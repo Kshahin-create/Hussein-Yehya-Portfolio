@@ -26,7 +26,7 @@ import greenTeam from '@assets/image_1787527280769.png';
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
 type Repo = { name: string; language: string | null; url: string; updated: string; fork?: boolean; homepage?: string };
-type Achievement = { date: string; title: string; titleEn?: string; body: string; bodyEn?: string; role: string; roleEn?: string; location: string; locationEn?: string; images: string[] };
+type Achievement = { date: string; title: string; titleEgyptian?: string; titleMoroccan?: string; titleEn?: string; body: string; bodyEgyptian?: string; bodyMoroccan?: string; bodyEn?: string; role: string; roleEgyptian?: string; roleMoroccan?: string; roleEn?: string; location: string; locationEgyptian?: string; locationMoroccan?: string; locationEn?: string; images: string[] };
 
 const repos: Repo[] = [
   { name: 'Tech-Day', language: 'HTML', url: 'https://github.com/husseinyehya1/Tech-Day', updated: '2026-06-29' },
@@ -46,32 +46,67 @@ const achievements: Achievement[] = [
   {
     date: '2026-06-09',
     title: 'ورشة المبادرة الوطنية للمشروعات الخضراء الذكية',
+    titleEgyptian: 'ورشة المبادرة الوطنية للمشروعات الخضراء الذكية',
+    titleMoroccan: 'ورشة المبادرة الوطنية للمشاريع الخضراء الذكية',
     titleEn: 'National Initiative for Smart Green Projects workshop',
     body: 'يوم من أحلى الأيام في ديوان عام محافظة القليوبية، محافظتي الغالية، وسط أحلى تيم… وقبل ما نكون تيم إحنا صحاب وأخوات. سعدت جدًا بحضوري ورشة المبادرة الوطنية للمشروعات الخضراء الذكية، يوم مليان طاقة إيجابية، أفكار ملهمة، وفرصة حقيقية إننا نتعلم ونفكر إزاي نكون جزء من حلول بتخدم بلدنا وبيئتنا ومستقبلنا. شكرًا لكل الناس الجميلة اللي كانت موجودة، وإن شاء الله دايمًا متجمعين على خير ونجاح وتأثير حقيقي.',
+    bodyEgyptian: 'كان يوم من أحلى الأيام في ديوان عام محافظة القليوبية، محافظتي الغالية، وسط أحلى تيم… وقبل ما نكون تيم إحنا صحاب وإخوات. اتبسطت جدًا بحضوري ورشة المبادرة الوطنية للمشروعات الخضراء الذكية؛ يوم مليان طاقة إيجابية وأفكار ملهمة، وفرصة حقيقية نتعلم ونفكر إزاي نكون جزء من حلول بتخدم بلدنا وبيئتنا ومستقبلنا. شكرًا لكل الناس الجميلة اللي كانت موجودة، وإن شاء الله نفضل دايمًا متجمعين على خير ونجاح وتأثير حقيقي.',
+    bodyMoroccan: 'كان نهار من زوين ما يكون فديوان عام محافظة القليوبية، المحافظة الغالية ديالي، وسط أحسن تيم… وقبل ما نكونو تيم، حنا صحاب وخوت. فرحت بزاف بالحضور ديالي فـورشة المبادرة الوطنية للمشاريع الخضراء الذكية؛ نهار عامر بالطاقة الإيجابية والأفكار الملهمة، وفرصة حقيقية باش نتعلمو ونفكرو كيفاش نكونو جزء من حلول كتخدم بلادنا وبيئتنا ومستقبلنا. شكراً لكل الناس الزوينة اللي كانت حاضرة، وإن شاء الله نبقاو ديما مجموعين على الخير والنجاح والأثر الحقيقي.',
     bodyEn: 'A beautiful day at the Qalyubia Governorate headquarters with an incredible team—and friends and siblings before we were ever a team. I was happy to attend the National Initiative for Smart Green Projects workshop: a day full of positive energy, inspiring ideas, and a real opportunity to learn how we can contribute to solutions that serve our country, environment, and future.',
     role: 'مشارك في ورشة المبادرة الوطنية للمشروعات الخضراء الذكية',
+    roleEgyptian: 'مشارك في ورشة المبادرة الوطنية للمشروعات الخضراء الذكية',
+    roleMoroccan: 'مشارك فـورشة المبادرة الوطنية للمشاريع الخضراء الذكية',
     roleEn: 'Participant in the National Initiative for Smart Green Projects workshop',
     location: 'ديوان عام محافظة القليوبية',
+    locationEgyptian: 'ديوان عام محافظة القليوبية',
+    locationMoroccan: 'ديوان عام محافظة القليوبية',
     locationEn: 'Qalyubia Governorate headquarters',
     images: [greenSpeaking, greenWorkshop, greenFriends, greenTeam],
   },
   {
     date: '2026-06-16',
     title: 'متابعة أعمال الفريق التقني بالعبور',
+    titleEgyptian: 'متابعة شغل الفريق التقني بالعبور',
+    titleMoroccan: 'تتبع خدمة الفريق التقني فالعبور',
     body: 'في إطار المتابعة المستمرة وحرصًا على دعم فرق العمل بالمحافظة، تابع قائد الفريق التقني بالقليوبية أعمال الفريق التقني بالعبور، والوقوف على أبرز التحديات التي تواجههم، والعمل على حل أي مشكلات بشكل فوري. كما تم التأكيد على توفير أفضل الإمكانيات والدعم اللازم، بما يضمن تقديم حلول تقنية فعّالة، وتحقيق أعلى مستوى من الجودة في الأداء والخدمات المقدمة. الفريق التقني بالقليوبية — معًا نحو أداء أفضل وحلول أكثر احترافية. إدارة العبور التعليمية.',
+    bodyEgyptian: 'ضمن المتابعة المستمرة ودعم فرق العمل في المحافظة، تابع قائد الفريق التقني بالقليوبية شغل الفريق التقني في العبور، ووقف على أهم التحديات اللي بتقابلهم، واشتغل على حل أي مشكلة بشكل فوري. كمان اتأكدنا من توفير أفضل الإمكانيات والدعم اللازم، عشان نقدم حلول تقنية فعّالة ونوصل لأعلى جودة في الأداء والخدمات. الفريق التقني بالقليوبية — مع بعض لأداء أفضل وحلول أكثر احترافية. إدارة العبور التعليمية.',
+    bodyMoroccan: 'فإطار التتبع المستمر والحرص على دعم فرق العمل فالمحافظة، تابع قائد الفريق التقني بالقليوبية خدمة الفريق التقني فالعبور ووقف على أبرز التحديات اللي كاتواجههم، وخدم على حل أي مشكل فالحين. وتأكدنا حتى من توفير أحسن الإمكانيات والدعم اللازم، باش نقدمو حلول تقنية فعّالة ونحققو أعلى جودة فالأداء والخدمات. الفريق التقني بالقليوبية — مجموعين من أجل أداء أحسن وحلول أكثر احترافية. إدارة العبور التعليمية.',
+    bodyEn: 'As part of our continued follow-up and commitment to supporting teams across the governorate, the Qalyubia Technical Team Lead followed up with the Obour technical team, identified their main challenges, and worked to resolve issues immediately. The visit also reaffirmed the need to provide the best resources and support for effective technical solutions and higher-quality services. Qalyubia Technical Team — together toward better performance and more professional solutions. Obour Educational Administration.',
+    roleEgyptian: 'قائد الفريق التقني بالقليوبية',
+    roleMoroccan: 'قائد الفريق التقني بالقليوبية',
     role: 'قائد الفريق التقني بالقليوبية',
     location: 'الفريق التقني بالقليوبية — إدارة العبور التعليمية',
+    locationEgyptian: 'الفريق التقني بالقليوبية — إدارة العبور التعليمية',
+    locationMoroccan: 'الفريق التقني بالقليوبية — إدارة العبور التعليمية',
+    locationEn: 'Qalyubia Technical Team — Obour Educational Administration',
     images: [teamGroup, teamPortrait, teamDiscussion, teamWorkshop, teamRoom, teamBriefing, teamMeet, teamVisit],
   },
   {
     date: '2026-06-26',
     title: 'إطلاق النسخة التجريبية الأولية من مدينة AI',
+    titleEgyptian: 'إطلاق النسخة التجريبية الأولى من مدينة AI',
+    titleMoroccan: 'إطلاق النسخة التجريبية الأولى من مدينة AI',
     body: 'سعدت اليوم، بصفتي قائد الفريق التقني بالقليوبية، بإطلاق النسخة التجريبية الأولية من تطبيق مدينة AI خلال فعاليات Tech Day | Nile Sons بإدارة العبور التعليمية. لحظة مهمة في بداية مشروع نؤمن إنه هيكون خطوة جديدة نحو توظيف التكنولوجيا والذكاء الاصطناعي في خدمة المجتمع وتطوير الخدمات اليومية بشكل أسهل وأذكى.',
+    bodyEgyptian: 'اتبسطت النهارده، بصفتي قائد الفريق التقني بالقليوبية، بإطلاق النسخة التجريبية الأولى من تطبيق مدينة AI خلال فعاليات Tech Day | Nile Sons بإدارة العبور التعليمية. دي لحظة مهمة في بداية مشروع مؤمنين إنه هيكون خطوة جديدة لتوظيف التكنولوجيا والذكاء الاصطناعي في خدمة المجتمع وتطوير الخدمات اليومية بشكل أسهل وأذكى.',
+    bodyMoroccan: 'فرحت اليوم، بصفتي قائد الفريق التقني بالقليوبية، بإطلاق النسخة التجريبية الأولى من تطبيق مدينة AI خلال فعاليات Tech Day | Nile Sons بإدارة العبور التعليمية. هادي لحظة مهمة فبداية مشروع كنآمنو أنه غادي يكون خطوة جديدة فاستعمال التكنولوجيا والذكاء الاصطناعي لخدمة المجتمع وتطوير الخدمات اليومية بطريقة أسهل وأذكى.',
+    bodyEn: 'I was happy to launch the first pilot version of Madinah AI as the Qalyubia Technical Team Lead during Tech Day | Nile Sons, organized by the Obour Educational Administration. It is an important first step for a project we believe can use technology and AI to serve the community and make everyday services easier and smarter.',
     role: 'قائد الفريق التقني بالقليوبية · المدير التنفيذي لمشروع مدينة AI',
+    roleEgyptian: 'قائد الفريق التقني بالقليوبية · المدير التنفيذي لمشروع مدينة AI',
+    roleMoroccan: 'قائد الفريق التقني بالقليوبية · المدير التنفيذي لمشروع مدينة AI',
+    roleEn: 'Qalyubia Technical Team Lead · Madinah AI Executive Director',
     location: 'Tech Day | Nile Sons — إدارة العبور التعليمية',
+    locationEgyptian: 'Tech Day | Nile Sons — إدارة العبور التعليمية',
+    locationMoroccan: 'Tech Day | Nile Sons — إدارة العبور التعليمية',
+    locationEn: 'Tech Day | Nile Sons — Obour Educational Administration',
     images: [madinahStage, madinahTalk, madinahSide, madinahPodium, madinahScreen, madinahWide],
   },
 ];
+
+function getAchievementCopy(item: Achievement, lang: Language, dialect: Dialect) {
+  if (lang === 'en') return { title: item.titleEn ?? item.title, body: item.bodyEn ?? item.body, role: item.roleEn ?? item.role, location: item.locationEn ?? item.location };
+  if (dialect === 'moroccan') return { title: item.titleMoroccan ?? item.title, body: item.bodyMoroccan ?? item.body, role: item.roleMoroccan ?? item.role, location: item.locationMoroccan ?? item.location };
+  return { title: item.titleEgyptian ?? item.title, body: item.bodyEgyptian ?? item.body, role: item.roleEgyptian ?? item.role, location: item.locationEgyptian ?? item.location };
+}
 
 const libraryPhotos = [
   { src: profileImage, title: 'Hussein Yehya', label: 'Portrait', labelAr: 'بورتريه', featured: true },
@@ -339,8 +374,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
     <div className="journal-list">
       {ordered.map((item, index) => <motion.article className="achievement-card" data-testid={`card-achievement-${index}`} key={item.date + item.title} initial={reduced ? false : { opacity: 0, y: 45 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }}>
         <div className="achievement-meta"><span>{String(index + 1).padStart(2, '0')}</span><time dateTime={item.date}>{new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(`${item.date}T12:00:00`))}</time></div>
-        <div className="achievement-copy"><h3>{lang === 'en' ? (item.titleEn ?? item.title) : item.title}</h3><p>{lang === 'en' ? (item.bodyEn ?? item.body) : item.body}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{lang === 'en' ? (item.roleEn ?? item.role) : item.role}</strong><small>{lang === 'en' ? (item.locationEn ?? item.location) : item.location}</small></div></div>
-        <AchievementGallery images={item.images} title={lang === 'en' ? (item.titleEn ?? item.title) : item.title} details={lang === 'en' ? (item.bodyEn ?? item.body) : item.body} role={lang === 'en' ? (item.roleEn ?? item.role) : item.role} location={lang === 'en' ? (item.locationEn ?? item.location) : item.location} />
+        {(() => { const copy = getAchievementCopy(item, lang, dialect); return <><div className="achievement-copy"><h3>{copy.title}</h3><p>{copy.body}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{copy.role}</strong><small>{copy.location}</small></div></div><AchievementGallery images={item.images} title={copy.title} details={copy.body} role={copy.role} location={copy.location} /></>; })()}
       </motion.article>)}
     </div>
   </section>;
