@@ -18,11 +18,15 @@ import teamRoom from '@assets/image_1787526922159.png';
 import teamBriefing from '@assets/image_1787526927703.png';
 import teamMeet from '@assets/image_1787526933323.png';
 import teamVisit from '@assets/image_1787526940727.png';
+import greenSpeaking from '@assets/image_1787527265364.png';
+import greenWorkshop from '@assets/image_1787527270175.png';
+import greenFriends from '@assets/image_1787527275972.png';
+import greenTeam from '@assets/image_1787527280769.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
 type Repo = { name: string; language: string | null; url: string; updated: string; fork?: boolean; homepage?: string };
-type Achievement = { date: string; title: string; body: string; role: string; location: string; images: string[] };
+type Achievement = { date: string; title: string; titleEn?: string; body: string; bodyEn?: string; role: string; roleEn?: string; location: string; locationEn?: string; images: string[] };
 
 const repos: Repo[] = [
   { name: 'Tech-Day', language: 'HTML', url: 'https://github.com/husseinyehya1/Tech-Day', updated: '2026-06-29' },
@@ -39,6 +43,18 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2026-06-09',
+    title: 'ورشة المبادرة الوطنية للمشروعات الخضراء الذكية',
+    titleEn: 'National Initiative for Smart Green Projects workshop',
+    body: 'يوم من أحلى الأيام في ديوان عام محافظة القليوبية، محافظتي الغالية، وسط أحلى تيم… وقبل ما نكون تيم إحنا صحاب وأخوات. سعدت جدًا بحضوري ورشة المبادرة الوطنية للمشروعات الخضراء الذكية، يوم مليان طاقة إيجابية، أفكار ملهمة، وفرصة حقيقية إننا نتعلم ونفكر إزاي نكون جزء من حلول بتخدم بلدنا وبيئتنا ومستقبلنا. شكرًا لكل الناس الجميلة اللي كانت موجودة، وإن شاء الله دايمًا متجمعين على خير ونجاح وتأثير حقيقي.',
+    bodyEn: 'A beautiful day at the Qalyubia Governorate headquarters with an incredible team—and friends and siblings before we were ever a team. I was happy to attend the National Initiative for Smart Green Projects workshop: a day full of positive energy, inspiring ideas, and a real opportunity to learn how we can contribute to solutions that serve our country, environment, and future.',
+    role: 'مشارك في ورشة المبادرة الوطنية للمشروعات الخضراء الذكية',
+    roleEn: 'Participant in the National Initiative for Smart Green Projects workshop',
+    location: 'ديوان عام محافظة القليوبية',
+    locationEn: 'Qalyubia Governorate headquarters',
+    images: [greenSpeaking, greenWorkshop, greenFriends, greenTeam],
+  },
   {
     date: '2026-06-16',
     title: 'متابعة أعمال الفريق التقني بالعبور',
@@ -75,6 +91,10 @@ const libraryPhotos = [
   { src: teamBriefing, title: 'Technical briefing', label: 'Team', labelAr: 'الفريق التقني' },
   { src: teamMeet, title: 'Team collaboration', label: 'Team', labelAr: 'الفريق التقني' },
   { src: teamVisit, title: 'Obour team visit', label: 'Team', labelAr: 'الفريق التقني' },
+  { src: greenSpeaking, title: 'Speaking at the green projects workshop', label: 'Initiative', labelAr: 'المبادرة الخضراء', featured: true },
+  { src: greenWorkshop, title: 'Smart green projects workshop', label: 'Initiative', labelAr: 'المبادرة الخضراء' },
+  { src: greenFriends, title: 'Together at Qalyubia Governorate', label: 'Initiative', labelAr: 'المبادرة الخضراء' },
+  { src: greenTeam, title: 'The initiative team', label: 'Initiative', labelAr: 'المبادرة الخضراء' },
 ];
 
 const detailCopy = {
@@ -319,15 +339,15 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
     <div className="journal-list">
       {ordered.map((item, index) => <motion.article className="achievement-card" data-testid={`card-achievement-${index}`} key={item.date + item.title} initial={reduced ? false : { opacity: 0, y: 45 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }}>
         <div className="achievement-meta"><span>{String(index + 1).padStart(2, '0')}</span><time dateTime={item.date}>{new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(`${item.date}T12:00:00`))}</time></div>
-        <div className="achievement-copy"><h3>{lang === 'en' ? 'Madinah AI pilot launch' : item.title}</h3><p>{lang === 'en' ? 'Launched the first Madinah AI pilot during Tech Day | Nile Sons.' : 'إطلاق النسخة التجريبية الأولى من مدينة AI خلال Tech Day | Nile Sons.'}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{lang === 'en' ? 'Qalyubia Technical Team Lead · Madinah AI Executive Director' : item.role}</strong><small>{item.location}</small></div></div>
-        <AchievementGallery images={item.images} title={lang === 'en' ? 'Madinah AI pilot launch' : item.title} details={item.body} role={item.role} location={item.location} />
+        <div className="achievement-copy"><h3>{lang === 'en' ? (item.titleEn ?? item.title) : item.title}</h3><p>{lang === 'en' ? (item.bodyEn ?? item.body) : item.body}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{lang === 'en' ? (item.roleEn ?? item.role) : item.role}</strong><small>{lang === 'en' ? (item.locationEn ?? item.location) : item.location}</small></div></div>
+        <AchievementGallery images={item.images} title={lang === 'en' ? (item.titleEn ?? item.title) : item.title} details={lang === 'en' ? (item.bodyEn ?? item.body) : item.body} role={lang === 'en' ? (item.roleEn ?? item.role) : item.role} location={lang === 'en' ? (item.locationEn ?? item.location) : item.location} />
       </motion.article>)}
     </div>
   </section>;
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -345,10 +365,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
