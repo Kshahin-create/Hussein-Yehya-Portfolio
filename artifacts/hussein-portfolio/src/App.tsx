@@ -8,6 +8,7 @@ import madinahSide from '@assets/image_1787524800777.png';
 import madinahPodium from '@assets/image_1787524804715.png';
 import madinahScreen from '@assets/image_1787524808716.png';
 import madinahWide from '@assets/image_1787524812715.png';
+import madinahClose from '@assets/image_1787525611582.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -37,6 +38,17 @@ const achievements: Achievement[] = [
     location: 'Tech Day | Nile Sons — إدارة العبور التعليمية',
     images: [madinahStage, madinahTalk, madinahSide, madinahPodium, madinahScreen, madinahWide],
   },
+];
+
+const libraryPhotos = [
+  { src: profileImage, title: 'Hussein Yehya', label: 'Portrait', labelAr: 'بورتريه', featured: true },
+  { src: madinahStage, title: 'Madinah AI — Tech Day', label: 'Launch', labelAr: 'إطلاق', featured: true },
+  { src: madinahTalk, title: 'On stage at Tech Day', label: 'Launch', labelAr: 'إطلاق' },
+  { src: madinahSide, title: 'Madinah AI presentation', label: 'Launch', labelAr: 'إطلاق' },
+  { src: madinahPodium, title: 'Presenting the pilot', label: 'Launch', labelAr: 'إطلاق' },
+  { src: madinahScreen, title: 'Madinah AI early access', label: 'Launch', labelAr: 'إطلاق' },
+  { src: madinahWide, title: 'Madinah AI event', label: 'Launch', labelAr: 'إطلاق' },
+  { src: madinahClose, title: 'Madinah AI pilot launch', label: 'Launch', labelAr: 'إطلاق' },
 ];
 
 const detailCopy = {
@@ -146,11 +158,12 @@ function SectionHead({ label, title }: { label: string; title: string }) {
   return <div className="section-heading"><span>{label}</span><div /><h2>{title}</h2></div>;
 }
 
-function Header({ lang, dialect, dark, onLanguage, onDialect, onTheme }: { lang: Language; dialect: Dialect; dark: boolean; onLanguage: () => void; onDialect: () => void; onTheme: () => void }) {
+function Header({ lang, dialect, dark, onLanguage, onDialect, onTheme, libraryPage = false }: { lang: Language; dialect: Dialect; dark: boolean; onLanguage: () => void; onDialect: () => void; onTheme: () => void; libraryPage?: boolean }) {
   const [open, setOpen] = useState(false); const t = getT(lang, dialect);
   const links = ['story', 'profile', 'journal', 'systems', 'archive', 'method', 'contact'];
   const labels = [t.nav[0], lang === 'ar' ? 'البروفايل' : 'Profile', lang === 'ar' ? 'الإنجازات' : 'Journal', ...t.nav.slice(1)];
-  return <header className="new-nav"><a href="#top" data-testid="link-home" className="mark">HY<span>.</span></a><nav>{links.map((link, i) => <a data-testid={`link-nav-${i}`} key={link} href={`#${link}`}>{labels[i]}</a>)}</nav><div className="nav-tools"><button data-testid="button-language-toggle" onClick={onLanguage}>{t.language}</button>{lang === 'ar' && <button data-testid="button-dialect-toggle" onClick={onDialect}>{dialect === 'egyptian' ? 'مصرية' : 'مغربية'}</button>}<button data-testid="button-theme-toggle" aria-label={dark ? t.themeDark : t.themeLight} onClick={onTheme}>{dark ? <Sun size={15} /> : <Moon size={15} />}</button><button data-testid="button-menu-toggle" className="mobile-menu" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X size={17} /> : <Menu size={17} />}</button></div>{open && <div className="mobile-sheet">{links.map((link, i) => <a onClick={() => setOpen(false)} data-testid={`link-mobile-nav-${i}`} key={link} href={`#${link}`}>{labels[i]} <ArrowDownRight size={16} /></a>)}</div>}</header>;
+  const home = libraryPage ? '/' : '#top'; const sectionHref = (link: string) => libraryPage ? `/#${link}` : `#${link}`;
+  return <header className="new-nav"><a href={home} data-testid="link-home" className="mark">HY<span>.</span></a><nav>{links.map((link, i) => <a data-testid={`link-nav-${i}`} key={link} href={sectionHref(link)}>{labels[i]}</a>)}</nav><div className="nav-tools"><a className="library-link" href="/gallery">{lang === 'ar' ? 'مكتبة الصور' : 'Photo library'}</a><button data-testid="button-language-toggle" onClick={onLanguage}>{t.language}</button>{lang === 'ar' && <button data-testid="button-dialect-toggle" onClick={onDialect}>{dialect === 'egyptian' ? 'مصرية' : 'مغربية'}</button>}<button data-testid="button-theme-toggle" aria-label={dark ? t.themeDark : t.themeLight} onClick={onTheme}>{dark ? <Sun size={15} /> : <Moon size={15} />}</button><button data-testid="button-menu-toggle" className="mobile-menu" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X size={17} /> : <Menu size={17} />}</button></div>{open && <div className="mobile-sheet">{links.map((link, i) => <a onClick={() => setOpen(false)} data-testid={`link-mobile-nav-${i}`} key={link} href={sectionHref(link)}>{labels[i]} <ArrowDownRight size={16} /></a>)}</div>}</header>;
 }
 
 function Hero({ lang, dialect }: { lang: Language; dialect: Dialect }) {
@@ -255,6 +268,34 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   </section>;
 }
 
+function PhotoLibrary({ lang }: { lang: Language }) {
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch'>('all');
+  const [active, setActive] = useState<number | null>(null);
+  const filtered = libraryPhotos.filter((photo) => filter === 'all' || (filter === 'portrait' ? photo.label === 'Portrait' : photo.label === 'Launch'));
+  const current = active === null ? null : libraryPhotos[active];
+  const go = (direction: number) => {
+    if (active === null) return;
+    setActive((active + direction + libraryPhotos.length) % libraryPhotos.length);
+  };
+  useEffect(() => {
+    if (active === null) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setActive(null);
+      if (event.key === 'ArrowLeft') go(-1);
+      if (event.key === 'ArrowRight') go(1);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [active]);
+  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+  return <div className="library-page">
+    <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
+    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+    <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
+    {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
+  </div>;
+}
+
 function SystemCard({ type, lang, dialect, reduced }: { type: 'sakr' | 'clean'; lang: Language; dialect: Dialect; reduced: boolean | null }) {
   const t = getT(lang, dialect); const sakr = type === 'sakr'; const title = sakr ? 'sakrmarket.com' : 'cleannovaeg.com'; const url = sakr ? 'https://sakrmarket.com' : 'https://cleannovaeg.com';
   return <motion.article data-testid={`card-project-${type}`} initial={reduced ? false : { opacity: 0, y: 70 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .65 }} className={`system-card ${type}`}><div className="system-screen"><span>LIVE SYSTEM / 0{sakr ? 1 : 2}</span><strong>{sakr ? 'SAKR' : 'CLEAN\\NOVA'}</strong><div className="screen-lines"><i /><i /><i /></div></div><div className="system-info"><p>{sacrTags(sakr, lang).map(x => <span key={x}>{x}</span>)}</p><h3 data-testid={`text-project-title-${type}`}>{title}</h3><p>{sakr ? t.sakr : t.clean}</p><div><small>{t.builtFor}<b>{sakr ? 'Sakr supermarket' : 'CleanNova laundry'}</b></small><small>{lang === 'ar' ? 'دوري' : 'Role'}<b>{t.role}</b></small><a data-testid={`link-project-${type}`} target="_blank" rel="noreferrer" href={url}>{t.visit}<ExternalLink size={14} /></a></div></div></motion.article>;
@@ -281,8 +322,9 @@ function Contact({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 
 function App() {
   const [lang, setLang] = useState<Language>('en'); const [dialect, setDialect] = useState<Dialect>('egyptian'); const [dark, setDark] = useState(false); const t = getT(lang, dialect);
+  const libraryPage = window.location.pathname.endsWith('/gallery') || window.location.pathname.endsWith('/gallery/');
   useEffect(() => { setDark(localStorage.getItem('hussein-theme') === 'dark'); }, []);
   useEffect(() => { document.documentElement.classList.toggle('dark', dark); document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'; document.documentElement.lang = lang; localStorage.setItem('hussein-theme', dark ? 'dark' : 'light'); }, [dark, lang]);
-  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}><Header lang={lang} dialect={dialect} dark={dark} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} /><main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} /><Journal lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main><footer><span>© {new Date().getFullYear()} / Hussein Yehya</span><a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a></footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
+  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}>{<Header lang={lang} dialect={dialect} dark={dark} libraryPage={libraryPage} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} />}{libraryPage ? <PhotoLibrary lang={lang} /> : <main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} /><Journal lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main>}<footer><span>© {new Date().getFullYear()} / Hussein Yehya</span>{libraryPage ? <a href="/">{t.back}<ArrowUpRight size={14} /></a> : <a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a>}</footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
 }
 export default App;
