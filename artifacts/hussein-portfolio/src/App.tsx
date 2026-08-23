@@ -11,6 +11,7 @@ import profileImage from '@assets/hussein-profile.jpeg';
 const queryClient = new QueryClient();
 
 type Language = 'en' | 'ar';
+type ArabicDialect = 'egyptian' | 'moroccan';
 
 type GitHubRepository = {
   name: string;
@@ -99,6 +100,9 @@ const copy = {
     footerLine: 'Designed & built by Hussein Yehya',
     backTop: 'Back to top',
     languageLabel: 'العربية',
+    dialectLabel: 'اللهجة',
+    egyptian: 'مصرية',
+    moroccan: 'مغربية',
     themeLabelLight: 'Switch to dark mode',
     themeLabelDark: 'Switch to light mode',
   },
@@ -165,13 +169,69 @@ const copy = {
     footerLine: 'تصميم وتطوير حسين يحيى',
     backTop: 'العودة للأعلى',
     languageLabel: 'English',
+    dialectLabel: 'اللهجة',
+    egyptian: 'مصرية',
+    moroccan: 'مغربية',
     themeLabelLight: 'التبديل للوضع الداكن',
     themeLabelDark: 'التبديل للوضع الفاتح',
   },
 } as const;
 
-function Nav({ language, dark, onLanguage, onTheme }: { language: Language; dark: boolean; onLanguage: () => void; onTheme: () => void }) {
-  const t = copy[language];
+const dialectCopy: Record<ArabicDialect, Partial<typeof copy.ar>> = {
+  egyptian: {
+    heroTitle: <>واجهات بتفهم <em>الناس.</em></>,
+    heroBody: 'أنا حسين يحيى — مطور ويب وتطبيقات متكامل، بحوّل تفاصيل الشغل اليومية لمنتجات رقمية سهلة، سريعة، وتنجز من غير لف ودوران.',
+    available: 'متاح لتعاونات طموحة ومحترمة',
+    aboutTitle: <>عملي في شغلي.<br /><span className="text-primary">فضولي في تعلّمي.</span></>,
+    aboutBody: 'بحب أقرّب المسافة بين الفكرة والنتيجة اللي الناس تقدر تستخدمها بجد. بدمج فهم المنتج مع هندسة قوية واهتمام بالتفاصيل اللي بتخلّي التجربة مريحة وواضحة.',
+    aboutBody2: 'كطالب مصري-مغربي، عندي نظرة واسعة للبرمجيات، لكن رجلي دايماً على الأرض: بفهم احتياجات البيزنس المحلي وببني حلول تشتغل بجد.',
+    workTitle: <>شغل<br /><span className="font-display italic text-primary">يفرق.</span></>,
+    workIntro: 'مشروعان شغّالان، وكل واحد فيهم معمول عشان يسهّل يوم الناس اللي بتستخدمه — مش مجرد شكل حلو في البورتفوليو.',
+    sakrDesc: 'سيستم إدارة ومبيعات لسوبر ماركت صقر في مصر، بيجمع حركة المحل اليومية في طريقة تشغيل أبسط وأوضح.',
+    cleanDesc: 'سيستم إدارة وتشغيل ومنصة بيع لمغسلة كلين نوفا في مصر، بتنظّم الطلبات والخدمات والمبيعات في مكان واحد.',
+    approachTitle: <>نخلّي المعقّد<br /><span className="font-display italic text-primary">سهل.</span></>,
+    approachIntro: 'البرنامج الصح مش بيستعرض نفسه؛ بيخلّي الخطوة اللي بعدها واضحة وطبيعية.',
+    step1: 'أفهم المشكلة من أصلها',
+    step1Body: 'كل مشروع بيبدأ بسماع الناس، وفهم طريقة شغلهم، والحلول المؤقتة اللي اتعودوا عليها.',
+    step2: 'أرتّب الطريق الصح',
+    step2Body: 'بحوّل المتطلبات الكتير لتجربة مركّزة، كل شاشة فيها لها هدف واضح.',
+    step3: 'أبني حاجة تعيش',
+    step3Body: 'الشكل الجميل بيبان، لكن الثبات والاعتمادية هما اللي بيخلّوا المنتج مفيد كل يوم.',
+    principles: ['الوضوح أهم من الزحمة', 'الأنظمة قبل الحلول المؤقتة', 'تفاصيل بتوفّر وقت'],
+    contactTitle: <>عندك فكرة<br /><span className="font-display italic text-primary">نخلّيها حقيقة؟</span></>,
+    contactBody: 'لو عندك فكرة طموحة أو مشكلة تستاهل تتحل، احكي لي عنها ونشوف مع بعض أنسب بداية.',
+  },
+  moroccan: {
+    heroTitle: <>واجهات كتوصل<br /><em>المعنى.</em></>,
+    heroBody: 'أنا حسين يحيى — مطوّر ويب وتطبيقات متكامل، كنحوّل تعقيدات الخدمة اليومية لمنتجات رقمية واضحة، خفيفة، ومفيدة.',
+    available: 'منفتح على تعاونات زوينة وهادفة',
+    aboutTitle: <>عملي وواضح.<br /><span className="text-primary">ودائماً كنكتاشف.</span></>,
+    aboutBody: 'كنهتم بالمسافة بين الفكرة واللحظة اللي كتولي فيها نافعة فعلاً. كنمزج التفكير فالمنتج مع هندسة متينة واهتمام بالتفاصيل اللي كتخلي التجربة مريحة.',
+    aboutBody2: 'كطالب مصري-مغربي، كنجيب نظرة واسعة للبرمجيات، مع فهم قريب من احتياجات المشاريع المحلية والطريقة اللي كيخدم بها الناس كل نهار.',
+    workTitle: <>حلول<br /><span className="font-display italic text-primary">كتخدم مزيان.</span></>,
+    workIntro: 'جوج أنظمة خدامين، وكل واحد فيهم مبني باش يسهّل الخدمة على الناس اللي كيستعملوه يومياً — ماشي غير باش يبان مزيان.',
+    sakrDesc: 'نظام للتسيير والمبيعات لسوبر ماركت صقر فمصر، كيجمع تفاصيل الخدمة اليومية فطريقة تشغيل منظمة وواضحة.',
+    cleanDesc: 'نظام للتسيير والتشغيل ومنصة للبيع لمغسلة كلين نوفا فمصر، كينظّم الطلبات والخدمات والمبيعات فبلاصة وحدة.',
+    approachTitle: <>نخلّيو التعقيد<br /><span className="font-display italic text-primary">واضح.</span></>,
+    approachIntro: 'البرنامج المزيان ما كيطلبش الإعجاب؛ كيسهّل عليك الخطوة الجاية وكيخليها طبيعية.',
+    step1: 'كنسمع للمشكل الحقيقي',
+    step1Body: 'كل مشروع كيبدا بفهم الناس، طريقة الخدمة، والالتفافات اللي ولات جزء من الروتين.',
+    step2: 'كنبني المسار المفيد',
+    step2Body: 'كنرتّب المتطلبات الكثيرة ف تجربة مركّزة، وكل شاشة عندها سبب واضح.',
+    step3: 'كنبني حاجة كتكمّل',
+    step3Body: 'الصقل كيبان، ولكن الثبات والاعتمادية هما اللي كيخليو المنتج نافع مع الوقت.',
+    principles: ['الوضوح قبل الزواق', 'الأنظمة قبل الحلول السريعة', 'تفاصيل كتحترم الوقت'],
+    contactTitle: <>عندك فكرة<br /><span className="font-display italic text-primary">نخدمو عليها؟</span></>,
+    contactBody: 'إلى عندك فكرة طموحة أو مشكل خاصو حل، شاركني التفاصيل ونشوفو كيفاش نبداو بطريقة زوينة وواضحة.',
+  },
+};
+
+function getCopy(language: Language, dialect: ArabicDialect) {
+  return language === 'ar' ? { ...copy.ar, ...dialectCopy[dialect] } : copy.en;
+}
+
+function Nav({ language, dialect, dark, onLanguage, onDialect, onTheme }: { language: Language; dialect: ArabicDialect; dark: boolean; onLanguage: () => void; onDialect: () => void; onTheme: () => void }) {
+  const t = getCopy(language, dialect);
   return (
     <header className="nav-blur fixed inset-x-0 top-0 z-40 border-b border-border/60">
       <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-5 sm:px-8">
@@ -186,6 +246,7 @@ function Nav({ language, dark, onLanguage, onTheme }: { language: Language; dark
         </nav>
         <div className="flex items-center gap-2">
           <button type="button" onClick={onLanguage} data-testid="button-language-toggle" aria-label="Toggle language" className="rounded-full border border-border px-3 py-2 font-mono-custom text-[10px] font-medium uppercase tracking-[.1em] transition-colors hover:border-primary hover:text-primary">{t.languageLabel}</button>
+          {language === 'ar' && <button type="button" onClick={onDialect} data-testid="button-dialect-toggle" aria-label={t.dialectLabel} className="hidden rounded-full border border-border px-3 py-2 font-mono-custom text-[10px] font-medium tracking-[.08em] transition-colors hover:border-primary hover:text-primary sm:block">{dialect === 'egyptian' ? t.egyptian : t.moroccan}</button>}
           <button type="button" onClick={onTheme} data-testid="button-theme-toggle" aria-label={dark ? t.themeLabelDark : t.themeLabelLight} className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary">
             {dark ? <Sun size={15} strokeWidth={1.8} /> : <Moon size={15} strokeWidth={1.8} />}
           </button>
@@ -195,8 +256,8 @@ function Nav({ language, dark, onLanguage, onTheme }: { language: Language; dark
   );
 }
 
-function Hero({ language }: { language: Language }) {
-  const t = copy[language];
+function Hero({ language, dialect }: { language: Language; dialect: ArabicDialect }) {
+  const t = getCopy(language, dialect);
   return (
     <section id="top" className="relative mx-auto grid min-h-[720px] max-w-[1240px] items-center gap-14 px-5 pb-16 pt-32 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-20 lg:pb-24">
       <div className="relative z-10">
@@ -240,8 +301,8 @@ function Hero({ language }: { language: Language }) {
   );
 }
 
-function About({ language }: { language: Language }) {
-  const t = copy[language];
+function About({ language, dialect }: { language: Language; dialect: ArabicDialect }) {
+  const t = getCopy(language, dialect);
   return (
     <section id="about" className="mx-auto max-w-[1240px] scroll-mt-24 px-5 py-24 sm:px-8 lg:py-36">
       <div className="mb-12 flex items-center gap-4"><span className="font-mono-custom text-[10px] uppercase tracking-[.14em] text-primary">{t.aboutKicker}</span><span className="section-rule h-px flex-1" /></div>
@@ -259,8 +320,8 @@ function About({ language }: { language: Language }) {
   );
 }
 
-function ProjectCard({ kind, language }: { kind: 'sakr' | 'clean'; language: Language }) {
-  const t = copy[language];
+function ProjectCard({ kind, language, dialect }: { kind: 'sakr' | 'clean'; language: Language; dialect: ArabicDialect }) {
+  const t = getCopy(language, dialect);
   const sakr = kind === 'sakr';
   const title = sakr ? 'sakrmarket.com' : 'cleannovaeg.com';
   const description = sakr ? t.sakrDesc : t.cleanDesc;
@@ -296,8 +357,8 @@ function ProjectCard({ kind, language }: { kind: 'sakr' | 'clean'; language: Lan
   );
 }
 
-function Work({ language }: { language: Language }) {
-  const t = copy[language];
+function Work({ language, dialect }: { language: Language; dialect: ArabicDialect }) {
+  const t = getCopy(language, dialect);
   return (
     <section id="work" className="scroll-mt-24 bg-secondary py-24 text-secondary-foreground sm:py-32">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
@@ -306,14 +367,14 @@ function Work({ language }: { language: Language }) {
           <h2 data-testid="text-work-title" className="text-[clamp(2.8rem,6vw,6rem)] font-extrabold leading-[.88] tracking-[-.07em]">{t.workTitle}</h2>
           <p className="max-w-[340px] pb-1 text-sm leading-7 text-secondary-foreground/65">{t.workIntro}</p>
         </div>
-        <div className="mt-16 grid gap-5 lg:grid-cols-12 lg:items-start"><ProjectCard kind="sakr" language={language} /><ProjectCard kind="clean" language={language} /></div>
+        <div className="mt-16 grid gap-5 lg:grid-cols-12 lg:items-start"><ProjectCard kind="sakr" language={language} dialect={dialect} /><ProjectCard kind="clean" language={language} dialect={dialect} /></div>
       </div>
     </section>
   );
 }
 
-function GitHubArchive({ language }: { language: Language }) {
-  const t = copy[language];
+function GitHubArchive({ language, dialect }: { language: Language; dialect: ArabicDialect }) {
+  const t = getCopy(language, dialect);
   const formatUpdated = (date: string) => new Intl.DateTimeFormat(language === 'ar' ? 'ar-EG' : 'en-GB', {
     month: 'short',
     year: 'numeric',
@@ -361,8 +422,8 @@ function GitHubArchive({ language }: { language: Language }) {
   );
 }
 
-function Approach({ language }: { language: Language }) {
-  const t = copy[language];
+function Approach({ language, dialect }: { language: Language; dialect: ArabicDialect }) {
+  const t = getCopy(language, dialect);
   const steps = [[t.step1, t.step1Body], [t.step2, t.step2Body], [t.step3, t.step3Body]];
   return (
     <section id="approach" className="mx-auto max-w-[1240px] scroll-mt-24 px-5 py-24 sm:px-8 lg:py-36">
@@ -379,8 +440,8 @@ function Approach({ language }: { language: Language }) {
   );
 }
 
-function Contact({ language }: { language: Language }) {
-  const t = copy[language];
+function Contact({ language, dialect }: { language: Language; dialect: ArabicDialect }) {
+  const t = getCopy(language, dialect);
   const [copied, setCopied] = useState(false);
   const copyLink = async () => {
     try { await navigator.clipboard.writeText(window.location.href); setCopied(true); window.setTimeout(() => setCopied(false), 1800); } catch { setCopied(false); }
