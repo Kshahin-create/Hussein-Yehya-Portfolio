@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowDownRight, ArrowUpRight, Check, ExternalLink, Facebook, Github, Instagram, Linkedin, Menu, Moon, Phone, Sun, X } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, ExternalLink, Facebook, Github, Instagram, Linkedin, Menu, Moon, Phone, Sun, X } from 'lucide-react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import profileImage from '@assets/hussein-profile.jpeg';
 import madinahStage from '@assets/image_1787524765206.png';
@@ -183,6 +183,18 @@ function AchievementGallery({ images, title, details, role, location }: { images
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const showGallery = (index = 0) => { setActive(index); setOpen(true); };
+  const previous = () => setActive((index) => (index - 1 + images.length) % images.length);
+  const next = () => setActive((index) => (index + 1) % images.length);
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+      if (event.key === 'ArrowLeft') previous();
+      if (event.key === 'ArrowRight') next();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [open, images.length]);
   return <>
     <div className="achievement-gallery" aria-label={title}>
       <button className="achievement-feature" onClick={() => showGallery(0)} aria-label={`Open ${title} gallery`}>
@@ -197,10 +209,29 @@ function AchievementGallery({ images, title, details, role, location }: { images
     </div>
     {open && <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
       <div className="gallery-modal-inner">
-        <div className="gallery-modal-top"><span>{String(active + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span><button onClick={() => setOpen(false)} aria-label="Close gallery"><X size={20} /></button></div>
-        <img className="gallery-modal-image" src={images[active]} alt={`${title} — ${active + 1}`} />
-        <div className="gallery-modal-details"><h3>{title}</h3><p>{details}</p><strong>{role}</strong><small>{location}</small></div>
-        <div className="gallery-thumbs">{images.map((image, index) => <button className={index === active ? 'active' : ''} key={image} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" /></button>)}</div>
+        <div className="gallery-modal-viewer">
+          <span className="gallery-viewer-count">{String(active + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
+          <button type="button" className="gallery-viewer-nav previous" onClick={previous} aria-label="Previous photo"><ChevronLeft size={20} /></button>
+          <img src={images[active]} alt={`${title} — ${active + 1}`} />
+          <button type="button" className="gallery-viewer-nav next" onClick={next} aria-label="Next photo"><ChevronRight size={20} /></button>
+        </div>
+        <div className="gallery-modal-sidebar">
+          <div className="gallery-modal-top">
+            <span>{String(active + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
+            <button type="button" onClick={() => setOpen(false)} aria-label="Close gallery"><X size={20} /></button>
+          </div>
+          <div className="gallery-modal-details">
+            <h3>{title}</h3>
+            <p>{details}</p>
+            <div>
+              <strong>{role}</strong>
+              <small>{location}</small>
+            </div>
+          </div>
+          <div className="gallery-thumbs">
+            {images.map((image, index) => <button type="button" className={index === active ? 'active' : ''} aria-current={index === active ? 'true' : undefined} key={image} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" /></button>)}
+          </div>
+        </div>
       </div>
     </div>}
   </>;
