@@ -148,11 +148,11 @@ function ProfileDetails({ lang }: { lang: Language }) {
   const t = detailCopy[lang];
   const areas = [[t.backend, t.backendBody], [t.mobile, t.mobileBody], [t.cloud, t.cloudBody], [t.ai, t.aiBody]];
   const initiatives = [[t.edu, t.eduBody], [t.madinah, t.madinahBody], [t.country, t.countryBody]];
-  return <section id="profile" className="profile-section">
+  return <section id="profile" data-testid="section-profile-details" className="profile-section">
     <SectionHead label={t.label} title={t.title} />
     <div className="profile-lead"><p>{t.intro}</p><div><span>{t.doing}</span><p>{t.doingBody}</p><div className="focus-list">{t.focus.map((item) => <span key={item}>{item}</span>)}</div></div></div>
     <div className="profile-subhead"><span>{t.stack}</span><div /></div>
-    <div className="range-grid">{areas.map(([title, body], i) => <motion.article key={title} initial={{ opacity: 0, y: 35 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .25 }} transition={{ delay: i * .08 }}><b>0{i + 1}</b><h3>{title}</h3><p>{body}</p></motion.article>)}</div>
+    <div className="range-grid">{areas.map(([title, body], i) => <motion.article data-testid={`card-technical-area-${i}`} key={title} initial={{ opacity: 0, y: 35 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .25 }} transition={{ delay: i * .08 }}><b>0{i + 1}</b><h3>{title}</h3><p>{body}</p></motion.article>)}</div>
     <div className="profile-split"><div><div className="profile-subhead"><span>{t.initiatives}</span><div /></div><div className="initiative-list">{initiatives.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div></div><div className="product-note"><span>{t.products}</span><p>{t.productsBody}</p><div className="security-line"><strong>{t.security}</strong><p>{t.securityBody}</p></div></div></div>
     <div className="vision-block"><span>{t.vision}</span><p>{t.visionBody}</p><strong>“{t.philosophy}”</strong></div>
   </section>;
