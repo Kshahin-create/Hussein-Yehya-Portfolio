@@ -3,6 +3,7 @@ import { ArrowDownRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, Externa
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import profileImage from '@assets/hussein-profile.jpeg';
 import madinahStage from '@assets/image_1787524765206.png';
+import madinahExtra from '@assets/image_1787524769990.png';
 import madinahTalk from '@assets/image_1787524775727.png';
 import madinahSide from '@assets/image_1787524800777.png';
 import madinahPodium from '@assets/image_1787524804715.png';
@@ -43,6 +44,7 @@ const achievements: Achievement[] = [
 const libraryPhotos = [
   { src: profileImage, title: 'Hussein Yehya', label: 'Portrait', labelAr: 'بورتريه', featured: true },
   { src: madinahStage, title: 'Madinah AI — Tech Day', label: 'Launch', labelAr: 'إطلاق', featured: true },
+  { src: madinahExtra, title: 'Madinah AI — Tech Day', label: 'Launch', labelAr: 'إطلاق' },
   { src: madinahTalk, title: 'On stage at Tech Day', label: 'Launch', labelAr: 'إطلاق' },
   { src: madinahSide, title: 'Madinah AI presentation', label: 'Launch', labelAr: 'إطلاق' },
   { src: madinahPodium, title: 'Presenting the pilot', label: 'Launch', labelAr: 'إطلاق' },
