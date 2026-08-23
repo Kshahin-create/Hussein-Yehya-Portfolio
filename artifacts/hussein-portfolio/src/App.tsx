@@ -197,46 +197,78 @@ function ProfileDetails({ lang }: { lang: Language }) {
 function AchievementGallery({ images, title, details, role, location }: { images: string[]; title: string; details: string; role: string; location: string }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
-  const showGallery = (index = 0) => { setActive(index); setOpen(true); };
-  const previous = () => setActive((index) => (index - 1 + images.length) % images.length);
-  const next = () => setActive((index) => (index + 1) % images.length);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLElement>(null);
+  const imageCount = images.length;
+  const activeIndex = imageCount > 0 ? Math.min(active, imageCount - 1) : 0;
+  const showGallery = (index = 0, trigger?: HTMLElement) => {
+    if (!imageCount) return;
+    triggerRef.current = trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
+    setActive(Math.max(0, Math.min(index, imageCount - 1)));
+    setOpen(true);
+  };
+  const closeGallery = () => {
+    setOpen(false);
+    window.requestAnimationFrame(() => triggerRef.current?.focus());
+  };
+  const previous = () => {
+    if (!imageCount) return;
+    setActive((index) => (index - 1 + imageCount) % imageCount);
+  };
+  const next = () => {
+    if (!imageCount) return;
+    setActive((index) => (index + 1) % imageCount);
+  };
   useEffect(() => {
     if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.requestAnimationFrame(() => closeButtonRef.current?.focus());
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false);
-      if (event.key === 'ArrowLeft') previous();
-      if (event.key === 'ArrowRight') next();
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeGallery();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        previous();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        next();
+      }
     };
     document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [open, images.length]);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open, imageCount]);
   return <>
     <div className="achievement-gallery" aria-label={title}>
-      <button className="achievement-feature" onClick={() => showGallery(0)} aria-label={`Open ${title} gallery`}>
-        <img src={images[0]} alt={title} />
+      <button className="achievement-feature" onClick={(event) => showGallery(0, event.currentTarget)} aria-label={`Open ${title} gallery`}>
+        {images[0] && <img src={images[0]} alt={title} />}
         <span className="gallery-open-label">View gallery <ArrowUpRight size={15} /></span>
       </button>
-      <button className="achievement-stack" onClick={() => showGallery(1)} aria-label={`View all ${images.length} photos`}>
-        <img src={images[1]} alt="" />
-        <img src={images[2]} alt="" />
-        <span>+{images.length - 1} photos <ArrowUpRight size={15} /></span>
+      <button className="achievement-stack" onClick={(event) => showGallery(1, event.currentTarget)} aria-label={`View all ${imageCount} photos`}>
+        {images[1] && <img src={images[1]} alt="" />}
+        {images[2] && <img src={images[2]} alt="" />}
+        <span>+{Math.max(0, imageCount - 1)} photos <ArrowUpRight size={15} /></span>
       </button>
     </div>
-    {open && <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
+    {open && imageCount > 0 && <div className="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" onMouseDown={(event) => { if (event.target === event.currentTarget) closeGallery(); }}>
       <div className="gallery-modal-inner">
         <div className="gallery-modal-viewer">
-          <span className="gallery-viewer-count">{String(active + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
+          <span className="gallery-viewer-count">{String(activeIndex + 1).padStart(2, '0')} / {String(imageCount).padStart(2, '0')}</span>
           <button type="button" className="gallery-viewer-nav previous" onClick={previous} aria-label="Previous photo"><ChevronLeft size={20} /></button>
-          <img src={images[active]} alt={`${title} — ${active + 1}`} />
+          <img src={images[activeIndex]} alt={`${title} — ${activeIndex + 1}`} />
           <button type="button" className="gallery-viewer-nav next" onClick={next} aria-label="Next photo"><ChevronRight size={20} /></button>
         </div>
         <div className="gallery-modal-sidebar">
           <div className="gallery-modal-top">
-            <span>{String(active + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
-            <button type="button" onClick={() => setOpen(false)} aria-label="Close gallery"><X size={20} /></button>
+            <span>{String(activeIndex + 1).padStart(2, '0')} / {String(imageCount).padStart(2, '0')}</span>
+            <button ref={closeButtonRef} type="button" onClick={closeGallery} aria-label="Close gallery"><X size={20} /></button>
           </div>
           <div className="gallery-modal-details">
-            <h3>{title}</h3>
+            <h3 id="gallery-modal-title">{title}</h3>
             <p>{details}</p>
             <div>
               <strong>{role}</strong>
@@ -244,7 +276,7 @@ function AchievementGallery({ images, title, details, role, location }: { images
             </div>
           </div>
           <div className="gallery-thumbs">
-            {images.map((image, index) => <button type="button" className={index === active ? 'active' : ''} aria-current={index === active ? 'true' : undefined} key={image} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" /></button>)}
+            {images.map((image, index) => <button type="button" className={index === activeIndex ? 'active' : ''} aria-current={index === activeIndex ? 'true' : undefined} key={`${image}-${index}`} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" /></button>)}
           </div>
         </div>
       </div>

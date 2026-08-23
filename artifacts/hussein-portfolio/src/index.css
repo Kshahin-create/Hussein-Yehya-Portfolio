@@ -72,7 +72,7 @@ footer { padding:22px max(20px,calc((100% - 1240px)/2)); display:flex; justify-c
 .gallery-viewer-nav:hover { background:hsl(var(--signal)); border-color:hsl(var(--signal)); transform:translateY(-50%) scale(1.05); }
 .gallery-viewer-nav.previous { inset-inline-start:18px; }
 .gallery-viewer-nav.next { inset-inline-end:18px; }
-.gallery-modal-viewer img { max-width:100%; max-height:100%; object-fit:contain; }
+.gallery-modal-viewer img { display:block; width:auto; max-width:100%; height:auto; max-height:100%; object-fit:contain; }
 .gallery-modal-sidebar { display:flex; flex-direction:column; height:100%; overflow-y:auto; }
 .gallery-modal-top { display:flex; justify-content:space-between; align-items:center; padding:20px 24px; border-bottom:1px solid hsl(var(--border)); font:11px var(--font-mono); color:hsl(var(--ink)); }
 .gallery-modal-top button { width:32px; height:32px; padding:0; display:grid; place-items:center; border:1px solid hsl(var(--ink)/.2); background:transparent; color:hsl(var(--ink)); transition:all .2s; }
@@ -106,11 +106,12 @@ footer { padding:22px max(20px,calc((100% - 1240px)/2)); display:flex; justify-c
   .rtl .achievement-footer small { grid-column:auto; }
   
   .gallery-modal-inner { grid-template-columns:1fr; grid-template-rows:auto 1fr; height:auto; max-height:calc(100dvh - 28px); overflow-y:auto; box-shadow:6px 6px 0 hsl(var(--signal)/.15); }
-  .gallery-modal-viewer { border-inline-end:none; border-bottom:1px solid hsl(var(--border)); height:40vh; min-height:280px; padding:16px; }
+  .gallery-modal-viewer { border-inline-end:none; border-bottom:1px solid hsl(var(--border)); height:min(42vh,390px); min-height:250px; padding:16px 52px; }
   .gallery-viewer-count { inset-block-start:12px; inset-inline-start:12px; }
   .gallery-viewer-nav { width:36px; height:36px; }
   .gallery-viewer-nav.previous { inset-inline-start:12px; }
   .gallery-viewer-nav.next { inset-inline-end:12px; }
+  .gallery-modal-viewer img { max-height:100%; }
   .gallery-modal-sidebar { height:auto; overflow:visible; }
   .gallery-modal-details { padding:24px 16px; }
   .gallery-thumbs { padding:16px; }
