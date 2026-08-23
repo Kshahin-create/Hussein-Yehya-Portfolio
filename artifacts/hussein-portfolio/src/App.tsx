@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import { ArrowDownRight, ArrowUpRight, Check, ExternalLink, Github, Layers3, Moon, Quote, Sun, Terminal, Zap } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Check, ExternalLink, Facebook, Github, Instagram, Layers3, Linkedin, Moon, Quote, Sun, Terminal, Zap } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -12,9 +12,32 @@ const queryClient = new QueryClient();
 
 type Language = 'en' | 'ar';
 
+type GitHubRepository = {
+  name: string;
+  language: string | null;
+  url: string;
+  updated: string;
+  fork?: boolean;
+  homepage?: string;
+};
+
+const githubRepositories: readonly GitHubRepository[] = [
+  { name: 'Tech-Day', language: 'HTML', url: 'https://github.com/husseinyehya1/Tech-Day', updated: '2026-06-29' },
+  { name: 'vertify', language: 'HTML', url: 'https://github.com/husseinyehya1/vertify', updated: '2026-06-25' },
+  { name: 'EDU-TECH-Obour-Team87', language: null, url: 'https://github.com/husseinyehya1/EDU-TECH-Obour-Team87', updated: '2026-05-30', fork: true },
+  { name: 'my-nono', language: 'HTML', url: 'https://github.com/husseinyehya1/my-nono', updated: '2025-12-12' },
+  { name: '-', language: 'HTML', url: 'https://github.com/husseinyehya1/-', updated: '2025-12-05' },
+  { name: 'Casaapp', language: 'C++', url: 'https://github.com/husseinyehya1/Casaapp', updated: '2025-12-05', homepage: 'https://casa.study' },
+  { name: 'SOT-App', language: 'Dart', url: 'https://github.com/husseinyehya1/SOT-App', updated: '2025-12-05' },
+  { name: 'Portfolio', language: 'HTML', url: 'https://github.com/husseinyehya1/Portfolio', updated: '2025-12-04' },
+  { name: 'team', language: 'HTML', url: 'https://github.com/husseinyehya1/team', updated: '2025-10-09' },
+  { name: 'airscope', language: 'HTML', url: 'https://github.com/husseinyehya1/airscope', updated: '2025-09-23' },
+  { name: 'Tech-Adventurers-team', language: 'HTML', url: 'https://github.com/husseinyehya1/Tech-Adventurers-team', updated: '2025-02-05' },
+];
+
 const copy = {
   en: {
-    nav: ['about', 'work', 'approach', 'contact'],
+    nav: ['about', 'work', 'github', 'approach', 'contact'],
     eyebrow: 'Independent developer · Egypt / Morocco',
     heroTitle: <>Interfaces with <em>intent.</em></>,
     heroBody: 'I’m Hussein Yehya — a full-stack web & app developer turning the everyday complexity of real businesses into clear, capable digital products.',
@@ -47,7 +70,15 @@ const copy = {
     stack: 'Stack',
     sakrTags: ['Operations', 'Sales platform', 'Business system'],
     cleanTags: ['Order flow', 'Management', 'Sales platform'],
-    approachKicker: '03 — How I work',
+    githubKicker: '03 — GitHub archive',
+    githubTitle: <>Public work,<br /><span className="font-display italic text-primary">in progress.</span></>,
+    githubIntro: 'A complete view of Hussein’s public repositories — experiments, team work, and shipped ideas from GitHub.',
+    githubRepository: 'Repository',
+    githubOpen: 'Open on GitHub',
+    githubUpdated: 'Updated',
+    githubFork: 'Forked repository',
+    githubProfile: 'View GitHub profile',
+    approachKicker: '04 — How I work',
     approachTitle: <>Make the complex<br /><span className="font-display italic text-primary">feel obvious.</span></>,
     approachIntro: 'Good software does not ask people to admire it. It makes the next right action feel natural.',
     step1: 'Listen for the real problem',
@@ -59,7 +90,7 @@ const copy = {
     principles: ['Clarity over decoration', 'Systems over shortcuts', 'Details that respect time'],
     note: 'A note from the desk',
     quote: 'The best interface is the one that lets the work take center stage.',
-    contactKicker: '04 — Say hello',
+    contactKicker: '05 — Connect',
     contactTitle: <>Have a real problem<br /><span className="font-display italic text-primary">worth solving?</span></>,
     contactBody: 'I’m interested in ambitious ideas, thoughtful teams, and products that make a tangible difference. Tell me what you are working through.',
     contactPlaceholder: 'Contact details · add later',
@@ -72,7 +103,7 @@ const copy = {
     themeLabelDark: 'Switch to light mode',
   },
   ar: {
-    nav: ['عنّي', 'الأعمال', 'المنهج', 'تواصل'],
+    nav: ['عنّي', 'الأعمال', 'GitHub', 'المنهج', 'تواصل'],
     eyebrow: 'مطور مستقل · مصر / المغرب',
     heroTitle: <>واجهات لها <em>قصد.</em></>,
     heroBody: 'أنا حسين يحيى — مطور ويب وتطبيقات متكامل، أحوّل تعقيدات الأعمال اليومية إلى منتجات رقمية واضحة وقادرة على الإنجاز.',
@@ -105,7 +136,15 @@ const copy = {
     stack: 'التقنيات',
     sakrTags: ['العمليات', 'منصة مبيعات', 'نظام أعمال'],
     cleanTags: ['تدفق الطلبات', 'الإدارة', 'منصة مبيعات'],
-    approachKicker: '٠٣ — طريقة العمل',
+    githubKicker: '٠٣ — أرشيف GitHub',
+    githubTitle: <>أعمال عامة<br /><span className="font-display italic text-primary">قيد التطور.</span></>,
+    githubIntro: 'نظرة كاملة على مستودعات حسين العامة — تجارب، وأعمال جماعية، وأفكار منشورة على GitHub.',
+    githubRepository: 'مستودع',
+    githubOpen: 'افتح على GitHub',
+    githubUpdated: 'آخر تحديث',
+    githubFork: 'مستودع متشعب',
+    githubProfile: 'عرض حساب GitHub',
+    approachKicker: '٠٤ — طريقة العمل',
     approachTitle: <>أجعل التعقيد<br /><span className="font-display italic text-primary">بديهياً.</span></>,
     approachIntro: 'البرنامج الجيد لا يطلب من الناس الإعجاب به. بل يجعل الخطوة الصحيحة التالية تبدو طبيعية.',
     step1: 'أستمع للمشكلة الحقيقية',
@@ -117,7 +156,7 @@ const copy = {
     principles: ['الوضوح قبل الزخرفة', 'الأنظمة قبل الحلول السريعة', 'تفاصيل تحترم الوقت'],
     note: 'ملاحظة من المكتب',
     quote: 'أفضل واجهة هي التي تسمح للعمل بأن يتصدر المشهد.',
-    contactKicker: '٠٤ — تواصل',
+    contactKicker: '٠٥ — تواصل',
     contactTitle: <>لديك مشكلة حقيقية<br /><span className="font-display italic text-primary">تستحق الحل؟</span></>,
     contactBody: 'أهتم بالأفكار الطموحة، والفرق الواعية، والمنتجات التي تصنع فرقاً ملموساً. أخبرني عمّا تعمل عليه.',
     contactPlaceholder: 'بيانات التواصل · ستُضاف لاحقاً',
@@ -142,7 +181,7 @@ function Nav({ language, dark, onLanguage, onTheme }: { language: Language; dark
         </a>
         <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
           {t.nav.map((item, index) => (
-            <a href={`#${['about', 'work', 'approach', 'contact'][index]}`} data-testid={`link-nav-${index}`} key={item} className="font-mono-custom text-[10px] uppercase tracking-[.14em] text-muted-foreground transition-colors hover:text-foreground">{item}</a>
+            <a href={`#${['about', 'work', 'github', 'approach', 'contact'][index]}`} data-testid={`link-nav-${index}`} key={item} className="font-mono-custom text-[10px] uppercase tracking-[.14em] text-muted-foreground transition-colors hover:text-foreground">{item}</a>
           ))}
         </nav>
         <div className="flex items-center gap-2">
@@ -273,6 +312,55 @@ function Work({ language }: { language: Language }) {
   );
 }
 
+function GitHubArchive({ language }: { language: Language }) {
+  const t = copy[language];
+  const formatUpdated = (date: string) => new Intl.DateTimeFormat(language === 'ar' ? 'ar-EG' : 'en-GB', {
+    month: 'short',
+    year: 'numeric',
+  }).format(new Date(`${date}T00:00:00Z`));
+
+  return (
+    <section id="github" className="scroll-mt-24 border-b border-border bg-muted/40 py-24 sm:py-32">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
+        <div className="mb-12 flex items-center gap-4">
+          <span className="font-mono-custom text-[10px] uppercase tracking-[.14em] text-primary">{t.githubKicker}</span>
+          <span className="section-rule h-px flex-1" />
+        </div>
+        <div className="grid items-end gap-8 lg:grid-cols-[1fr_.72fr]">
+          <h2 className="text-[clamp(2.8rem,6vw,6rem)] font-extrabold leading-[.88] tracking-[-.07em]">{t.githubTitle}</h2>
+          <div className="max-w-[390px]">
+            <p className="text-sm leading-7 text-muted-foreground">{t.githubIntro}</p>
+            <a href="https://github.com/husseinyehya1" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-primary transition-colors hover:text-foreground">
+              <Github size={15} />{t.githubProfile}<ArrowUpRight size={14} />
+            </a>
+          </div>
+        </div>
+        <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {githubRepositories.map((repository, index) => (
+            <article key={repository.url} data-testid={`card-github-repository-${index}`} className="group flex min-h-56 flex-col justify-between rounded-[1.25rem] border border-border bg-card p-6 transition-transform duration-300 hover:-translate-y-1">
+              <div>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-mono-custom text-[10px] uppercase tracking-[.13em] text-muted-foreground">{t.githubRepository} / {String(index + 1).padStart(2, '0')}</span>
+                  <Github size={18} className="text-primary" />
+                </div>
+                <h3 className="mt-9 break-words text-2xl font-extrabold tracking-tight">{repository.name}</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {repository.language && <span className="rounded-full bg-primary/10 px-3 py-1 font-mono-custom text-[9px] uppercase tracking-[.08em] text-primary">{repository.language}</span>}
+                  {repository.fork && <span className="rounded-full bg-accent/15 px-3 py-1 font-mono-custom text-[9px] uppercase tracking-[.08em] text-accent-foreground">{t.githubFork}</span>}
+                </div>
+              </div>
+              <div className="mt-8 flex items-center justify-between gap-3 border-t border-border pt-4">
+                <span className="font-mono-custom text-[9px] uppercase tracking-[.1em] text-muted-foreground">{t.githubUpdated} · {formatUpdated(repository.updated)}</span>
+                <a href={repository.url} target="_blank" rel="noreferrer" aria-label={`${t.githubOpen}: ${repository.name}`} data-testid={`link-github-repository-${index}`} className="inline-flex items-center gap-1.5 text-xs font-bold text-primary transition-colors hover:text-foreground">{t.githubOpen}<ExternalLink size={13} /></a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Approach({ language }: { language: Language }) {
   const t = copy[language];
   const steps = [[t.step1, t.step1Body], [t.step2, t.step2Body], [t.step3, t.step3Body]];
@@ -302,8 +390,8 @@ function Contact({ language }: { language: Language }) {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         <div className="mb-12 flex items-center gap-4"><span className="font-mono-custom text-[10px] uppercase tracking-[.14em] text-primary">{t.contactKicker}</span><span className="section-rule h-px flex-1" /></div>
         <div className="grid gap-12 lg:grid-cols-[1fr_.72fr] lg:gap-24">
-          <div><h2 data-testid="text-contact-title" className="text-[clamp(3rem,7vw,7rem)] font-extrabold leading-[.86] tracking-[-.08em]">{t.contactTitle}</h2><p className="mt-8 max-w-[490px] text-base leading-8 text-muted-foreground">{t.contactBody}</p><button type="button" onClick={copyLink} data-testid="button-copy-profile-link" className="mt-8 inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-xs font-bold transition-colors hover:border-primary hover:text-primary">{copied ? <Check size={14} /> : <Github size={14} />}{copied ? (language === 'ar' ? 'تم نسخ الرابط' : 'Link copied') : (language === 'ar' ? 'مشاركة الصفحة' : 'Share this page')}</button></div>
-          <div className="self-end rounded-[1.25rem] border border-border bg-card p-7 sm:p-9"><div className="flex items-center justify-between"><Terminal size={20} className="text-primary" /><span className="font-mono-custom text-[10px] uppercase tracking-[.14em] text-muted-foreground">contact.txt</span></div><h3 className="mt-12 text-lg font-bold">{t.contactPlaceholder}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{t.contactPlaceholderBody}</p><div className="mt-8 h-px bg-border" /><p className="mt-4 font-mono-custom text-[10px] uppercase tracking-[.13em] text-muted-foreground">status: <span className="text-accent">{language === 'ar' ? 'قريباً' : 'preparing'}</span></p></div>
+          <div><h2 data-testid="text-contact-title" className="text-[clamp(3rem,7vw,7rem)] font-extrabold leading-[.86] tracking-[-.08em]">{t.contactTitle}</h2><p className="mt-8 max-w-[490px] text-base leading-8 text-muted-foreground">{t.contactBody}</p><div className="mt-8 flex flex-wrap gap-3"><button type="button" onClick={copyLink} data-testid="button-copy-profile-link" className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-xs font-bold transition-colors hover:border-primary hover:text-primary">{copied ? <Check size={14} /> : <Github size={14} />}{copied ? (language === 'ar' ? 'تم نسخ الرابط' : 'Link copied') : (language === 'ar' ? 'مشاركة الصفحة' : 'Share this page')}</button></div></div>
+          <div className="self-end rounded-[1.25rem] border border-border bg-card p-7 sm:p-9"><div className="flex items-center justify-between"><Terminal size={20} className="text-primary" /><span className="font-mono-custom text-[10px] uppercase tracking-[.14em] text-muted-foreground">profiles.txt</span></div><h3 className="mt-10 text-lg font-bold">{language === 'ar' ? 'روابط التواصل' : 'Find Hussein online'}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{language === 'ar' ? 'تابع الأعمال والتحديثات عبر الحسابات الرسمية.' : 'Follow the work and updates through Hussein’s official profiles.'}</p><div className="mt-7 grid gap-2 border-t border-border pt-5"><a href="https://github.com/husseinyehya1" target="_blank" rel="noreferrer" data-testid="link-social-github" className="flex items-center justify-between rounded-lg px-2 py-2 text-sm font-bold transition-colors hover:bg-muted hover:text-primary"><span className="inline-flex items-center gap-3"><Github size={16} />GitHub</span><ArrowUpRight size={14} /></a><a href="https://www.facebook.com/hussin.aboslman" target="_blank" rel="noreferrer" data-testid="link-social-facebook" className="flex items-center justify-between rounded-lg px-2 py-2 text-sm font-bold transition-colors hover:bg-muted hover:text-primary"><span className="inline-flex items-center gap-3"><Facebook size={16} />Facebook</span><ArrowUpRight size={14} /></a><a href="https://www.instagram.com/hussinaboslman/" target="_blank" rel="noreferrer" data-testid="link-social-instagram" className="flex items-center justify-between rounded-lg px-2 py-2 text-sm font-bold transition-colors hover:bg-muted hover:text-primary"><span className="inline-flex items-center gap-3"><Instagram size={16} />Instagram</span><ArrowUpRight size={14} /></a><a href="https://www.linkedin.com/in/seliman-hussein/" target="_blank" rel="noreferrer" data-testid="link-social-linkedin" className="flex items-center justify-between rounded-lg px-2 py-2 text-sm font-bold transition-colors hover:bg-muted hover:text-primary"><span className="inline-flex items-center gap-3"><Linkedin size={16} />LinkedIn</span><ArrowUpRight size={14} /></a></div></div>
         </div>
       </div>
     </section>
@@ -336,6 +424,7 @@ function Home() {
         <Hero language={language} />
         <About language={language} />
         <Work language={language} />
+        <GitHubArchive language={language} />
         <Approach language={language} />
         <Contact language={language} />
       </main>
