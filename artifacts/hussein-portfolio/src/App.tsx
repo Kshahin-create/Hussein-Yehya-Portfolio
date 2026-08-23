@@ -179,6 +179,32 @@ function ProfileDetails({ lang }: { lang: Language }) {
   </section>;
 }
 
+function AchievementGallery({ images, title }: { images: string[]; title: string }) {
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(0);
+  const showGallery = (index = 0) => { setActive(index); setOpen(true); };
+  return <>
+    <div className="achievement-gallery" aria-label={title}>
+      <button className="achievement-feature" onClick={() => showGallery(0)} aria-label={`Open ${title} gallery`}>
+        <img src={images[0]} alt={title} />
+        <span className="gallery-open-label">View gallery <ArrowUpRight size={15} /></span>
+      </button>
+      <button className="achievement-stack" onClick={() => showGallery(1)} aria-label={`View all ${images.length} photos`}>
+        <img src={images[1]} alt="" />
+        <img src={images[2]} alt="" />
+        <span>+{images.length - 1} photos <ArrowUpRight size={15} /></span>
+      </button>
+    </div>
+    {open && <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
+      <div className="gallery-modal-inner">
+        <div className="gallery-modal-top"><span>{String(active + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span><button onClick={() => setOpen(false)} aria-label="Close gallery"><X size={20} /></button></div>
+        <img className="gallery-modal-image" src={images[active]} alt={`${title} — ${active + 1}`} />
+        <div className="gallery-thumbs">{images.map((image, index) => <button className={index === active ? 'active' : ''} key={image} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" /></button>)}</div>
+      </div>
+    </div>}
+  </>;
+}
+
 function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   const t = getT(lang, dialect);
   const reduced = useReducedMotion();
@@ -191,7 +217,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
       {ordered.map((item, index) => <motion.article className="achievement-card" data-testid={`card-achievement-${index}`} key={item.date + item.title} initial={reduced ? false : { opacity: 0, y: 45 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }}>
         <div className="achievement-meta"><span>{String(index + 1).padStart(2, '0')}</span><time dateTime={item.date}>{new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(`${item.date}T12:00:00`))}</time></div>
         <div className="achievement-copy"><h3>{lang === 'en' ? 'Madinah AI pilot launch' : item.title}</h3><p>{lang === 'en' ? 'As Technical Team Lead for Qalyubia, I launched the initial pilot version of Madinah AI during Tech Day | Nile Sons, organized by Obour Educational Administration. It marks the beginning of a practical effort to use technology and artificial intelligence to make everyday services easier and smarter.' : item.body}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{lang === 'en' ? 'Qalyubia Technical Team Lead · Madinah AI Executive Director' : item.role}</strong><small>{item.location}</small></div></div>
-        <div className="achievement-gallery">{item.images.map((image, imageIndex) => <img key={image} data-testid={`img-achievement-${index}-${imageIndex}`} src={image} alt={`${item.title} — ${imageIndex + 1}`} loading={imageIndex > 1 ? 'lazy' : undefined} />)}</div>
+        <AchievementGallery images={item.images} title={lang === 'en' ? 'Madinah AI pilot launch photos' : item.title} />
       </motion.article>)}
     </div>
   </section>;
