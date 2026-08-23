@@ -177,7 +177,31 @@ const copy = {
   },
 } as const;
 
-const dialectCopy: Record<ArabicDialect, Partial<typeof copy.ar>> = {
+type ArabicDialectCopy = {
+  heroTitle: ReactNode;
+  heroBody: string;
+  available: string;
+  aboutTitle: ReactNode;
+  aboutBody: string;
+  aboutBody2: string;
+  workTitle: ReactNode;
+  workIntro: string;
+  sakrDesc: string;
+  cleanDesc: string;
+  approachTitle: ReactNode;
+  approachIntro: string;
+  step1: string;
+  step1Body: string;
+  step2: string;
+  step2Body: string;
+  step3: string;
+  step3Body: string;
+  principles: readonly string[];
+  contactTitle: ReactNode;
+  contactBody: string;
+};
+
+const dialectCopy: Record<ArabicDialect, ArabicDialectCopy> = {
   egyptian: {
     heroTitle: <>واجهات بتفهم <em>الناس.</em></>,
     heroBody: 'أنا حسين يحيى — مطور ويب وتطبيقات متكامل، بحوّل تفاصيل الشغل اليومية لمنتجات رقمية سهلة، سريعة، وتنجز من غير لف ودوران.',
@@ -246,7 +270,7 @@ function Nav({ language, dialect, dark, onLanguage, onDialect, onTheme }: { lang
         </nav>
         <div className="flex items-center gap-2">
           <button type="button" onClick={onLanguage} data-testid="button-language-toggle" aria-label="Toggle language" className="rounded-full border border-border px-3 py-2 font-mono-custom text-[10px] font-medium uppercase tracking-[.1em] transition-colors hover:border-primary hover:text-primary">{t.languageLabel}</button>
-          {language === 'ar' && <button type="button" onClick={onDialect} data-testid="button-dialect-toggle" aria-label={t.dialectLabel} className="hidden rounded-full border border-border px-3 py-2 font-mono-custom text-[10px] font-medium tracking-[.08em] transition-colors hover:border-primary hover:text-primary sm:block">{dialect === 'egyptian' ? t.egyptian : t.moroccan}</button>}
+          {language === 'ar' && <button type="button" onClick={onDialect} data-testid="button-dialect-toggle" aria-label={t.dialectLabel} className="rounded-full border border-border px-3 py-2 font-mono-custom text-[10px] font-medium tracking-[.08em] transition-colors hover:border-primary hover:text-primary">{dialect === 'egyptian' ? t.egyptian : t.moroccan}</button>}
           <button type="button" onClick={onTheme} data-testid="button-theme-toggle" aria-label={dark ? t.themeLabelDark : t.themeLabelLight} className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary">
             {dark ? <Sun size={15} strokeWidth={1.8} /> : <Moon size={15} strokeWidth={1.8} />}
           </button>
@@ -459,15 +483,16 @@ function Contact({ language, dialect }: { language: Language; dialect: ArabicDia
   );
 }
 
-function Footer({ language }: { language: Language }) {
-  const t = copy[language];
+function Footer({ language, dialect }: { language: Language; dialect: ArabicDialect }) {
+  const t = getCopy(language, dialect);
   return <footer className="mx-auto flex max-w-[1240px] flex-col gap-5 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8"><p className="font-mono-custom text-[10px] uppercase tracking-[.12em] text-muted-foreground">© {new Date().getFullYear()} · {t.footerLine}</p><a href="#top" data-testid="link-back-top" className="inline-flex items-center gap-2 self-start font-mono-custom text-[10px] uppercase tracking-[.12em] text-muted-foreground transition-colors hover:text-primary sm:self-auto">{t.backTop}<ArrowUpRight size={13} /></a></footer>;
 }
 
 function Home() {
   const [language, setLanguage] = useState<Language>('en');
+  const [dialect, setDialect] = useState<ArabicDialect>('egyptian');
   const [dark, setDark] = useState(false);
-  const t = copy[language];
+  const t = getCopy(language, dialect);
   useEffect(() => {
     const savedTheme = localStorage.getItem('hussein-theme');
     if (savedTheme === 'dark') setDark(true);
@@ -480,16 +505,16 @@ function Home() {
   }, [dark, language]);
   return (
     <div className={`noise site-shell min-h-[100dvh] ${language === 'ar' ? 'rtl' : ''}`}>
-      <Nav language={language} dark={dark} onLanguage={() => setLanguage(language === 'en' ? 'ar' : 'en')} onTheme={() => setDark(!dark)} />
+      <Nav language={language} dialect={dialect} dark={dark} onLanguage={() => setLanguage(language === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} />
       <main>
-        <Hero language={language} />
-        <About language={language} />
-        <Work language={language} />
-        <GitHubArchive language={language} />
-        <Approach language={language} />
-        <Contact language={language} />
+        <Hero language={language} dialect={dialect} />
+        <About language={language} dialect={dialect} />
+        <Work language={language} dialect={dialect} />
+        <GitHubArchive language={language} dialect={dialect} />
+        <Approach language={language} dialect={dialect} />
+        <Contact language={language} dialect={dialect} />
       </main>
-      <Footer language={language} />
+      <Footer language={language} dialect={dialect} />
       <span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span>
     </div>
   );
