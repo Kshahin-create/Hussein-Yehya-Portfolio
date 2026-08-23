@@ -2,10 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowDownRight, ArrowUpRight, Check, ExternalLink, Facebook, Github, Instagram, Linkedin, Menu, Moon, Phone, Sun, X } from 'lucide-react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import profileImage from '@assets/hussein-profile.jpeg';
+import madinahStage from '@assets/image_1787524765206.png';
+import madinahTalk from '@assets/image_1787524775727.png';
+import madinahSide from '@assets/image_1787524800777.png';
+import madinahPodium from '@assets/image_1787524804715.png';
+import madinahScreen from '@assets/image_1787524808716.png';
+import madinahWide from '@assets/image_1787524812715.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
 type Repo = { name: string; language: string | null; url: string; updated: string; fork?: boolean; homepage?: string };
+type Achievement = { date: string; title: string; body: string; role: string; location: string; images: string[] };
 
 const repos: Repo[] = [
   { name: 'Tech-Day', language: 'HTML', url: 'https://github.com/husseinyehya1/Tech-Day', updated: '2026-06-29' },
@@ -19,6 +26,17 @@ const repos: Repo[] = [
   { name: 'team', language: 'HTML', url: 'https://github.com/husseinyehya1/team', updated: '2025-10-09' },
   { name: 'airscope', language: 'HTML', url: 'https://github.com/husseinyehya1/airscope', updated: '2025-09-23' },
   { name: 'Tech-Adventurers-team', language: 'HTML', url: 'https://github.com/husseinyehya1/Tech-Adventurers-team', updated: '2025-02-05' },
+];
+
+const achievements: Achievement[] = [
+  {
+    date: '2026-06-26',
+    title: 'إطلاق النسخة التجريبية الأولية من مدينة AI',
+    body: 'سعدت اليوم، بصفتي قائد الفريق التقني بالقليوبية، بإطلاق النسخة التجريبية الأولية من تطبيق مدينة AI خلال فعاليات Tech Day | Nile Sons بإدارة العبور التعليمية. لحظة مهمة في بداية مشروع نؤمن إنه هيكون خطوة جديدة نحو توظيف التكنولوجيا والذكاء الاصطناعي في خدمة المجتمع وتطوير الخدمات اليومية بشكل أسهل وأذكى.',
+    role: 'قائد الفريق التقني بالقليوبية · المدير التنفيذي لمشروع مدينة AI',
+    location: 'Tech Day | Nile Sons — إدارة العبور التعليمية',
+    images: [madinahStage, madinahTalk, madinahSide, madinahPodium, madinahScreen, madinahWide],
+  },
 ];
 
 const detailCopy = {
@@ -71,6 +89,7 @@ const text = {
     sakr: 'A focused management and sales platform for Sakr supermarket in Egypt. It brings the moving parts of a busy store into one dependable operating view.',
     clean: 'A clear, operational home for CleanNova laundry in Egypt — connecting order flow, service management, and sales in a system built to keep the day moving.',
     archiveLabel: '03 / Public archive', archiveTitle: 'Every experiment leaves a trace.', archiveIntro: 'A complete view of Hussein’s public repositories — experiments, team work, and shipped ideas from GitHub.', open: 'Open', updated: 'Updated', profile: 'GitHub profile', fork: 'Forked repository',
+    journalLabel: '03 / Build journal', journalTitle: 'The work, in real moments.', journalIntro: 'Selected launches, talks, and milestones from the projects I help move forward.', role: 'Role',
     methodLabel: '04 / Method', methodTitle: 'Listen. Shape. Build.', steps: [['Listen for the real problem', 'Every build starts with the people, workarounds, and constraints behind the brief.'], ['Shape the useful path', 'I turn messy requirements into a focused experience with a clear hierarchy and a reason for every screen.'], ['Build for the long run', 'The polish is visible. The reliability underneath is what makes a product stay useful.']],
     contactLabel: '05 / Contact', contactTitle: 'Have a real problem worth solving?', contact: 'I’m interested in ambitious ideas, thoughtful teams, and products that make a tangible difference. Tell me what you are working through.', phone: 'Call Hussein', share: 'Share this page', copied: 'Link copied', back: 'Back to top', language: 'العربية', themeLight: 'Switch to dark mode', themeDark: 'Switch to light mode',
   },
@@ -85,6 +104,7 @@ const text = {
     systemsLabel: '٠٢ / أنظمة شغّالة', systemsTitle: 'مش صور. مساحات تشغيل.', systemsIntro: 'مشروعان شغّالان، وكل واحد فيهم معمول عشان يسهّل يوم الناس اللي بتستخدمه.', visit: 'افتح الموقع', role: 'منتج · Full-stack', builtFor: 'معمول لـ',
     sakr: 'سيستم إدارة ومبيعات لسوبر ماركت صقر في مصر، بيجمع حركة المحل اليومية في طريقة تشغيل أبسط وأوضح.', clean: 'سيستم إدارة وتشغيل ومنصة بيع لمغسلة كلين نوفا في مصر، بتنظّم الطلبات والخدمات والمبيعات في مكان واحد.',
     archiveLabel: '٠٣ / أرشيف علني', archiveTitle: 'كل تجربة بتسيب أثر.', archiveIntro: 'كل المستودعات العامة في مكان واحد: تجارب، شغل جماعي، وأفكار بتكبر واحدة واحدة.', open: 'افتح', updated: 'اتحدّث', profile: 'حساب GitHub', fork: 'مستودع متفرّع',
+    journalLabel: '٠٣ / سجل الإنجازات', journalTitle: 'الشغل في لحظاته الحقيقية.', journalIntro: 'إطلاقات، مشاركات، ومحطات موثقة من المشاريع اللي بساهم في تحريكها.', role: 'الدور',
     methodLabel: '٠٤ / طريقة الشغل', methodTitle: 'نفهم. نرتب. نبني.', steps: [['أفهم المشكلة من أصلها', 'كل مشروع بيبدأ بسماع الناس، وفهم طريقة شغلهم، والحلول المؤقتة اللي اتعودوا عليها.'], ['أرتّب الطريق الصح', 'بحوّل المتطلبات الكتير لتجربة مركّزة، كل شاشة فيها لها هدف واضح.'], ['أبني حاجة تعيش', 'الشكل الجميل بيبان، لكن الثبات والاعتمادية هما اللي بيخلّوا المنتج مفيد كل يوم.']],
     contactLabel: '٠٥ / تواصل', contactTitle: 'عندك مشكلة تستاهل حل؟', contact: 'لو عندك فكرة طموحة أو مشكلة تستاهل تتحل، احكي لي عنها ونشوف مع بعض أنسب بداية.', phone: 'اتصل بيا', share: 'شارك الصفحة', copied: 'تم نسخ الرابط', back: 'اطلع لفوق', language: 'English', themeLight: 'التبديل للوضع الداكن', themeDark: 'التبديل للوضع الفاتح',
   },
@@ -112,6 +132,7 @@ function getT(lang: Language, dialect: Dialect) {
     clean: 'سيستم للتسيير والتشغيل ومنصة بيع ديال كلين نوفا فمصر، كيرتّب الطلبات والخدمات والمبيعات فبلاصة وحدة.',
     archiveLabel: '٠٣ / أرشيف علني', archiveTitle: 'كل تجربة كتخلّي أثر.',
     archiveIntro: 'المستودعات العامة كلها هنا: تجارب، خدمة مع الفريق، وأفكار كتكبر شوية بشوية.',
+    journalLabel: '٠٣ / سجل المحطات', journalTitle: 'الخدمة ف لحظاتها الحقيقية.', journalIntro: 'إطلاقات، مشاركات، ومحطات من المشاريع اللي كنساهم ف تحريكها.', role: 'الدور',
     open: 'حلّ', updated: 'تحدّث', profile: 'حساب GitHub', fork: 'مستودع متفرّع',
     methodLabel: '٠٤ / الطريقة', methodTitle: 'نسمعو. نرتّبو. نبنيو.',
     steps: [['كنفهمو المشكل من الجذر', 'كل مشروع كيبدا بالناس، بطريقتهم فالخدمة، وبالحلول المؤقتة اللي ولفوها.'], ['كنصفّيو الطريق', 'كنحوّلو الطلبات الكثيرة لتجربة مركّزة، وكل شاشة عندها دور واضح.'], ['كنبنيوا باش تبقى', 'الشكل كيبان، ولكن الثبات والاعتمادية هما اللي كيخليو المنتج مفيد كل نهار.']],
