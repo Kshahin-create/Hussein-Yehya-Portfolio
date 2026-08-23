@@ -10,6 +10,14 @@ import madinahPodium from '@assets/image_1787524804715.png';
 import madinahScreen from '@assets/image_1787524808716.png';
 import madinahWide from '@assets/image_1787524812715.png';
 import madinahClose from '@assets/image_1787525611582.png';
+import teamGroup from '@assets/image_1787526879975.png';
+import teamPortrait from '@assets/image_1787526886704.png';
+import teamDiscussion from '@assets/image_1787526892281.png';
+import teamWorkshop from '@assets/image_1787526913873.png';
+import teamRoom from '@assets/image_1787526922159.png';
+import teamBriefing from '@assets/image_1787526927703.png';
+import teamMeet from '@assets/image_1787526933323.png';
+import teamVisit from '@assets/image_1787526940727.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -32,6 +40,14 @@ const repos: Repo[] = [
 
 const achievements: Achievement[] = [
   {
+    date: '2026-06-16',
+    title: 'متابعة أعمال الفريق التقني بالعبور',
+    body: 'في إطار المتابعة المستمرة وحرصًا على دعم فرق العمل بالمحافظة، تابع قائد الفريق التقني بالقليوبية أعمال الفريق التقني بالعبور، والوقوف على أبرز التحديات التي تواجههم، والعمل على حل أي مشكلات بشكل فوري. كما تم التأكيد على توفير أفضل الإمكانيات والدعم اللازم، بما يضمن تقديم حلول تقنية فعّالة، وتحقيق أعلى مستوى من الجودة في الأداء والخدمات المقدمة. الفريق التقني بالقليوبية — معًا نحو أداء أفضل وحلول أكثر احترافية. إدارة العبور التعليمية.',
+    role: 'قائد الفريق التقني بالقليوبية',
+    location: 'الفريق التقني بالقليوبية — إدارة العبور التعليمية',
+    images: [teamGroup, teamPortrait, teamDiscussion, teamWorkshop, teamRoom, teamBriefing, teamMeet, teamVisit],
+  },
+  {
     date: '2026-06-26',
     title: 'إطلاق النسخة التجريبية الأولية من مدينة AI',
     body: 'سعدت اليوم، بصفتي قائد الفريق التقني بالقليوبية، بإطلاق النسخة التجريبية الأولية من تطبيق مدينة AI خلال فعاليات Tech Day | Nile Sons بإدارة العبور التعليمية. لحظة مهمة في بداية مشروع نؤمن إنه هيكون خطوة جديدة نحو توظيف التكنولوجيا والذكاء الاصطناعي في خدمة المجتمع وتطوير الخدمات اليومية بشكل أسهل وأذكى.',
@@ -51,6 +67,14 @@ const libraryPhotos = [
   { src: madinahScreen, title: 'Madinah AI early access', label: 'Launch', labelAr: 'إطلاق' },
   { src: madinahWide, title: 'Madinah AI event', label: 'Launch', labelAr: 'إطلاق' },
   { src: madinahClose, title: 'Madinah AI pilot launch', label: 'Launch', labelAr: 'إطلاق' },
+  { src: teamGroup, title: 'Obour technical team', label: 'Team', labelAr: 'الفريق التقني', featured: true },
+  { src: teamPortrait, title: 'Team support visit', label: 'Team', labelAr: 'الفريق التقني' },
+  { src: teamDiscussion, title: 'Technical team discussion', label: 'Team', labelAr: 'الفريق التقني' },
+  { src: teamWorkshop, title: 'Working through challenges', label: 'Team', labelAr: 'الفريق التقني' },
+  { src: teamRoom, title: 'Team follow-up', label: 'Team', labelAr: 'الفريق التقني' },
+  { src: teamBriefing, title: 'Technical briefing', label: 'Team', labelAr: 'الفريق التقني' },
+  { src: teamMeet, title: 'Team collaboration', label: 'Team', labelAr: 'الفريق التقني' },
+  { src: teamVisit, title: 'Obour team visit', label: 'Team', labelAr: 'الفريق التقني' },
 ];
 
 const detailCopy = {
@@ -303,9 +327,9 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team'>('all');
   const [active, setActive] = useState<number | null>(null);
-  const filtered = libraryPhotos.filter((photo) => filter === 'all' || (filter === 'portrait' ? photo.label === 'Portrait' : photo.label === 'Launch'));
+  const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
   const go = (direction: number) => {
     if (active === null) return;
@@ -321,10 +345,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
