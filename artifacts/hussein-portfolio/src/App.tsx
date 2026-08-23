@@ -21,6 +21,43 @@ const repos: Repo[] = [
   { name: 'Tech-Adventurers-team', language: 'HTML', url: 'https://github.com/husseinyehya1/Tech-Adventurers-team', updated: '2025-02-05' },
 ];
 
+const detailCopy = {
+  en: {
+    label: 'PROFILE / WHAT I BUILD', title: 'More than shipping code.',
+    intro: 'I work across product, engineering, operations, and the decisions that turn an idea into something people can actually use.',
+    doing: 'What I do', doingBody: 'I design and develop digital systems from the first question to deployment: requirements, architecture, databases, APIs, product experience, and the operating details underneath.',
+    focus: ['Web applications', 'Mobile apps with Flutter', 'Backend systems & REST APIs', 'Database architecture', 'Admin and operations platforms', 'AI inside real products', 'Automation and integrations', 'Product and technical leadership'],
+    stack: 'Technical range', backend: 'Backend development', backendBody: 'Django, Flask, REST APIs, authentication, authorization, role-based access, business logic, integrations, and backend architecture.',
+    mobile: 'Mobile & ecosystem', mobileBody: 'Flutter apps for Android, iOS, Windows, and Web — one connected product ecosystem instead of four disconnected builds.',
+    cloud: 'Data & cloud', cloudBody: 'Supabase, PostgreSQL, Railway, Cloudflare, Firebase, OneSignal, hosting, deployment, DNS, and domain management.',
+    ai: 'Artificial intelligence', aiBody: 'AI assistants, intelligent search, recommendation systems, agents, automation, data analysis, and decision support — integrated into a real workflow, not added as a gimmick.',
+    initiatives: 'Leadership & initiatives', edu: 'Edu-Tech Qalyubia', eduBody: 'A technical team working across education, digital transformation, events, assessments, verification, and data. I help plan systems, organize teams, and coordinate technical and administrative work.',
+    madinah: 'Madinah AI', madinahBody: 'A smart-city services ecosystem connecting people with nearby providers, products, delivery, maps, intelligent search, recommendations, and operations platforms.',
+    country: 'Know Your Country', countryBody: 'An educational initiative making national, political, historical, geographic, economic, cultural, and technological knowledge more accessible and interactive.',
+    products: 'Product thinking', productsBody: 'PharmaCore covers pharmacy POS, stock, purchasing, prescriptions, permissions, and audit. Nova Core is a commerce OS for stores, products, inventory, orders, customers, suppliers, reports, and multi-tenant architecture.',
+    security: 'Security & the real world', securityBody: 'Cybersecurity, network security, infrastructure, secure APIs, threat modeling, access control, Arduino, robotics, electronics, embedded systems, and IoT.',
+    vision: 'The bigger picture', visionBody: 'My goal is to build and manage real technology products from idea to operation — understanding the technology, product, user, market, data, management, and operations together.',
+    philosophy: 'Technology is not the destination. It is the tool that helps us build a better answer.',
+  },
+  ar: {
+    label: 'الملف / أنا ببني إيه', title: 'مش بسلّم كود وخلاص.',
+    intro: 'بشتغل بين المنتج والهندسة والتشغيل والقرارات اللي بتحوّل الفكرة لحاجة الناس تقدر تستخدمها بجد.',
+    doing: 'بعمل إيه؟', doingBody: 'بصمّم وبطوّر الأنظمة من أول سؤال لحد التشغيل: متطلبات، Architecture، قواعد بيانات، APIs، تجربة المنتج، وكل التفاصيل اللي بتحرّك الشغل من تحت.',
+    focus: ['تطبيقات ويب', 'تطبيقات موبايل بـ Flutter', 'Backend وREST APIs', 'تصميم قواعد البيانات', 'أنظمة إدارية وتشغيلية', 'ذكاء اصطناعي جوّه المنتج', 'أتمتة وربط الخدمات', 'إدارة المنتجات والفرق التقنية'],
+    stack: 'المدى التقني', backend: 'Backend منظم', backendBody: 'Django وFlask وREST APIs، تسجيل الدخول والصلاحيات، Role-Based Access، منطق الأعمال، الربط بين الخدمات، وتصميم الـBackend.',
+    mobile: 'موبايل ومنظومة كاملة', mobileBody: 'تطبيقات Flutter لـ Android وiOS وWindows والويب، عشان نفس المشروع يبقى Ecosystem واحد مش أربع نسخ منفصلة.',
+    cloud: 'بيانات وCloud', cloudBody: 'Supabase وPostgreSQL وRailway وCloudflare وFirebase وOneSignal، بالإضافة للاستضافة والنشر وDNS والدومينات.',
+    ai: 'الذكاء الاصطناعي', aiBody: 'مساعدات ذكية، بحث ذكي، توصيات، Agents، أتمتة، تحليل بيانات، وقرارات مدعومة بالبيانات — جوّه Workflow حقيقي، مش Feature متحطوطة للمنظر.',
+    initiatives: 'القيادة والمبادرات', edu: 'الفريق التقني لتعليم القليوبية', eduBody: 'فريق شغال على التعليم والتحول الرقمي والفعاليات والاختبارات والتحقق والبيانات. بساهم في تخطيط الأنظمة وتنظيم الفرق وربط الشغل التقني بالإداري.',
+    madinah: 'Madinah AI', madinahBody: 'منظومة خدمات للمدينة الذكية بتوصل الناس بمقدمي الخدمات والمنتجات القريبة، مع توصيل وخرائط وبحث ذكي وتوصيات وأنظمة تشغيل.',
+    country: 'مبادرة اعرف بلدك', countryBody: 'مبادرة تعليمية وتوعوية بتقدم المعرفة الوطنية والسياسية والتاريخية والجغرافية والاقتصادية والثقافية والتقنية بشكل بسيط وتفاعلي.',
+    products: 'بعقلية المنتج', productsBody: 'PharmaCore نظام لإدارة الصيدليات يشمل POS والمخزون والمشتريات والروشتات والصلاحيات والـAudit. وNova Core هو Commerce OS للمتاجر والمنتجات والمخازن والطلبات والعملاء والتقارير وMulti-tenant Architecture.',
+    security: 'الأمان والعالم الحقيقي', securityBody: 'باهتم بالأمن السيبراني وأمن الشبكات والبنية التحتية والـSecure APIs والـThreat Modeling والتحكم في الوصول، وكمان Arduino والروبوتات والإلكترونيات والأنظمة المدمجة وIoT.',
+    vision: 'الصورة الأكبر', visionBody: 'هدفي أبني وأدير منتجات تقنية حقيقية من الفكرة للتشغيل، وأنا فاهم التكنولوجيا والمنتج والمستخدم والسوق والبيانات والإدارة والتشغيل مع بعض.',
+    philosophy: 'التكنولوجيا مش هي الهدف. هي الأداة اللي بنبني بيها إجابة أحسن.',
+  },
+} as const;
+
 const text = {
   en: {
     nav: ['Story', 'Systems', 'Archive', 'Method', 'Contact'],
@@ -90,8 +127,9 @@ function SectionHead({ label, title }: { label: string; title: string }) {
 
 function Header({ lang, dialect, dark, onLanguage, onDialect, onTheme }: { lang: Language; dialect: Dialect; dark: boolean; onLanguage: () => void; onDialect: () => void; onTheme: () => void }) {
   const [open, setOpen] = useState(false); const t = getT(lang, dialect);
-  const links = ['story', 'systems', 'archive', 'method', 'contact'];
-  return <header className="new-nav"><a href="#top" data-testid="link-home" className="mark">HY<span>.</span></a><nav>{links.map((link, i) => <a data-testid={`link-nav-${i}`} key={link} href={`#${link}`}>{t.nav[i]}</a>)}</nav><div className="nav-tools"><button data-testid="button-language-toggle" onClick={onLanguage}>{t.language}</button>{lang === 'ar' && <button data-testid="button-dialect-toggle" onClick={onDialect}>{dialect === 'egyptian' ? 'مصرية' : 'مغربية'}</button>}<button data-testid="button-theme-toggle" aria-label={dark ? t.themeDark : t.themeLight} onClick={onTheme}>{dark ? <Sun size={15} /> : <Moon size={15} />}</button><button data-testid="button-menu-toggle" className="mobile-menu" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X size={17} /> : <Menu size={17} />}</button></div>{open && <div className="mobile-sheet">{links.map((link, i) => <a onClick={() => setOpen(false)} data-testid={`link-mobile-nav-${i}`} key={link} href={`#${link}`}>{t.nav[i]} <ArrowDownRight size={16} /></a>)}</div>}</header>;
+  const links = ['story', 'profile', 'systems', 'archive', 'method', 'contact'];
+  const labels = [t.nav[0], lang === 'ar' ? 'البروفايل' : 'Profile', ...t.nav.slice(1)];
+  return <header className="new-nav"><a href="#top" data-testid="link-home" className="mark">HY<span>.</span></a><nav>{links.map((link, i) => <a data-testid={`link-nav-${i}`} key={link} href={`#${link}`}>{labels[i]}</a>)}</nav><div className="nav-tools"><button data-testid="button-language-toggle" onClick={onLanguage}>{t.language}</button>{lang === 'ar' && <button data-testid="button-dialect-toggle" onClick={onDialect}>{dialect === 'egyptian' ? 'مصرية' : 'مغربية'}</button>}<button data-testid="button-theme-toggle" aria-label={dark ? t.themeDark : t.themeLight} onClick={onTheme}>{dark ? <Sun size={15} /> : <Moon size={15} />}</button><button data-testid="button-menu-toggle" className="mobile-menu" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X size={17} /> : <Menu size={17} />}</button></div>{open && <div className="mobile-sheet">{links.map((link, i) => <a onClick={() => setOpen(false)} data-testid={`link-mobile-nav-${i}`} key={link} href={`#${link}`}>{labels[i]} <ArrowDownRight size={16} /></a>)}</div>}</header>;
 }
 
 function Hero({ lang, dialect }: { lang: Language; dialect: Dialect }) {
@@ -104,6 +142,20 @@ function Hero({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 function Story({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   const t = getT(lang, dialect); const reduced = useReducedMotion(); const facts = lang === 'ar' ? [['متكامل', 'ويب وتطبيقات من الألف للياء'], ['٢', 'أنظمة شغّالة على أرض الواقع'], ['مصر / المغرب', 'جذور محلية ونظرة واسعة']] : [['Full-stack', 'web & app development'], ['2', 'live business systems'], ['EG / MA', 'roots, global outlook']];
   return <motion.section initial={reduced ? false : { opacity: 0 }} whileInView={reduced ? undefined : { opacity: 1 }} viewport={{ once: true, amount: .22 }} id="story" className="story-block"><SectionHead label={t.storyLabel} title={t.storyTitle} /><div className="story-body"><motion.p initial={reduced ? false : { x: -45, opacity: 0 }} whileInView={reduced ? undefined : { x: 0, opacity: 1 }} viewport={{ once: true }}>{t.story1}</motion.p><motion.p initial={reduced ? false : { x: 45, opacity: 0 }} whileInView={reduced ? undefined : { x: 0, opacity: 1 }} viewport={{ once: true }}>{t.story2}</motion.p><div className="facts">{facts.map(([title, sub], index) => <span data-testid={`text-fact-${index + 1}`} key={title}><b>{title}</b>{sub}</span>)}</div></div></motion.section>;
+}
+
+function ProfileDetails({ lang }: { lang: Language }) {
+  const t = detailCopy[lang];
+  const areas = [[t.backend, t.backendBody], [t.mobile, t.mobileBody], [t.cloud, t.cloudBody], [t.ai, t.aiBody]];
+  const initiatives = [[t.edu, t.eduBody], [t.madinah, t.madinahBody], [t.country, t.countryBody]];
+  return <section id="profile" className="profile-section">
+    <SectionHead label={t.label} title={t.title} />
+    <div className="profile-lead"><p>{t.intro}</p><div><span>{t.doing}</span><p>{t.doingBody}</p><div className="focus-list">{t.focus.map((item) => <span key={item}>{item}</span>)}</div></div></div>
+    <div className="profile-subhead"><span>{t.stack}</span><div /></div>
+    <div className="range-grid">{areas.map(([title, body], i) => <motion.article key={title} initial={{ opacity: 0, y: 35 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .25 }} transition={{ delay: i * .08 }}><b>0{i + 1}</b><h3>{title}</h3><p>{body}</p></motion.article>)}</div>
+    <div className="profile-split"><div><div className="profile-subhead"><span>{t.initiatives}</span><div /></div><div className="initiative-list">{initiatives.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div></div><div className="product-note"><span>{t.products}</span><p>{t.productsBody}</p><div className="security-line"><strong>{t.security}</strong><p>{t.securityBody}</p></div></div></div>
+    <div className="vision-block"><span>{t.vision}</span><p>{t.visionBody}</p><strong>“{t.philosophy}”</strong></div>
+  </section>;
 }
 
 function SystemCard({ type, lang, dialect, reduced }: { type: 'sakr' | 'clean'; lang: Language; dialect: Dialect; reduced: boolean | null }) {
@@ -134,6 +186,6 @@ function App() {
   const [lang, setLang] = useState<Language>('en'); const [dialect, setDialect] = useState<Dialect>('egyptian'); const [dark, setDark] = useState(false); const t = getT(lang, dialect);
   useEffect(() => { setDark(localStorage.getItem('hussein-theme') === 'dark'); }, []);
   useEffect(() => { document.documentElement.classList.toggle('dark', dark); document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'; document.documentElement.lang = lang; localStorage.setItem('hussein-theme', dark ? 'dark' : 'light'); }, [dark, lang]);
-  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}><Header lang={lang} dialect={dialect} dark={dark} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} /><main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main><footer><span>© {new Date().getFullYear()} / Hussein Yehya</span><a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a></footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
+  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}><Header lang={lang} dialect={dialect} dark={dark} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} /><main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main><footer><span>© {new Date().getFullYear()} / Hussein Yehya</span><a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a></footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
 }
 export default App;
