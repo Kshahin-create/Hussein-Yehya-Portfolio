@@ -89,7 +89,7 @@ const text = {
     sakr: 'A focused management and sales platform for Sakr supermarket in Egypt. It brings the moving parts of a busy store into one dependable operating view.',
     clean: 'A clear, operational home for CleanNova laundry in Egypt — connecting order flow, service management, and sales in a system built to keep the day moving.',
     archiveLabel: '03 / Public archive', archiveTitle: 'Every experiment leaves a trace.', archiveIntro: 'A complete view of Hussein’s public repositories — experiments, team work, and shipped ideas from GitHub.', open: 'Open', updated: 'Updated', profile: 'GitHub profile', fork: 'Forked repository',
-    journalLabel: '03 / Build journal', journalTitle: 'The work, in real moments.', journalIntro: 'Selected launches, talks, and milestones from the projects I help move forward.', role: 'Role',
+    journalLabel: '03 / Build journal', journalTitle: 'The work, in real moments.', journalIntro: 'Selected launches, talks, and milestones from the projects I help move forward.', achievementRole: 'Role',
     methodLabel: '04 / Method', methodTitle: 'Listen. Shape. Build.', steps: [['Listen for the real problem', 'Every build starts with the people, workarounds, and constraints behind the brief.'], ['Shape the useful path', 'I turn messy requirements into a focused experience with a clear hierarchy and a reason for every screen.'], ['Build for the long run', 'The polish is visible. The reliability underneath is what makes a product stay useful.']],
     contactLabel: '05 / Contact', contactTitle: 'Have a real problem worth solving?', contact: 'I’m interested in ambitious ideas, thoughtful teams, and products that make a tangible difference. Tell me what you are working through.', phone: 'Call Hussein', share: 'Share this page', copied: 'Link copied', back: 'Back to top', language: 'العربية', themeLight: 'Switch to dark mode', themeDark: 'Switch to light mode',
   },
@@ -104,7 +104,7 @@ const text = {
     systemsLabel: '٠٢ / أنظمة شغّالة', systemsTitle: 'مش صور. مساحات تشغيل.', systemsIntro: 'مشروعان شغّالان، وكل واحد فيهم معمول عشان يسهّل يوم الناس اللي بتستخدمه.', visit: 'افتح الموقع', role: 'منتج · Full-stack', builtFor: 'معمول لـ',
     sakr: 'سيستم إدارة ومبيعات لسوبر ماركت صقر في مصر، بيجمع حركة المحل اليومية في طريقة تشغيل أبسط وأوضح.', clean: 'سيستم إدارة وتشغيل ومنصة بيع لمغسلة كلين نوفا في مصر، بتنظّم الطلبات والخدمات والمبيعات في مكان واحد.',
     archiveLabel: '٠٣ / أرشيف علني', archiveTitle: 'كل تجربة بتسيب أثر.', archiveIntro: 'كل المستودعات العامة في مكان واحد: تجارب، شغل جماعي، وأفكار بتكبر واحدة واحدة.', open: 'افتح', updated: 'اتحدّث', profile: 'حساب GitHub', fork: 'مستودع متفرّع',
-    journalLabel: '٠٣ / سجل الإنجازات', journalTitle: 'الشغل في لحظاته الحقيقية.', journalIntro: 'إطلاقات، مشاركات، ومحطات موثقة من المشاريع اللي بساهم في تحريكها.', role: 'الدور',
+    journalLabel: '٠٣ / سجل الإنجازات', journalTitle: 'الشغل في لحظاته الحقيقية.', journalIntro: 'إطلاقات، مشاركات، ومحطات موثقة من المشاريع اللي بساهم في تحريكها.', achievementRole: 'الدور',
     methodLabel: '٠٤ / طريقة الشغل', methodTitle: 'نفهم. نرتب. نبني.', steps: [['أفهم المشكلة من أصلها', 'كل مشروع بيبدأ بسماع الناس، وفهم طريقة شغلهم، والحلول المؤقتة اللي اتعودوا عليها.'], ['أرتّب الطريق الصح', 'بحوّل المتطلبات الكتير لتجربة مركّزة، كل شاشة فيها لها هدف واضح.'], ['أبني حاجة تعيش', 'الشكل الجميل بيبان، لكن الثبات والاعتمادية هما اللي بيخلّوا المنتج مفيد كل يوم.']],
     contactLabel: '٠٥ / تواصل', contactTitle: 'عندك مشكلة تستاهل حل؟', contact: 'لو عندك فكرة طموحة أو مشكلة تستاهل تتحل، احكي لي عنها ونشوف مع بعض أنسب بداية.', phone: 'اتصل بيا', share: 'شارك الصفحة', copied: 'تم نسخ الرابط', back: 'اطلع لفوق', language: 'English', themeLight: 'التبديل للوضع الداكن', themeDark: 'التبديل للوضع الفاتح',
   },
@@ -132,7 +132,7 @@ function getT(lang: Language, dialect: Dialect) {
     clean: 'سيستم للتسيير والتشغيل ومنصة بيع ديال كلين نوفا فمصر، كيرتّب الطلبات والخدمات والمبيعات فبلاصة وحدة.',
     archiveLabel: '٠٣ / أرشيف علني', archiveTitle: 'كل تجربة كتخلّي أثر.',
     archiveIntro: 'المستودعات العامة كلها هنا: تجارب، خدمة مع الفريق، وأفكار كتكبر شوية بشوية.',
-    journalLabel: '٠٣ / سجل المحطات', journalTitle: 'الخدمة ف لحظاتها الحقيقية.', journalIntro: 'إطلاقات، مشاركات، ومحطات من المشاريع اللي كنساهم ف تحريكها.', role: 'الدور',
+    journalLabel: '٠٣ / سجل المحطات', journalTitle: 'الخدمة ف لحظاتها الحقيقية.', journalIntro: 'إطلاقات، مشاركات، ومحطات من المشاريع اللي كنساهم ف تحريكها.', achievementRole: 'الدور',
     open: 'حلّ', updated: 'تحدّث', profile: 'حساب GitHub', fork: 'مستودع متفرّع',
     methodLabel: '٠٤ / الطريقة', methodTitle: 'نسمعو. نرتّبو. نبنيو.',
     steps: [['كنفهمو المشكل من الجذر', 'كل مشروع كيبدا بالناس، بطريقتهم فالخدمة، وبالحلول المؤقتة اللي ولفوها.'], ['كنصفّيو الطريق', 'كنحوّلو الطلبات الكثيرة لتجربة مركّزة، وكل شاشة عندها دور واضح.'], ['كنبنيوا باش تبقى', 'الشكل كيبان، ولكن الثبات والاعتمادية هما اللي كيخليو المنتج مفيد كل نهار.']],
@@ -148,8 +148,8 @@ function SectionHead({ label, title }: { label: string; title: string }) {
 
 function Header({ lang, dialect, dark, onLanguage, onDialect, onTheme }: { lang: Language; dialect: Dialect; dark: boolean; onLanguage: () => void; onDialect: () => void; onTheme: () => void }) {
   const [open, setOpen] = useState(false); const t = getT(lang, dialect);
-  const links = ['story', 'profile', 'systems', 'archive', 'method', 'contact'];
-  const labels = [t.nav[0], lang === 'ar' ? 'البروفايل' : 'Profile', ...t.nav.slice(1)];
+  const links = ['story', 'profile', 'journal', 'systems', 'archive', 'method', 'contact'];
+  const labels = [t.nav[0], lang === 'ar' ? 'البروفايل' : 'Profile', lang === 'ar' ? 'الإنجازات' : 'Journal', ...t.nav.slice(1)];
   return <header className="new-nav"><a href="#top" data-testid="link-home" className="mark">HY<span>.</span></a><nav>{links.map((link, i) => <a data-testid={`link-nav-${i}`} key={link} href={`#${link}`}>{labels[i]}</a>)}</nav><div className="nav-tools"><button data-testid="button-language-toggle" onClick={onLanguage}>{t.language}</button>{lang === 'ar' && <button data-testid="button-dialect-toggle" onClick={onDialect}>{dialect === 'egyptian' ? 'مصرية' : 'مغربية'}</button>}<button data-testid="button-theme-toggle" aria-label={dark ? t.themeDark : t.themeLight} onClick={onTheme}>{dark ? <Sun size={15} /> : <Moon size={15} />}</button><button data-testid="button-menu-toggle" className="mobile-menu" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X size={17} /> : <Menu size={17} />}</button></div>{open && <div className="mobile-sheet">{links.map((link, i) => <a onClick={() => setOpen(false)} data-testid={`link-mobile-nav-${i}`} key={link} href={`#${link}`}>{labels[i]} <ArrowDownRight size={16} /></a>)}</div>}</header>;
 }
 
@@ -176,6 +176,24 @@ function ProfileDetails({ lang }: { lang: Language }) {
     <div className="range-grid">{areas.map(([title, body], i) => <motion.article data-testid={`card-technical-area-${i}`} key={title} initial={{ opacity: 0, y: 35 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .25 }} transition={{ delay: i * .08 }}><b>0{i + 1}</b><h3>{title}</h3><p>{body}</p></motion.article>)}</div>
     <div className="profile-split"><div><div className="profile-subhead"><span>{t.initiatives}</span><div /></div><div className="initiative-list">{initiatives.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div></div><div className="product-note"><span>{t.products}</span><p>{t.productsBody}</p><div className="security-line"><strong>{t.security}</strong><p>{t.securityBody}</p></div></div></div>
     <div className="vision-block"><span>{t.vision}</span><p>{t.visionBody}</p><strong>“{t.philosophy}”</strong></div>
+  </section>;
+}
+
+function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
+  const t = getT(lang, dialect);
+  const reduced = useReducedMotion();
+  const ordered = [...achievements].sort((a, b) => b.date.localeCompare(a.date));
+  const locale = lang === 'ar' ? 'ar-EG' : 'en-GB';
+  return <section id="journal" className="journal-section" data-testid="section-achievements">
+    <SectionHead label={t.journalLabel} title={t.journalTitle} />
+    <p className="journal-intro">{t.journalIntro}</p>
+    <div className="journal-list">
+      {ordered.map((item, index) => <motion.article className="achievement-card" data-testid={`card-achievement-${index}`} key={item.date + item.title} initial={reduced ? false : { opacity: 0, y: 45 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }}>
+        <div className="achievement-meta"><span>{String(index + 1).padStart(2, '0')}</span><time dateTime={item.date}>{new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(`${item.date}T12:00:00`))}</time></div>
+        <div className="achievement-copy"><h3>{lang === 'en' ? 'Madinah AI pilot launch' : item.title}</h3><p>{lang === 'en' ? 'As Technical Team Lead for Qalyubia, I launched the initial pilot version of Madinah AI during Tech Day | Nile Sons, organized by Obour Educational Administration. It marks the beginning of a practical effort to use technology and artificial intelligence to make everyday services easier and smarter.' : item.body}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{lang === 'en' ? 'Qalyubia Technical Team Lead · Madinah AI Executive Director' : item.role}</strong><small>{item.location}</small></div></div>
+        <div className="achievement-gallery">{item.images.map((image, imageIndex) => <img key={image} data-testid={`img-achievement-${index}-${imageIndex}`} src={image} alt={`${item.title} — ${imageIndex + 1}`} loading={imageIndex > 1 ? 'lazy' : undefined} />)}</div>
+      </motion.article>)}
+    </div>
   </section>;
 }
 
@@ -207,6 +225,6 @@ function App() {
   const [lang, setLang] = useState<Language>('en'); const [dialect, setDialect] = useState<Dialect>('egyptian'); const [dark, setDark] = useState(false); const t = getT(lang, dialect);
   useEffect(() => { setDark(localStorage.getItem('hussein-theme') === 'dark'); }, []);
   useEffect(() => { document.documentElement.classList.toggle('dark', dark); document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'; document.documentElement.lang = lang; localStorage.setItem('hussein-theme', dark ? 'dark' : 'light'); }, [dark, lang]);
-  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}><Header lang={lang} dialect={dialect} dark={dark} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} /><main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main><footer><span>© {new Date().getFullYear()} / Hussein Yehya</span><a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a></footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
+  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}><Header lang={lang} dialect={dialect} dark={dark} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} /><main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} /><Journal lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main><footer><span>© {new Date().getFullYear()} / Hussein Yehya</span><a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a></footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
 }
 export default App;
