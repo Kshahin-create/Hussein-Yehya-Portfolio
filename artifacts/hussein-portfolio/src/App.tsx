@@ -179,7 +179,7 @@ function ProfileDetails({ lang }: { lang: Language }) {
   </section>;
 }
 
-function AchievementGallery({ images, title }: { images: string[]; title: string }) {
+function AchievementGallery({ images, title, details, role, location }: { images: string[]; title: string; details: string; role: string; location: string }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const showGallery = (index = 0) => { setActive(index); setOpen(true); };
@@ -199,6 +199,7 @@ function AchievementGallery({ images, title }: { images: string[]; title: string
       <div className="gallery-modal-inner">
         <div className="gallery-modal-top"><span>{String(active + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span><button onClick={() => setOpen(false)} aria-label="Close gallery"><X size={20} /></button></div>
         <img className="gallery-modal-image" src={images[active]} alt={`${title} — ${active + 1}`} />
+        <div className="gallery-modal-details"><h3>{title}</h3><p>{details}</p><strong>{role}</strong><small>{location}</small></div>
         <div className="gallery-thumbs">{images.map((image, index) => <button className={index === active ? 'active' : ''} key={image} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" /></button>)}</div>
       </div>
     </div>}
@@ -216,8 +217,8 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
     <div className="journal-list">
       {ordered.map((item, index) => <motion.article className="achievement-card" data-testid={`card-achievement-${index}`} key={item.date + item.title} initial={reduced ? false : { opacity: 0, y: 45 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }}>
         <div className="achievement-meta"><span>{String(index + 1).padStart(2, '0')}</span><time dateTime={item.date}>{new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(`${item.date}T12:00:00`))}</time></div>
-        <div className="achievement-copy"><h3>{lang === 'en' ? 'Madinah AI pilot launch' : item.title}</h3><p>{lang === 'en' ? 'As Technical Team Lead for Qalyubia, I launched the initial pilot version of Madinah AI during Tech Day | Nile Sons, organized by Obour Educational Administration. It marks the beginning of a practical effort to use technology and artificial intelligence to make everyday services easier and smarter.' : item.body}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{lang === 'en' ? 'Qalyubia Technical Team Lead · Madinah AI Executive Director' : item.role}</strong><small>{item.location}</small></div></div>
-        <AchievementGallery images={item.images} title={lang === 'en' ? 'Madinah AI pilot launch photos' : item.title} />
+        <div className="achievement-copy"><h3>{lang === 'en' ? 'Madinah AI pilot launch' : item.title}</h3><p>{lang === 'en' ? 'Launched the first Madinah AI pilot during Tech Day | Nile Sons.' : 'إطلاق النسخة التجريبية الأولى من مدينة AI خلال Tech Day | Nile Sons.'}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{lang === 'en' ? 'Qalyubia Technical Team Lead · Madinah AI Executive Director' : item.role}</strong><small>{item.location}</small></div></div>
+        <AchievementGallery images={item.images} title={lang === 'en' ? 'Madinah AI pilot launch' : item.title} details={item.body} role={item.role} location={item.location} />
       </motion.article>)}
     </div>
   </section>;
