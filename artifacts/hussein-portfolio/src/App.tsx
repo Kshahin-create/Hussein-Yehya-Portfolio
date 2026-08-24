@@ -398,7 +398,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
     <div className="journal-list">
       {ordered.map((item, index) => <motion.article className="achievement-card" data-testid={`card-achievement-${index}`} key={item.date + item.title} initial={reduced ? false : { opacity: 0, y: 45 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }}>
         <div className="achievement-meta"><span>{String(index + 1).padStart(2, '0')}</span><time dateTime={item.date}>{new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(`${item.date}T12:00:00`))}</time></div>
-        {(() => { const copy = getAchievementCopy(item, lang, dialect); return <><div className="achievement-copy"><h3>{copy.title}</h3><p>{copy.body}</p><div className="achievement-footer"><span>{t.achievementRole}</span><strong>{copy.role}</strong><small>{copy.location}</small></div></div><AchievementGallery images={item.images} title={copy.title} details={copy.body} role={copy.role} location={copy.location} /></>; })()}
+        {(() => { const copy = getAchievementCopy(item, lang, dialect); return <><div className="achievement-copy"><h3>{copy.title}</h3></div><AchievementGallery images={item.images} title={copy.title} details={copy.body} role={copy.role} location={copy.location} /></>; })()}
       </motion.article>)}
     </div>
   </section>;
