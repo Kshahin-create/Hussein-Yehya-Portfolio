@@ -25,6 +25,9 @@ import greenTeam from '@assets/image_1787527280769.png';
 import postalMeeting from '@assets/image_1787529915109.png';
 import postalSession from '@assets/image_1787529925461.png';
 import eduTechProtocol from '@assets/image_1787530965625.png';
+import benhaVisitGroup from '@assets/image_1787531567164.png';
+import benhaVisitLab from '@assets/image_1787531580282.png';
+import benhaVisitTour from '@assets/image_1787531597147.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -46,6 +49,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2026-03-10',
+    title: 'زيارة الفريق التقني لكلية الحاسبات والذكاء الاصطناعي بجامعة بنها',
+    titleEgyptian: 'زيارة الفريق التقني لكلية الحاسبات والذكاء الاصطناعي بجامعة بنها',
+    titleMoroccan: 'زيارة الفريق التقني لكلية الحاسبات والذكاء الاصطناعي بجامعة بنها',
+    titleEn: 'EDU-TECH visit to the Faculty of Computers and Artificial Intelligence at Benha University',
+    body: 'في إطار تنفيذ توجيهات فخامة الرئيس عبد الفتاح السيسي بضرورة الاهتمام بجودة التعليم ومواكبة أحدث ما وصلت إليه تكنولوجيا البرمجة والذكاء الاصطناعي، وتحت رعاية معالي دولة رئيس مجلس الوزراء المصري الدكتور مصطفى مدبولي، ومعالي وزير التربية والتعليم والتعليم الفني الأستاذ محمد عبد اللطيف، ومعالي وزير التعليم العالي والبحث العلمي الدكتور عبد العزيز قنصوة، والأستاذ ياسر محمود مدير مديرية التربية والتعليم بالقليوبية، والأستاذ الدكتور ناصر الجيزاوي رئيس جامعة بنها، وتحت إشراف موجه عام الحاسب الآلي الدكتورة جيهان محمد، وباستضافة كريمة من الدكتورة إيمان منير، وكيل كلية الحاسبات والذكاء الاصطناعي لشؤون خدمة المجتمع وتنمية البيئة، تم تنظيم زيارة ميدانية للفريق التقني بالقليوبية إلى كلية الحاسبات والذكاء الاصطناعي بجامعة بنها. حظي الفريق بجولة تعريفية متميزة داخل الكلية برفقة الدكتور عبد الحميد الشرقاوي، تعرّف خلالها أعضاء الفريق على أقسام الكلية المختلفة، كما زاروا المعامل والمدرجات واطلعوا على الإمكانات التعليمية والتقنية التي توفرها الكلية لطلابها. ومثّلت الزيارة فرصة مهمة لربط الطلاب بالواقع الأكاديمي والتكنولوجي، وتعزيز وعيهم بالتخصصات الحديثة في مجالات الحاسبات والذكاء الاصطناعي، بما يسهم في تنمية طموحاتهم العلمية ويدعم توجه الدولة نحو بناء جيل مؤهل علميًا وتقنيًا وقادر على المشاركة في مسيرة التحول الرقمي والتنمية المستدامة. كل الشكر والتقدير لكل من أسهم في إنجاح هذه الزيارة، ولكلية الحاسبات والذكاء الاصطناعي بجامعة بنها على حسن الاستقبال والتنظيم.',
+    bodyEgyptian: 'في إطار توجيهات فخامة الرئيس عبد الفتاح السيسي بالاهتمام بجودة التعليم ومواكبة أحدث تكنولوجيا البرمجة والذكاء الاصطناعي، وتحت رعاية دولة رئيس مجلس الوزراء الدكتور مصطفى مدبولي، ووزير التربية والتعليم والتعليم الفني الأستاذ محمد عبد اللطيف، ووزير التعليم العالي والبحث العلمي الدكتور عبد العزيز قنصوة، والأستاذ ياسر محمود مدير مديرية التربية والتعليم بالقليوبية، والأستاذ الدكتور ناصر الجيزاوي رئيس جامعة بنها، وتحت إشراف الدكتورة جيهان محمد، موجه عام الحاسب الآلي، وباستضافة الدكتورة إيمان منير، وكيل كلية الحاسبات والذكاء الاصطناعي لشؤون خدمة المجتمع وتنمية البيئة، اتنظمت زيارة ميدانية للفريق التقني بالقليوبية لكلية الحاسبات والذكاء الاصطناعي بجامعة بنها. الفريق عمل جولة تعريفية مميزة داخل الكلية برفقة الدكتور عبد الحميد الشرقاوي، واتعرف على أقسام الكلية المختلفة، وزار المعامل والمدرجات، وشاف الإمكانيات التعليمية والتقنية اللي بتوفرها الكلية لطلابها. الزيارة كانت فرصة مهمة عشان نربط الطلاب بالواقع الأكاديمي والتكنولوجي، ونزود وعيهم بالتخصصات الحديثة في الحاسبات والذكاء الاصطناعي، ونشجع طموحهم العلمي ونجهزهم للمشاركة في التحول الرقمي والتنمية المستدامة. كل الشكر والتقدير لكل اللي ساهم في نجاح الزيارة، ولكلية الحاسبات والذكاء الاصطناعي بجامعة بنها على حسن الاستقبال والتنظيم.',
+    bodyMoroccan: 'فإطار توجيهات فخامة الرئيس عبد الفتاح السيسي بالاهتمام بجودة التعليم ومواكبة آخر ما وصلات ليه تكنولوجيا البرمجة والذكاء الاصطناعي، وتحت رعاية رئيس الحكومة المصرية الدكتور مصطفى مدبولي، ووزير التربية والتعليم والتعليم الفني الأستاذ محمد عبد اللطيف، ووزير التعليم العالي والبحث العلمي الدكتور عبد العزيز قنصوة، والأستاذ ياسر محمود مدير مديرية التربية والتعليم بالقليوبية، والأستاذ الدكتور ناصر الجيزاوي رئيس جامعة بنها، وتحت إشراف الدكتورة جيهان محمد، الموجهة العامة للحاسب الآلي، وباستضافة الدكتورة إيمان منير، وكيلة كلية الحاسبات والذكاء الاصطناعي لشؤون خدمة المجتمع وتنمية البيئة، تدار زيارة ميدانية للفريق التقني بالقليوبية لكلية الحاسبات والذكاء الاصطناعي بجامعة بنها. دار الفريق جولة تعريفية مميزة داخل الكلية برفقة الدكتور عبد الحميد الشرقاوي، وتعرفو على الأقسام المختلفة، وزارو المعامل والمدرجات، وطلعو على الإمكانيات التعليمية والتقنية اللي كتوفّرها الكلية للطلبة. هاد الزيارة كانت فرصة مهمة باش نربطو الطلبة بالواقع الأكاديمي والتكنولوجي، ونقويو الوعي ديالهم بالتخصصات الحديثة فمجالات الحاسبات والذكاء الاصطناعي، وندعمو الطموح العلمي ديالهم وتوجه الدولة لبناء جيل مؤهل علميًا وتقنيًا وقادر يساهم فمسيرة التحول الرقمي والتنمية المستدامة. الشكر والتقدير لكل من ساهم فنجاح هاد الزيارة، ولكلية الحاسبات والذكاء الاصطناعي بجامعة بنها على حسن الاستقبال والتنظيم.',
+    bodyEn: 'As part of President Abdel Fattah El-Sisi’s direction to prioritize education quality and keep students connected to the latest developments in programming and artificial intelligence, EDU-TECH Qalyubia made a field visit to the Faculty of Computers and Artificial Intelligence at Benha University. The visit was held under the patronage of Prime Minister Dr. Mostafa Madbouly; Minister of Education and Technical Education Mohamed Abdel Latif; Minister of Higher Education and Scientific Research Dr. Abdel Aziz Konsowa; Yasser Mahmoud, Director of the Qalyubia Directorate of Education; and Dr. Nasser El-Gizawy, President of Benha University. It was supervised by Dr. Jehan Mohamed, General Computer Science Supervisor, and graciously hosted by Dr. Eman Mounir, Vice Dean of the faculty for Community Service and Environmental Development. Accompanied by Dr. Abdel Hamid El-Sharqawy, the team toured the faculty, learned about its departments, visited laboratories and lecture halls, and explored the educational and technical resources available to students. The visit connected students with the academic and technology landscape, raised their awareness of modern computer science and AI specializations, and supported their ambitions as part of the country’s digital transformation and sustainable development goals. We are grateful to everyone who contributed to the visit’s success and to the faculty for its warm welcome and excellent organization.',
+    role: 'عضو الفريق التقني بالقليوبية — زائر ومشارك في الجولة التعليمية',
+    roleEgyptian: 'عضو الفريق التقني بالقليوبية — زائر ومشارك في الجولة التعليمية',
+    roleMoroccan: 'عضو الفريق التقني بالقليوبية — زائر ومشارك فالجولة التعليمية',
+    roleEn: 'Qalyubia Technical Team member — educational visit participant',
+    location: 'كلية الحاسبات والذكاء الاصطناعي — جامعة بنها',
+    locationEgyptian: 'كلية الحاسبات والذكاء الاصطناعي — جامعة بنها',
+    locationMoroccan: 'كلية الحاسبات والذكاء الاصطناعي — جامعة بنها',
+    locationEn: 'Faculty of Computers and Artificial Intelligence — Benha University',
+    images: [benhaVisitGroup, benhaVisitLab, benhaVisitTour],
+  },
   {
     date: '2026-03-25',
     title: 'بروتوكول تعاون بين الفريق التقني واتحاد طلاب القليوبية',
@@ -178,6 +201,9 @@ const libraryPhotos = [
   { src: postalMeeting, title: 'Egypt Post services awareness session', label: 'Postal services', labelAr: 'خدمات البريد', featured: true },
   { src: postalSession, title: 'Introducing student services', label: 'Postal services', labelAr: 'خدمات البريد' },
   { src: eduTechProtocol, title: 'EDU-TECH cooperation protocol', label: 'Protocol', labelAr: 'بروتوكول التعاون', featured: true },
+  { src: benhaVisitGroup, title: 'Benha University faculty visit', label: 'University visit', labelAr: 'زيارة جامعية', featured: true },
+  { src: benhaVisitLab, title: 'Exploring the AI faculty laboratories', label: 'University visit', labelAr: 'زيارة جامعية' },
+  { src: benhaVisitTour, title: 'EDU-TECH educational tour', label: 'University visit', labelAr: 'زيارة جامعية' },
 ];
 
 const detailCopy = {
@@ -429,7 +455,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -447,10 +473,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
