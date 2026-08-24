@@ -476,72 +476,91 @@ const libraryPhotos = [
 
 const detailCopy = {
   en: {
-    label: 'PROFILE / WHAT I BUILD', title: 'More than shipping code.',
-    intro: 'I work across product, engineering, operations, and the decisions that turn an idea into something people can actually use.',
-    doing: 'What I do', doingBody: 'I design and develop digital systems from the first question to deployment: requirements, architecture, databases, APIs, product experience, and the operating details underneath.',
+    label: 'PROFILE / THINGS I LIKE', title: 'I like trying a bit of everything.',
+    intro: 'Code is a big part of my life, but it is not the whole story. I also enjoy teams, student initiatives, events, ideas, and seeing how things work in the real world.',
+    doing: 'What I spend time on', doingBody: 'I learn by making things. Sometimes it is a website, sometimes an app, a backend, an experiment with AI, or helping a team turn an idea into something real.',
     focus: ['Web applications', 'Mobile apps with Flutter', 'Backend systems & REST APIs', 'Database architecture', 'Admin and operations platforms', 'AI inside real products', 'Automation and integrations', 'Product and technical leadership'],
-    stack: 'Technical range', backend: 'Backend development', backendBody: 'Django, Flask, REST APIs, authentication, authorization, role-based access, business logic, integrations, and backend architecture.',
-    mobile: 'Mobile & ecosystem', mobileBody: 'Flutter apps for Android, iOS, Windows, and Web — one connected product ecosystem instead of four disconnected builds.',
-    cloud: 'Data & cloud', cloudBody: 'Supabase, PostgreSQL, Railway, Cloudflare, Firebase, OneSignal, hosting, deployment, DNS, and domain management.',
-    ai: 'Artificial intelligence', aiBody: 'AI assistants, intelligent search, recommendation systems, agents, automation, data analysis, and decision support — integrated into a real workflow, not added as a gimmick.',
-    initiatives: 'Leadership & initiatives', edu: 'Edu-Tech Qalyubia', eduBody: 'A technical team working across education, digital transformation, events, assessments, verification, and data. I help plan systems, organize teams, and coordinate technical and administrative work.',
+    stack: 'Things I have worked with', backend: 'Backend', backendBody: 'I have worked with Django, Flask, REST APIs, authentication, permissions, business logic, integrations, and backend architecture.',
+    mobile: 'Mobile', mobileBody: 'I use Flutter to experiment with apps across Android, iOS, Windows, and the web.',
+    cloud: 'Data & cloud', cloudBody: 'I have used Supabase, PostgreSQL, Railway, Cloudflare, Firebase, OneSignal, hosting, deployment, DNS, and domains.',
+    ai: 'Artificial intelligence', aiBody: 'I keep exploring assistants, search, recommendations, agents, automation, data analysis, and useful ways to bring AI into a real project.',
+    initiatives: 'Teams & initiatives', edu: 'Edu-Tech Qalyubia', eduBody: 'A technical team where I take part in education, digital transformation, events, assessments, verification, data, and team coordination.',
     madinah: 'Madinah AI', madinahBody: 'A smart-city services ecosystem connecting people with nearby providers, products, delivery, maps, intelligent search, recommendations, and operations platforms.',
     country: 'Know Your Country', countryBody: 'An educational initiative making national, political, historical, geographic, economic, cultural, and technological knowledge more accessible and interactive.',
-    products: 'Product thinking', productsBody: 'PharmaCore covers pharmacy POS, stock, purchasing, prescriptions, permissions, and audit. Nova Core is a commerce OS for stores, products, inventory, orders, customers, suppliers, reports, and multi-tenant architecture.',
-    security: 'Security & the real world', securityBody: 'Cybersecurity, network security, infrastructure, secure APIs, threat modeling, access control, Arduino, robotics, electronics, embedded systems, and IoT.',
-    vision: 'The bigger picture', visionBody: 'My goal is to build and manage real technology products from idea to operation — understanding the technology, product, user, market, data, management, and operations together.',
-    philosophy: 'Technology is not the destination. It is the tool that helps us build a better answer.',
+    products: 'Ideas I keep exploring', productsBody: 'PharmaCore is an idea for pharmacy management. Nova Core explores store operations, products, inventory, orders, customers, suppliers, reports, and multi-tenant systems.',
+    security: 'Other things I am curious about', securityBody: 'Cybersecurity, networks, infrastructure, secure APIs, threat modeling, Arduino, robotics, electronics, embedded systems, and IoT.',
+    vision: 'Where I want to go', visionBody: 'I want to keep learning, meet good people, take part in meaningful experiences, and build things I can look back on and feel proud of.',
+    philosophy: 'I do not need to know everything. I just want to keep learning and getting better.',
   },
   ar: {
-    label: 'الملف / أنا ببني إيه', title: 'مش بسلّم كود وخلاص.',
-    intro: 'بشتغل بين المنتج والهندسة والتشغيل والقرارات اللي بتحوّل الفكرة لحاجة الناس تقدر تستخدمها بجد.',
-    doing: 'بعمل إيه؟', doingBody: 'بصمّم وبطوّر الأنظمة من أول سؤال لحد التشغيل: متطلبات، Architecture، قواعد بيانات، APIs، تجربة المنتج، وكل التفاصيل اللي بتحرّك الشغل من تحت.',
+    label: 'عنّي / الحاجات اللي بحبها', title: 'بحب أجرب في حاجات كتير.',
+    intro: 'البرمجة جزء كبير من حياتي، بس مش كل الحكاية. بحب كمان الفرق والمبادرات والفعاليات والأفكار، وإني أشوف الحاجات وهي بتتحول من كلام لتجربة حقيقية.',
+    doing: 'بقضي وقتي في إيه؟', doingBody: 'بتعلم وأنا بعمل. مرة موقع، مرة تطبيق، مرة Backend، مرة تجربة بالذكاء الاصطناعي، ومرة بساعد فريق يحوّل فكرة لحاجة موجودة فعلًا.',
     focus: ['تطبيقات ويب', 'تطبيقات موبايل بـ Flutter', 'Backend وREST APIs', 'تصميم قواعد البيانات', 'أنظمة إدارية وتشغيلية', 'ذكاء اصطناعي جوّه المنتج', 'أتمتة وربط الخدمات', 'إدارة المنتجات والفرق التقنية'],
-    stack: 'المدى التقني', backend: 'Backend منظم', backendBody: 'Django وFlask وREST APIs، تسجيل الدخول والصلاحيات، Role-Based Access، منطق الأعمال، الربط بين الخدمات، وتصميم الـBackend.',
-    mobile: 'موبايل ومنظومة كاملة', mobileBody: 'تطبيقات Flutter لـ Android وiOS وWindows والويب، عشان نفس المشروع يبقى Ecosystem واحد مش أربع نسخ منفصلة.',
-    cloud: 'بيانات وCloud', cloudBody: 'Supabase وPostgreSQL وRailway وCloudflare وFirebase وOneSignal، بالإضافة للاستضافة والنشر وDNS والدومينات.',
-    ai: 'الذكاء الاصطناعي', aiBody: 'مساعدات ذكية، بحث ذكي، توصيات، Agents، أتمتة، تحليل بيانات، وقرارات مدعومة بالبيانات — جوّه Workflow حقيقي، مش Feature متحطوطة للمنظر.',
-    initiatives: 'القيادة والمبادرات', edu: 'الفريق التقني لتعليم القليوبية', eduBody: 'فريق شغال على التعليم والتحول الرقمي والفعاليات والاختبارات والتحقق والبيانات. بساهم في تخطيط الأنظمة وتنظيم الفرق وربط الشغل التقني بالإداري.',
+    stack: 'حاجات اتعاملت معاها', backend: 'Backend', backendBody: 'اشتغلت بـ Django وFlask وREST APIs وتسجيل الدخول والصلاحيات ومنطق الأعمال وربط الخدمات وتصميم الـBackend.',
+    mobile: 'موبايل', mobileBody: 'بستخدم Flutter وبجرب أعمل تطبيقات تشتغل على Android وiOS وWindows والويب.',
+    cloud: 'بيانات وCloud', cloudBody: 'اتعاملت مع Supabase وPostgreSQL وRailway وCloudflare وFirebase وOneSignal والاستضافة والنشر وDNS والدومينات.',
+    ai: 'الذكاء الاصطناعي', aiBody: 'بجرب مساعدين وبحث وتوصيات وAgents وأتمتة وتحليل بيانات، وبشوف إزاي الذكاء الاصطناعي يبقى مفيد فعلًا جوّه المشروع.',
+    initiatives: 'فرق ومبادرات كنت جزء منها', edu: 'الفريق التقني لتعليم القليوبية', eduBody: 'فريق شاركت معاه في التعليم والتحول الرقمي والفعاليات والاختبارات والتحقق والبيانات وتنظيم الشغل بين الفريق.',
     madinah: 'Madinah AI', madinahBody: 'منظومة خدمات للمدينة الذكية بتوصل الناس بمقدمي الخدمات والمنتجات القريبة، مع توصيل وخرائط وبحث ذكي وتوصيات وأنظمة تشغيل.',
     country: 'مبادرة اعرف بلدك', countryBody: 'مبادرة تعليمية وتوعوية بتقدم المعرفة الوطنية والسياسية والتاريخية والجغرافية والاقتصادية والثقافية والتقنية بشكل بسيط وتفاعلي.',
-    products: 'بعقلية المنتج', productsBody: 'PharmaCore نظام لإدارة الصيدليات يشمل POS والمخزون والمشتريات والروشتات والصلاحيات والـAudit. وNova Core هو Commerce OS للمتاجر والمنتجات والمخازن والطلبات والعملاء والتقارير وMulti-tenant Architecture.',
-    security: 'الأمان والعالم الحقيقي', securityBody: 'باهتم بالأمن السيبراني وأمن الشبكات والبنية التحتية والـSecure APIs والـThreat Modeling والتحكم في الوصول، وكمان Arduino والروبوتات والإلكترونيات والأنظمة المدمجة وIoT.',
-    vision: 'الصورة الأكبر', visionBody: 'هدفي أبني وأدير منتجات تقنية حقيقية من الفكرة للتشغيل، وأنا فاهم التكنولوجيا والمنتج والمستخدم والسوق والبيانات والإدارة والتشغيل مع بعض.',
-    philosophy: 'التكنولوجيا مش هي الهدف. هي الأداة اللي بنبني بيها إجابة أحسن.',
+    products: 'أفكار ومشاريع بجرب فيها', productsBody: 'PharmaCore فكرة لنظام إدارة صيدليات، وNova Core تجربة في تشغيل المتاجر والمنتجات والمخزون والطلبات والعملاء والتقارير والـMulti-tenant systems.',
+    security: 'حاجات تانية بشد ليها', securityBody: 'الأمن السيبراني والشبكات والبنية التحتية والـSecure APIs والـThreat Modeling، وكمان Arduino والروبوتات والإلكترونيات والأنظمة المدمجة وIoT.',
+    vision: 'نفسي أوصل لإيه؟', visionBody: 'نفسي أفضل بتعلم، وأقابل ناس كويسة، وأدخل تجارب ليها معنى، وأعمل حاجات أبص عليها بعدين وأكون مبسوط إني كنت جزء منها.',
+    philosophy: 'مش لازم أبقى عارف كل حاجة. المهم أفضل بتعلّم وبعمل.',
+  },
+  ma: {
+    label: 'عني / الحوايج اللي كيعجبوني', title: 'كيعجبني نجرّب فحوايج كثيرة.',
+    intro: 'البرمجة جزء كبير من حياتي، ولكن ماشي هي الحكاية كاملة. كيعجبوني حتى الفرق والمبادرات والفعاليات والأفكار، ونشوف الحاجة وهي كتمشي من كلام لتجربة حقيقية.',
+    doing: 'فاش كنقضي وقتي؟', doingBody: 'كنتعلم وأنا كندير. مرة موقع، مرة تطبيق، مرة Backend، مرة تجربة بالذكاء الاصطناعي، ومرة كنعاون فريق يحوّل فكرة لحاجة موجودة بجد.',
+    focus: ['تطبيقات الويب', 'تطبيقات الموبايل بـ Flutter', 'Backend وREST APIs', 'تصميم قواعد البيانات', 'أنظمة إدارية وتشغيلية', 'الذكاء الاصطناعي فالمنتج', 'الأتمتة وربط الخدمات', 'تنظيم المنتجات والفرق التقنية'],
+    stack: 'حوايج خدمت بيها', backend: 'Backend', backendBody: 'خدمت بـ Django وFlask وREST APIs وتسجيل الدخول والصلاحيات ومنطق الخدمة وربط الخدمات وتصميم الـBackend.',
+    mobile: 'موبايل', mobileBody: 'كنستعمل Flutter وكنجرب نصاوب تطبيقات كتخدم على Android وiOS وWindows والويب.',
+    cloud: 'البيانات وCloud', cloudBody: 'تعاملت مع Supabase وPostgreSQL وRailway وCloudflare وFirebase وOneSignal والاستضافة والنشر وDNS والدومينات.',
+    ai: 'الذكاء الاصطناعي', aiBody: 'كنجرب المساعدات والبحث والتوصيات وAgents والأتمتة وتحليل البيانات، وكنشوف كيفاش الذكاء الاصطناعي يقدر يكون مفيد بجد فالمشروع.',
+    initiatives: 'فرق ومبادرات كنت جزء منها', edu: 'الفريق التقني لتعليم القليوبية', eduBody: 'فريق شاركت معاه فالتعليم والتحول الرقمي والفعاليات والاختبارات والتحقق والبيانات وتنظيم الخدمة بين الفريق.',
+    madinah: 'Madinah AI', madinahBody: 'منظومة خدمات للمدينة الذكية كتوصل الناس بمقدمي الخدمات والمنتجات القريبة، مع التوصيل والخرائط والبحث الذكي والتوصيات.',
+    country: 'مبادرة اعرف بلدك', countryBody: 'مبادرة تعليمية وتوعوية كتقدم المعرفة الوطنية والسياسية والتاريخية والجغرافية والاقتصادية والثقافية والتقنية بطريقة بسيطة وتفاعلية.',
+    products: 'أفكار ومشاريع كنجرب فيها', productsBody: 'PharmaCore فكرة لنظام تسيير الصيدليات، وNova Core تجربة فتسيير المتاجر والمنتجات والمخزون والطلبات والعملاء والتقارير والـMulti-tenant systems.',
+    security: 'حوايج خرين كيشدوني', securityBody: 'الأمن السيبراني والشبكات والبنية التحتية والـSecure APIs والـThreat Modeling، وزيد عليهم Arduino والروبوتات والإلكترونيات والأنظمة المدمجة وIoT.',
+    vision: 'فين باغي نوصل؟', visionBody: 'باغي نبقى كنتعلم، ونتلاقى بناس زوينين، وندخل فتجارب عندها معنى، وندير حوايج نشوفهم من بعد ونفرح حيث كنت جزء منهم.',
+    philosophy: 'ما خاصنيش نعرف كلشي. المهم نبقى كنتعلم وكندير.',
   },
 } as const;
 
 const text = {
   en: {
-    nav: ['Story', 'Systems', 'Archive', 'Method', 'Contact'],
-    rail: 'Scroll for the build log',
-    eyebrow: 'Independent developer / Egypt — Morocco',
-    hero: 'I make local work run like good software.',
-    intro: 'Hussein Yehya is a full-stack web & app developer turning the everyday complexity of real businesses into clear, capable digital products.',
-    available: 'Open to thoughtful collaborations', work: 'Enter the work', talk: 'Start a conversation',
-    storyLabel: '01 / Origin', storyTitle: 'Built close to the work.', story1: 'I care about the space between an idea and the moment it becomes useful. My work blends product thinking, robust engineering, and a sharp eye for the small details people feel before they can name them.', story2: 'As an Egyptian-Moroccan student, I bring a cross-cultural perspective to software: grounded in the realities of local businesses, open to the patterns shaping the wider web.',
-    systemsLabel: '02 / Live systems', systemsTitle: 'Not mockups. Operating surfaces.', systemsIntro: 'Two systems made for the people who use them every day — not for a portfolio screenshot.', visit: 'Visit live site', role: 'Product · Full-stack', builtFor: 'Built for',
-    sakr: 'A focused management and sales platform for Sakr supermarket in Egypt. It brings the moving parts of a busy store into one dependable operating view.',
-    clean: 'A clear, operational home for CleanNova laundry in Egypt — connecting order flow, service management, and sales in a system built to keep the day moving.',
-    archiveLabel: '03 / Public archive', archiveTitle: 'Every experiment leaves a trace.', archiveIntro: 'A complete view of Hussein’s public repositories — experiments, team work, and shipped ideas from GitHub.', open: 'Open', updated: 'Updated', profile: 'GitHub profile', fork: 'Forked repository',
-    journalLabel: '03 / Build journal', journalTitle: 'The work, in real moments.', journalIntro: 'Selected launches, talks, and milestones from the projects I help move forward.', achievementRole: 'Role',
-    methodLabel: '04 / Method', methodTitle: 'Listen. Shape. Build.', steps: [['Listen for the real problem', 'Every build starts with the people, workarounds, and constraints behind the brief.'], ['Shape the useful path', 'I turn messy requirements into a focused experience with a clear hierarchy and a reason for every screen.'], ['Build for the long run', 'The polish is visible. The reliability underneath is what makes a product stay useful.']],
-    contactLabel: '05 / Contact', contactTitle: 'Have a real problem worth solving?', contact: 'I’m interested in ambitious ideas, thoughtful teams, and products that make a tangible difference. Tell me what you are working through.', phone: 'Call Hussein', share: 'Share this page', copied: 'Link copied', back: 'Back to top', language: 'العربية', themeLight: 'Switch to dark mode', themeDark: 'Switch to light mode',
+    nav: ['About', 'Projects', 'Code', 'What I learned', 'Links'],
+    rail: 'Keep scrolling',
+    eyebrow: 'Student & developer / Egypt × Morocco',
+    hero: 'I’m Hussein. I learn, build, and try things.',
+    intro: 'I’m an Egyptian-Moroccan student and developer. This is where I keep the projects, events, photos, and ideas that have shaped my path so far.',
+    available: 'Still learning. More to come.', work: 'Start with the story', talk: 'See the milestones',
+    photoTape: 'CAIRO / MY NOTES', photoRole: 'student / developer',
+    storyLabel: '01 / About me', storyTitle: 'Figuring things out as I go.', story1: 'I am still at the beginning, and that is the part I like most. Every project, event, team, and new idea gives me another chance to learn something I did not know before.', story2: 'This page is simply a record of things I have made, places I have been, people I have learned from, and moments I do not want to forget.',
+    systemsLabel: '02 / Projects', systemsTitle: 'Things I actually made.', systemsIntro: 'They are not perfect, and that is fine. They are real projects that taught me how ideas change once people start using them.', visit: 'Open the project', role: 'What I worked on', builtFor: 'Made for',
+    sakr: 'A management and sales system I worked on for Sakr supermarket in Egypt. It helped me understand how a real store moves through products, sales, and daily operations.',
+    clean: 'A management and sales system I worked on for CleanNova laundry in Egypt. It was another chance to learn from real orders, services, and daily work.',
+    archiveLabel: '03 / Code', archiveTitle: 'Experiments, attempts, and progress.', archiveIntro: 'Some repositories are projects and some are small experiments. I keep them here because every attempt taught me something.', open: 'Open', updated: 'Updated', profile: 'My GitHub', fork: 'Forked repository',
+    journalLabel: '03 / Milestones', journalTitle: 'Moments I want to remember.', journalIntro: 'Events, launches, visits, teams, and experiences that became part of my story.', achievementRole: 'My part',
+    methodLabel: '04 / What I learned', methodTitle: 'Every project changes how I think.', steps: [['Start before everything is clear', 'A lot of things only make sense after I begin, test an idea, and see what happens.'], ['Ask, listen, and adjust', 'Working with people taught me that the first idea is rarely the final one, and that is completely normal.'], ['Keep the lesson', 'Even when something does not go as planned, I try to leave with a better question, a new skill, or a clearer direction.']],
+    contactLabel: '05 / Find me', contactTitle: 'That’s pretty much it.', contact: 'If you want to keep up with what I am doing, these are my links. No pitch — just the easiest places to find me.', phone: 'My number', share: 'Share this page', copied: 'Link copied', back: 'Back to top', language: 'العربية', themeLight: 'Switch to dark mode', themeDark: 'Switch to light mode',
   },
   ar: {
-    nav: ['الحكاية', 'الأنظمة', 'الأرشيف', 'الطريقة', 'تواصل'],
-    rail: 'انزل عشان تشوف رحلة البناء',
-    eyebrow: 'مطور مستقل / مصر — المغرب',
-    hero: 'بحوّل زحمة الشغل لحاجة تشتغل صح.',
-    intro: 'أنا حسين يحيى — مطور ويب وتطبيقات متكامل بحوّل تعقيد الشغل اليومي في البيزنس لمنتجات رقمية واضحة وقوية.',
-    available: 'متاح لتعاونات طموحة ومحترمة', work: 'ادخل على الشغل', talk: 'يلا نتكلم',
-    storyLabel: '٠١ / البداية', storyTitle: 'قريب من الشغل الحقيقي.', story1: 'بحب أقرب المسافة بين الفكرة والنتيجة اللي الناس تقدر تستخدمها بجد. بدمج فهم المنتج مع هندسة قوية واهتمام بالتفاصيل اللي بتخلّي التجربة مريحة وواضحة.', story2: 'كطالب مصري-مغربي، عندي نظرة واسعة للبرمجيات، لكن رجلي دايماً على الأرض: بفهم احتياجات البيزنس المحلي وببني حلول تشتغل بجد.',
-    systemsLabel: '٠٢ / أنظمة شغّالة', systemsTitle: 'مش صور. مساحات تشغيل.', systemsIntro: 'مشروعان شغّالان، وكل واحد فيهم معمول عشان يسهّل يوم الناس اللي بتستخدمه.', visit: 'افتح الموقع', role: 'منتج · Full-stack', builtFor: 'معمول لـ',
-    sakr: 'سيستم إدارة ومبيعات لسوبر ماركت صقر في مصر، بيجمع حركة المحل اليومية في طريقة تشغيل أبسط وأوضح.', clean: 'سيستم إدارة وتشغيل ومنصة بيع لمغسلة كلين نوفا في مصر، بتنظّم الطلبات والخدمات والمبيعات في مكان واحد.',
-    archiveLabel: '٠٣ / أرشيف علني', archiveTitle: 'كل تجربة بتسيب أثر.', archiveIntro: 'كل المستودعات العامة في مكان واحد: تجارب، شغل جماعي، وأفكار بتكبر واحدة واحدة.', open: 'افتح', updated: 'اتحدّث', profile: 'حساب GitHub', fork: 'مستودع متفرّع',
-    journalLabel: '٠٣ / سجل الإنجازات', journalTitle: 'الشغل في لحظاته الحقيقية.', journalIntro: 'إطلاقات، مشاركات، ومحطات موثقة من المشاريع اللي بساهم في تحريكها.', achievementRole: 'الدور',
-    methodLabel: '٠٤ / طريقة الشغل', methodTitle: 'نفهم. نرتب. نبني.', steps: [['أفهم المشكلة من أصلها', 'كل مشروع بيبدأ بسماع الناس، وفهم طريقة شغلهم، والحلول المؤقتة اللي اتعودوا عليها.'], ['أرتّب الطريق الصح', 'بحوّل المتطلبات الكتير لتجربة مركّزة، كل شاشة فيها لها هدف واضح.'], ['أبني حاجة تعيش', 'الشكل الجميل بيبان، لكن الثبات والاعتمادية هما اللي بيخلّوا المنتج مفيد كل يوم.']],
-    contactLabel: '٠٥ / تواصل', contactTitle: 'عندك مشكلة تستاهل حل؟', contact: 'لو عندك فكرة طموحة أو مشكلة تستاهل تتحل، احكي لي عنها ونشوف مع بعض أنسب بداية.', phone: 'اتصل بيا', share: 'شارك الصفحة', copied: 'تم نسخ الرابط', back: 'اطلع لفوق', language: 'English', themeLight: 'التبديل للوضع الداكن', themeDark: 'التبديل للوضع الفاتح',
+    nav: ['عنّي', 'المشاريع', 'الكود', 'اللي اتعلمته', 'روابطي'],
+    rail: 'كمّل وهتشوف الحكاية',
+    eyebrow: 'طالب ومطوّر / مصر × المغرب',
+    hero: 'أنا حسين. بتعلّم، بجرّب، وبعمل حاجات.',
+    intro: 'أنا طالب ومطوّر مصري-مغربي. المكان ده بجمع فيه المشاريع والفعاليات والصور والحاجات اللي عملتها واللي اتعلمتها وأنا ماشي في الطريق.',
+    available: 'لسه بتعلّم ولسه في حاجات جاية', work: 'ابدأ من الحكاية', talk: 'شوف الإنجازات',
+    photoTape: 'القاهرة / ملاحظاتي', photoRole: 'طالب / مطوّر',
+    storyLabel: '٠١ / عنّي', storyTitle: 'ماشي في الطريق واحدة واحدة.', story1: 'أنا لسه في أول الطريق، ودي أكتر حاجة بحبها فيه. كل مشروع أو فعالية أو فريق أو فكرة جديدة بتديني فرصة أتعلم حاجة ماكنتش أعرفها.', story2: 'الموقع ده مكان بجمع فيه الحاجات اللي عملتها، والأماكن اللي رحتها، والناس اللي اتعلمت منها، واللحظات اللي مش عايز أنساها.',
+    systemsLabel: '٠٢ / المشاريع', systemsTitle: 'حاجات عملتها فعلًا.', systemsIntro: 'مش كاملة، وده عادي. دي مشاريع حقيقية علمتني إزاي الفكرة بتتغير أول ما الناس تبدأ تستخدمها.', visit: 'افتح المشروع', role: 'كنت بعمل إيه', builtFor: 'اتعمل لـ',
+    sakr: 'سيستم إدارة ومبيعات اشتغلت عليه لسوبر ماركت صقر في مصر. المشروع علّمني أكتر عن المنتجات والمبيعات وتشغيل محل حقيقي يوم بيوم.', clean: 'سيستم إدارة ومبيعات اشتغلت عليه لمغسلة كلين نوفا في مصر. تجربة تانية اتعلمت منها عن الطلبات والخدمات والشغل اليومي.',
+    archiveLabel: '٠٣ / الكود', archiveTitle: 'تجارب ومحاولات وخطوات.', archiveIntro: 'فيه مستودعات لمشاريع، وفيه حاجات صغيرة كنت بجربها. سايبهم هنا لأن كل محاولة علمتني حاجة.', open: 'افتح', updated: 'اتحدّث', profile: 'حسابي على GitHub', fork: 'مستودع متفرّع',
+    journalLabel: '٠٣ / الإنجازات', journalTitle: 'محطات بحب أفتكرها.', journalIntro: 'فعاليات وإطلاقات وزيارات وفرق وتجارب بقوا جزء من حكايتي.', achievementRole: 'كنت بعمل إيه',
+    methodLabel: '٠٤ / اللي اتعلمته', methodTitle: 'كل تجربة بتغيّر طريقة تفكيري.', steps: [['ابدأ حتى لو الصورة مش كاملة', 'حاجات كتير مابتفهمش غير لما أبدأ وأجرب وأشوف اللي هيحصل.'], ['اسأل واسمع وعدّل', 'الشغل مع الناس علّمني إن أول فكرة نادرًا ما بتكون الأخيرة، وده طبيعي جدًا.'], ['خد الدرس وكمل', 'حتى لو حاجة ماطلعتش زي ما كنت متخيل، بحاول أطلع منها بسؤال أحسن أو مهارة جديدة أو اتجاه أوضح.']],
+    contactLabel: '٠٥ / تلاقيني فين', contactTitle: 'وده تقريبًا كل اللي عندي.', contact: 'لو حابب تتابع الحاجات اللي بعملها، دي حساباتي. مفيش كلام مبيعات — دي بس أسهل أماكن تلاقيني فيها.', phone: 'رقمي', share: 'شارك الصفحة', copied: 'تم نسخ الرابط', back: 'اطلع لفوق', language: 'English', themeLight: 'التبديل للوضع الداكن', themeDark: 'التبديل للوضع الفاتح',
   },
 } as const;
 
@@ -550,30 +569,31 @@ function getT(lang: Language, dialect: Dialect) {
   const base = text.ar;
   return dialect === 'moroccan' ? {
     ...base,
-    nav: ['الحكاية', 'الخدمة', 'الأرشيف', 'الطريقة', 'تواصل'],
-    rail: 'هبط تشوف كيفاش كنبنيو',
-    eyebrow: 'مطوّر مستقل / مصر — المغرب',
-    hero: 'خلي الفكرة تولي خدامة.',
-    intro: 'أنا حسين يحيى — مطوّر ويب وتطبيقات، كنحوّل الفوضى ديال الخدمة لمنتجات رقمية خفيفة، مفهومة، وكتخدم من النهار اللول.',
-    available: 'مفتوح لشراكات زوينة وبلا تعقيد',
-    work: 'دخل للشغل', talk: 'يلا نهضرو',
-    storyLabel: '٠١ / البداية', storyTitle: 'قريب من الخدمة الحقيقية.',
-    story1: 'كنهتم بالمسافة بين الفكرة واللحظة اللي كتولي فيها نافعة بجد. كنخلط فهم المنتج مع هندسة قوية وعين للتفاصيل اللي كتخلي التجربة مريحة وواضحة.',
-    story2: 'كمصري-مغربي، طالب ومطوّر، كنشوف البرمجيات بعينين: واقع البيزنس اللي قدامي وروح الويب اللي كتمشي لقدّام.',
-    systemsLabel: '٠٢ / أنظمة خدامة', systemsTitle: 'ماشي صور. بلايص للخدمة.',
-    systemsIntro: 'جوج ديال الأنظمة خدامين فالواقع، مبنيين للناس اللي كيستعملوهم كل نهار، ماشي غير للصورة ديال البورتفوليو.',
-    visit: 'حلّ الموقع', role: 'منتج · Full-stack', builtFor: 'تدار لـ',
-    sakr: 'سيستم للتسيير والمبيعات ديال سوبر ماركت صقر فمصر، كيجمع حركة المحل كاملة فواجهة واضحة.',
-    clean: 'سيستم للتسيير والتشغيل ومنصة بيع ديال كلين نوفا فمصر، كيرتّب الطلبات والخدمات والمبيعات فبلاصة وحدة.',
-    archiveLabel: '٠٣ / أرشيف علني', archiveTitle: 'كل تجربة كتخلّي أثر.',
-    archiveIntro: 'المستودعات العامة كلها هنا: تجارب، خدمة مع الفريق، وأفكار كتكبر شوية بشوية.',
-    journalLabel: '٠٣ / سجل المحطات', journalTitle: 'الخدمة ف لحظاتها الحقيقية.', journalIntro: 'إطلاقات، مشاركات، ومحطات من المشاريع اللي كنساهم ف تحريكها.', achievementRole: 'الدور',
+    nav: ['عني', 'المشاريع', 'الكود', 'شنو تعلمت', 'روابطي'],
+    rail: 'كمّل وغادي تشوف الحكاية',
+    eyebrow: 'طالب ومطوّر / مصر × المغرب',
+    hero: 'أنا حسين. كنتعلم، كنجرب، وكندير حوايج.',
+    intro: 'أنا طالب ومطوّر مصري-مغربي. هاد البلاصة كنجمع فيها المشاريع والفعاليات والتصاور والحوايج اللي درت واللي تعلمت وأنا غادي فالطريق.',
+    available: 'ما زال كنتعلم وما زال الجاي أكثر',
+    work: 'بدا من الحكاية', talk: 'شوف المحطات',
+    photoTape: 'القاهرة / ملاحظاتي', photoRole: 'طالب / مطوّر',
+    storyLabel: '٠١ / عني', storyTitle: 'غادي فالطريق بشوية بشوية.',
+    story1: 'ما زلت فبداية الطريق، وهادشي هو اللي كيعجبني فيها. كل مشروع ولا فعالية ولا فريق ولا فكرة جديدة كتعطيني فرصة نتعلم حاجة ما كنتش عارفها.',
+    story2: 'هاد الموقع بلاصة كنجمع فيها الحوايج اللي درت، والبلايص اللي مشيت ليها، والناس اللي تعلمت منهم، واللحظات اللي ما بغيتش ننساهم.',
+    systemsLabel: '٠٢ / المشاريع', systemsTitle: 'حوايج درتهم بجد.',
+    systemsIntro: 'ماشي كاملين، وهادشي عادي. مشاريع حقيقية علموني كيفاش الفكرة كتبدل ملي الناس كيبداو يستعملوها.',
+    visit: 'حلّ المشروع', role: 'شنو درت فيه', builtFor: 'تدار لـ',
+    sakr: 'سيستم للتسيير والمبيعات خدمت عليه لسوبر ماركت صقر فمصر. علمني أكثر على المنتجات والمبيعات وكيفاش كيتسير محل حقيقي كل نهار.',
+    clean: 'سيستم للتسيير والمبيعات خدمت عليه لمغسلة كلين نوفا فمصر. تجربة أخرى تعلمت منها على الطلبات والخدمات والخدمة اليومية.',
+    archiveLabel: '٠٣ / الكود', archiveTitle: 'تجارب ومحاولات وخطوات.',
+    archiveIntro: 'كاينين مستودعات ديال مشاريع وكاينين حوايج صغار كنت كنجربهم. مخليهم هنا حيث كل محاولة علماتني حاجة.',
+    journalLabel: '٠٣ / المحطات', journalTitle: 'لحظات بغيت نبقى فاكرها.', journalIntro: 'فعاليات وإطلاقات وزيارات وفرق وتجارب ولاو جزء من حكايتي.', achievementRole: 'شنو كان دوري',
     open: 'حلّ', updated: 'تحدّث', profile: 'حساب GitHub', fork: 'مستودع متفرّع',
-    methodLabel: '٠٤ / الطريقة', methodTitle: 'نسمعو. نرتّبو. نبنيو.',
-    steps: [['كنفهمو المشكل من الجذر', 'كل مشروع كيبدا بالناس، بطريقتهم فالخدمة، وبالحلول المؤقتة اللي ولفوها.'], ['كنصفّيو الطريق', 'كنحوّلو الطلبات الكثيرة لتجربة مركّزة، وكل شاشة عندها دور واضح.'], ['كنبنيوا باش تبقى', 'الشكل كيبان، ولكن الثبات والاعتمادية هما اللي كيخليو المنتج مفيد كل نهار.']],
-    contactLabel: '٠٥ / تواصل', contactTitle: 'عندك مشكل باغي ليه حل؟',
-    contact: 'إلى كانت عندك فكرة طموحة ولا مشكل كيستاهل حل، صيفط ليا ونشوفو منين نبداو.',
-    phone: 'عيّط ليا', share: 'شارك الصفحة', copied: 'تنسخ الرابط', back: 'رجع للفوق',
+    methodLabel: '٠٤ / شنو تعلمت', methodTitle: 'كل تجربة كتبدل طريقة تفكيري.',
+    steps: [['بدا حتى إلا ما كانتش الصورة كاملة', 'حوايج كثيرة ما كيتفهموش حتى كنبدا ونجرب ونشوف شنو غادي يوقع.'], ['سول وسمع وبدل', 'الخدمة مع الناس علماتني باللي أول فكرة نادرًا ما كتكون هي الأخيرة، وهادشي عادي بزاف.'], ['خد الدرس وكمل', 'حتى إلا شي حاجة ما خرجاتش كيف ما تخيلت، كنحاول نخرج منها بسؤال حسن ولا مهارة جديدة ولا طريق أوضح.']],
+    contactLabel: '٠٥ / فين تلقاني', contactTitle: 'وهادشي تقريبًا كل اللي عندي.',
+    contact: 'إلى بغيتي تبقى متابع الحوايج اللي كندير، هادو حساباتي. بلا كلام ديال البيع — غير أسهل البلايص باش تلقاني.',
+    phone: 'رقمي', share: 'شارك الصفحة', copied: 'تنسخ الرابط', back: 'رجع للفوق',
   } : base;
 }
 
@@ -593,16 +613,16 @@ function Hero({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   const t = getT(lang, dialect); const ref = useRef<HTMLElement>(null); const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : 160]); const wordsY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : -110]); const opacity = useTransform(scrollYProgress, [.7, 1], [1, 0]);
-  return <section ref={ref} id="top" className="story-hero"><div className="hero-index">01 / 05</div><motion.div style={{ y: wordsY, opacity }} className="hero-copy"><p className="eyebrow">{t.eyebrow}</p><h1 data-testid="text-hero-title">{t.hero}</h1><p data-testid="text-hero-intro">{t.intro}</p><div className="hero-actions"><a data-testid="link-view-work" href="#systems">{t.work} <ArrowDownRight size={17} /></a><a data-testid="link-start-conversation" href="#contact">{t.talk} <ArrowUpRight size={16} /></a></div></motion.div><motion.figure style={{ y: portraitY }} className="hero-photo"><div className="photo-tape">CAIRO / BUILD LOG</div><img data-testid="img-profile-portrait" src={profileImage} alt="Hussein Yehya" /><figcaption><span>Hussein Yehya</span><span>developer / builder</span></figcaption></motion.figure><div className="hero-signal"><i />{t.available}</div><a className="scroll-rail" data-testid="link-scroll-explore" href="#story"><span>{t.rail}</span><b /></a></section>;
+  return <section ref={ref} id="top" className="story-hero"><div className="hero-index">01 / 05</div><motion.div style={{ y: wordsY, opacity }} className="hero-copy"><p className="eyebrow">{t.eyebrow}</p><h1 data-testid="text-hero-title">{t.hero}</h1><p data-testid="text-hero-intro">{t.intro}</p><div className="hero-actions"><a data-testid="link-view-work" href="#story">{t.work} <ArrowDownRight size={17} /></a><a data-testid="link-start-conversation" href="#journal">{t.talk} <ArrowUpRight size={16} /></a></div></motion.div><motion.figure style={{ y: portraitY }} className="hero-photo"><div className="photo-tape">{t.photoTape}</div><img data-testid="img-profile-portrait" src={profileImage} alt="Hussein Yehya" /><figcaption><span>Hussein Yehya</span><span>{t.photoRole}</span></figcaption></motion.figure><div className="hero-signal"><i />{t.available}</div><a className="scroll-rail" data-testid="link-scroll-explore" href="#story"><span>{t.rail}</span><b /></a></section>;
 }
 
 function Story({ lang, dialect }: { lang: Language; dialect: Dialect }) {
-  const t = getT(lang, dialect); const reduced = useReducedMotion(); const facts = lang === 'ar' ? [['متكامل', 'ويب وتطبيقات من الألف للياء'], ['٢', 'أنظمة شغّالة على أرض الواقع'], ['مصر / المغرب', 'جذور محلية ونظرة واسعة']] : [['Full-stack', 'web & app development'], ['2', 'live business systems'], ['EG / MA', 'roots, global outlook']];
+  const t = getT(lang, dialect); const reduced = useReducedMotion(); const facts = lang === 'en' ? [['Student', 'learning by doing'], ['Egypt × Morocco', 'the roots that shaped me'], ['Curious', 'always trying something new']] : dialect === 'moroccan' ? [['طالب ومطوّر', 'كنتعلم وأنا كندير'], ['مصر × المغرب', 'الجذور اللي كيشكلوني'], ['الفضول', 'ديما كنجرب حاجة جديدة']] : [['طالب ومطوّر', 'بتعلّم وأنا بعمل'], ['مصر × المغرب', 'الجذور اللي مكوّناني'], ['الفضول', 'دايمًا بجرب حاجة جديدة']];
   return <motion.section initial={reduced ? false : { opacity: 0 }} whileInView={reduced ? undefined : { opacity: 1 }} viewport={{ once: true, amount: .22 }} id="story" className="story-block"><SectionHead label={t.storyLabel} title={t.storyTitle} /><div className="story-body"><motion.p initial={reduced ? false : { x: -45, opacity: 0 }} whileInView={reduced ? undefined : { x: 0, opacity: 1 }} viewport={{ once: true }}>{t.story1}</motion.p><motion.p initial={reduced ? false : { x: 45, opacity: 0 }} whileInView={reduced ? undefined : { x: 0, opacity: 1 }} viewport={{ once: true }}>{t.story2}</motion.p><div className="facts">{facts.map(([title, sub], index) => <span data-testid={`text-fact-${index + 1}`} key={title}><b>{title}</b>{sub}</span>)}</div></div></motion.section>;
 }
 
-function ProfileDetails({ lang }: { lang: Language }) {
-  const t = detailCopy[lang];
+function ProfileDetails({ lang, dialect }: { lang: Language; dialect: Dialect }) {
+  const t = lang === 'en' ? detailCopy.en : dialect === 'moroccan' ? detailCopy.ma : detailCopy.ar;
   const areas = [[t.backend, t.backendBody], [t.mobile, t.mobileBody], [t.cloud, t.cloudBody], [t.ai, t.aiBody]];
   const initiatives = [[t.edu, t.eduBody], [t.madinah, t.madinahBody], [t.country, t.countryBody]];
   return <section id="profile" data-testid="section-profile-details" className="profile-section">
@@ -722,7 +742,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   </section>;
 }
 
-function PhotoLibrary({ lang }: { lang: Language }) {
+function PhotoLibrary({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual' | 'nasa' | 'press' | 'youth-strategy' | 'know-country'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
@@ -741,7 +761,7 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', press: 'Press exhibition', 'youth-strategy': 'Youth strategy', 'know-country': 'Know Your Country', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'en' ? { eyebrow: 'PHOTO LIBRARY / 01', title: 'Photos I wanted to keep.', intro: 'Projects, events, friends, trips, and random moments from the road so far.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', press: 'Press exhibition', 'youth-strategy': 'Youth strategy', 'know-country': 'Know Your Country', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' } : dialect === 'moroccan' ? { eyebrow: 'مكتبة التصاور / ٠١', title: 'تصاور بغيت نخليهم هنا.', intro: 'مشاريع وفعاليات وصحاب وسفر ولحظات عادية من الطريق حتى لدابا.', all: 'التصاور كلها', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'رجع للبورتفوليو', close: 'سدّ', previous: 'اللي قبل', next: 'اللي من بعد' } : { eyebrow: 'مكتبة الصور / ٠١', title: 'صور حبيت أسيبها هنا.', intro: 'مشاريع وفعاليات وصحاب وسفر ولحظات عادية من الطريق لحد دلوقتي.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
      <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press', 'youth-strategy', 'know-country'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
@@ -775,10 +795,19 @@ function Contact({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function App() {
-  const [lang, setLang] = useState<Language>('en'); const [dialect, setDialect] = useState<Dialect>('egyptian'); const [dark, setDark] = useState(false); const t = getT(lang, dialect);
+  const [lang, setLang] = useState<Language>(() => localStorage.getItem('hussein-language') === 'ar' ? 'ar' : 'en');
+  const [dialect, setDialect] = useState<Dialect>(() => localStorage.getItem('hussein-dialect') === 'moroccan' ? 'moroccan' : 'egyptian');
+  const [dark, setDark] = useState(false); const t = getT(lang, dialect);
   const libraryPage = window.location.pathname.endsWith('/gallery') || window.location.pathname.endsWith('/gallery/');
   useEffect(() => { setDark(localStorage.getItem('hussein-theme') === 'dark'); }, []);
-  useEffect(() => { document.documentElement.classList.toggle('dark', dark); document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'; document.documentElement.lang = lang; localStorage.setItem('hussein-theme', dark ? 'dark' : 'light'); }, [dark, lang]);
-  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}>{<Header lang={lang} dialect={dialect} dark={dark} libraryPage={libraryPage} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} />}{libraryPage ? <PhotoLibrary lang={lang} /> : <main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} /><Journal lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main>}<footer><span>© {new Date().getFullYear()} / Hussein Yehya</span>{libraryPage ? <a href="/">{t.back}<ArrowUpRight size={14} /></a> : <a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a>}</footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', dark);
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+    localStorage.setItem('hussein-theme', dark ? 'dark' : 'light');
+    localStorage.setItem('hussein-language', lang);
+    localStorage.setItem('hussein-dialect', dialect);
+  }, [dark, lang, dialect]);
+  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}>{<Header lang={lang} dialect={dialect} dark={dark} libraryPage={libraryPage} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} />}{libraryPage ? <PhotoLibrary lang={lang} dialect={dialect} /> : <main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} dialect={dialect} /><Journal lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main>}<footer><span>© {new Date().getFullYear()} / Hussein Yehya</span>{libraryPage ? <a href="/">{t.back}<ArrowUpRight size={14} /></a> : <a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a>}</footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
 }
 export default App;

@@ -1,0 +1,1 @@
+- [Portfolio voice](portfolio-voice.md) — Keep the site personal, youthful, and achievement-led; never frame Hussein as selling services or solving client problems.
