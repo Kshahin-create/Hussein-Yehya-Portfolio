@@ -37,6 +37,12 @@ import schoolLeadersTeams from '@assets/image_1787532521745.png';
 import schoolLeadersRoom from '@assets/image_1787532530336.png';
 import studentOrganizingTeam from '@assets/image_1787532649975.png';
 import studentOrganizingAward from '@assets/image_1787532661765.png';
+import readingCarnivalGroup from '@assets/image_1787532793304.png';
+import readingCarnivalPair from '@assets/image_1787532801556.png';
+import readingCarnivalGirls from '@assets/image_1787532807556.png';
+import readingCarnivalTeam from '@assets/image_1787532814564.png';
+import readingCarnivalFriends from '@assets/image_1787532820660.png';
+import readingCarnivalPortrait from '@assets/image_1787532828430.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -58,6 +64,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2025-11-12',
+    title: 'فريق SOT في تغطية كرنفال القراءة بالقليوبية',
+    titleEgyptian: 'فريق SOT في تغطية كرنفال القراءة بالقليوبية',
+    titleMoroccan: 'فريق SOT فالتغطية ديال كرنفال القراءة فالقليوبية',
+    titleEn: 'SOT Team covering the Qalyubia Reading Carnival',
+    body: 'شارك فريق SOT في التغطية الإعلامية والتنظيمية لكرنفال تحدي القراءة العربي بمحافظة القليوبية، ضمن فعاليات دعم القراءة والثقافة وتشجيع الطلاب على المشاركة والتعبير والإبداع. عمل أعضاء الفريق على توثيق أجواء الكرنفال والتفاعل مع الطلاب والطالبات والمشاركين، والمساهمة في إبراز الفعاليات بصورة منظمة تعكس روح التعاون والعمل الطلابي. مثّلت المشاركة فرصة لتعزيز مهارات الفريق في التغطية الإعلامية والعمل الميداني والتنسيق بين أعضاء الفريق خلال الفعاليات التعليمية والثقافية.',
+    bodyEgyptian: 'شارك فريق SOT في التغطية الإعلامية والتنظيمية لكرنفال تحدي القراءة العربي في محافظة القليوبية، ضمن فعاليات دعم القراءة والثقافة وتشجيع الطلاب على المشاركة والتعبير والإبداع. أعضاء الفريق اشتغلوا على توثيق أجواء الكرنفال والتفاعل مع الطلاب والطالبات والمشاركين، والمساهمة في إظهار الفعاليات بشكل منظم يعكس روح التعاون والعمل الطلابي. المشاركة كانت فرصة لتطوير مهارات الفريق في التغطية الإعلامية والشغل الميداني والتنسيق بين أعضاء الفريق أثناء الفعاليات التعليمية والثقافية.',
+    bodyMoroccan: 'شارك فريق SOT فالتغطية الإعلامية والتنظيمية ديال كرنفال تحدي القراءة العربي فإقليم القليوبية، ضمن فعاليات دعم القراءة والثقافة وتشجيع الطلبة على المشاركة والتعبير والإبداع. خدم أعضاء الفريق على توثيق أجواء الكرنفال والتفاعل مع الطلبة والطالبات والمشاركين، والمساهمة فإبراز الفعاليات بطريقة منظمة كتعكس روح التعاون والعمل الطلابي. كانت هاد المشاركة فرصة باش يطورو مهاراتهم فالتغطية الإعلامية والخدمة الميدانية والتنسيق بين أعضاء الفريق خلال الفعاليات التعليمية والثقافية.',
+    bodyEn: 'The SOT Team took part in the media coverage and field organization of the Arab Reading Challenge carnival in Qalyubia, as part of activities supporting reading, culture, and student participation, expression, and creativity. Team members documented the carnival atmosphere, engaged with students and participants, and helped present the activities in an organized way that reflected collaboration and student-led work. The experience strengthened the team’s skills in media coverage, field operations, and coordination during educational and cultural events.',
+    role: 'عضو فريق SOT — مشارك في التغطية الإعلامية والتنظيم الميداني',
+    roleEgyptian: 'عضو فريق SOT — مشارك في التغطية الإعلامية والتنظيم الميداني',
+    roleMoroccan: 'عضو فريق SOT — مشارك فالتغطية الإعلامية والتنظيم الميداني',
+    roleEn: 'SOT Team member — media coverage and field organization participant',
+    location: 'مجمع مدارس الشبان المسلمين ببنها — القليوبية، مصر',
+    locationEgyptian: 'مجمع مدارس الشبان المسلمين ببنها — القليوبية، مصر',
+    locationMoroccan: 'مجمع مدارس الشبان المسلمين ببنها — القليوبية، مصر',
+    locationEn: 'Muslim Youth Schools Complex, Benha — Qalyubia, Egypt',
+    images: [readingCarnivalGroup, readingCarnivalPair, readingCarnivalGirls, readingCarnivalTeam, readingCarnivalFriends, readingCarnivalPortrait],
+  },
   {
     date: '2025-11-23',
     title: 'تدريبات متقدمة لطلاب وطالبات قادة مدارس الجمهورية بالقليوبية',
@@ -282,6 +308,12 @@ const libraryPhotos = [
   { src: schoolLeadersRoom, title: 'Qalyubia Republic Schools Leaders', label: 'leaders', labelAr: 'قادة مدارس الجمهورية' },
   { src: studentOrganizingTeam, title: 'Student Organizing Team recognition', label: 'organizing', labelAr: 'التنظيم الطلابي', featured: true },
   { src: studentOrganizingAward, title: 'Honoring the Student Organizing Team', label: 'organizing', labelAr: 'التنظيم الطلابي' },
+  { src: readingCarnivalGroup, title: 'SOT Team at the Qalyubia Reading Carnival', label: 'reading', labelAr: 'كرنفال القراءة', featured: true },
+  { src: readingCarnivalPair, title: 'Reading Carnival coverage', label: 'reading', labelAr: 'كرنفال القراءة' },
+  { src: readingCarnivalGirls, title: 'SOT Team members at the carnival', label: 'reading', labelAr: 'كرنفال القراءة' },
+  { src: readingCarnivalTeam, title: 'Student media coverage team', label: 'reading', labelAr: 'كرنفال القراءة' },
+  { src: readingCarnivalFriends, title: 'SOT Team collaboration', label: 'reading', labelAr: 'كرنفال القراءة' },
+  { src: readingCarnivalPortrait, title: 'Qalyubia Reading Carnival coverage', label: 'reading', labelAr: 'كرنفال القراءة' },
 ];
 
 const detailCopy = {
@@ -533,7 +565,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -551,10 +583,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
