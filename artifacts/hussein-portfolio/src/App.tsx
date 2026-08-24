@@ -29,6 +29,8 @@ import benhaVisitGroup from '@assets/image_1787531567164.png';
 import benhaVisitLab from '@assets/image_1787531580282.png';
 import benhaVisitTour from '@assets/image_1787531597147.png';
 import culturalAmbassadors from '@assets/image_1787531861754.png';
+import casaPresentation from '@assets/image_1787532146188.png';
+import casaMeeting from '@assets/image_1787532368628.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -50,6 +52,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2025-12-07',
+    title: 'إطلاق منصة CASA للاختبارات الإلكترونية بأيدي طلابية مبتكرة',
+    titleEgyptian: 'إطلاق منصة CASA للاختبارات الإلكترونية بأيدي طلابية مبتكرة',
+    titleMoroccan: 'إطلاق منصة CASA للاختبارات الإلكترونية بأيادي طلبة مبتكرة',
+    titleEn: 'Launching CASA, a student-built electronic examination platform',
+    body: 'تحت رعاية معالي وزير التربية والتعليم والتعليم الفني محمد عبد اللطيف، ومعالي محافظ القليوبية المهندس أيمن عطية، والدكتورة إيمان محمد حسن، رئيس الإدارة المركزية للأنشطة الطلابية، وبتوجيهات الأستاذ مصطفى عبده، مدير مديرية التربية والتعليم بالقليوبية، شهدت المديرية عرضًا تقديميًا لمنصة CASA للاختبارات الإلكترونية، وهي مشروع تكنولوجي رائد ومبتكر بالكامل بأيدي طلاب القليوبية. قدّم العرض الطالب حسين يحيى حسين أحمد، من إدارة بنها التعليمية، وقائد فريق SOT التابع للإدارة المركزية للأنشطة الطلابية، وخريج برنامج قادة مدارس الجمهورية، والمدرب المعتمد من شركة مايكروسوفت العالمية. وتحت إشراف فريق عمل توجيه عام المكتبات بالمديرية، تهدف منصة CASA، التي تعني Central Administrator Students Activities، إلى محاكاة وتطوير منظومة الاختبارات الإلكترونية بمرونة تناسب احتياجات المديريات التعليمية المختلفة. تتيح المنصة إنشاء أقسام متعددة وإدارة امتحانات متنوعة، وتشمل أقسامًا للأرشيف والذكاء الاصطناعي والتقييم والمراجعة والقيادة والإعلام والبرمجة والتدريب، إلى جانب إنشاء عدد غير محدود من الاختبارات ولوحة تحكم لمتابعة بيانات الطلاب وحالة الاختبار والنتائج والوقت المستغرق وتحليل الإجابات. تم تطوير المنصة باستخدام Python عبر Django وFlask، بالإضافة إلى PHP، وتخضع لمرحلة الاختبارات والتجارب العملية تمهيدًا لتعميم الاستفادة منها.',
+    bodyEgyptian: 'تحت رعاية وزير التربية والتعليم والتعليم الفني محمد عبد اللطيف، ومحافظ القليوبية المهندس أيمن عطية، والدكتورة إيمان محمد حسن، رئيس الإدارة المركزية للأنشطة الطلابية، وبتوجيهات الأستاذ مصطفى عبده، مدير مديرية التربية والتعليم بالقليوبية، اتعمل عرض تقديمي لمنصة CASA للاختبارات الإلكترونية، وهي مشروع تكنولوجي مبتكر بالكامل بأيدي طلاب القليوبية. قدّم العرض الطالب حسين يحيى حسين أحمد، من إدارة بنها التعليمية، وقائد فريق SOT التابع للإدارة المركزية للأنشطة الطلابية، وخريج برنامج قادة مدارس الجمهورية، والمدرب المعتمد من شركة مايكروسوفت العالمية. وتحت إشراف فريق توجيه عام المكتبات بالمديرية، منصة CASA، أو Central Administrator Students Activities، بتستهدف محاكاة وتطوير منظومة الاختبارات الإلكترونية بشكل مرن يناسب احتياجات المديريات التعليمية المختلفة. المنصة بتسمح بإنشاء أقسام متعددة وإدارة امتحانات متنوعة، وفيها أقسام للأرشيف والذكاء الاصطناعي والتقييم والمراجعة والقيادة والإعلام والبرمجة والتدريب، بالإضافة لإنشاء اختبارات غير محدودة ولوحة تحكم تتابع بيانات الطلاب وحالة الاختبار والنتيجة والوقت وتحلل إجابات كل سؤال. اتطورت المنصة باستخدام Python مع Django وFlask، بالإضافة إلى PHP، وهي حاليًا في مرحلة الاختبارات والتجارب العملية تمهيدًا لتعميم استخدامها.',
+    bodyMoroccan: 'تحت رعاية وزير التربية والتعليم والتعليم الفني محمد عبد اللطيف، وعامل القليوبية المهندس أيمن عطية، والدكتورة إيمان محمد حسن، رئيسة الإدارة المركزية للأنشطة الطلابية، وبتوجيهات الأستاذ مصطفى عبده، مدير مديرية التربية والتعليم بالقليوبية، تدار عرض تقديمي لمنصة CASA للاختبارات الإلكترونية، وهي مشروع تكنولوجي مبتكر كامل بأيادي طلبة القليوبية. قدّم العرض الطالب حسين يحيى حسين أحمد من إدارة بنها التعليمية، وقائد فريق SOT التابع للإدارة المركزية للأنشطة الطلابية، وخريج برنامج قادة مدارس الجمهورية، ومدرب معتمد من شركة مايكروسوفت العالمية. وتحت إشراف فريق توجيه عام المكتبات فالمديرية، منصة CASA، اللي كتعني Central Administrator Students Activities، الهدف ديالها هو محاكاة وتطوير منظومة الاختبارات الإلكترونية بمرونة كتوافق احتياجات المديريات التعليمية المختلفة. المنصة كتسمح بإنشاء أقسام متعددة وتدبير امتحانات متنوعة، وفيها أقسام للأرشيف والذكاء الاصطناعي والتقييم والمراجعة والقيادة والإعلام والبرمجة والتدريب، مع إمكانية إنشاء اختبارات بلا حدود ولوحة تحكم كتتبع بيانات الطلبة وحالة الاختبار والنتيجة والوقت وتحلل أجوبة كل سؤال. تطورات المنصة باستعمال Python مع Django وFlask، وزيد عليهم PHP، ودابا كتمر من مرحلة الاختبارات والتجارب العملية استعدادًا لتعميم الاستفادة منها.',
+    bodyEn: 'Under the patronage of Minister of Education and Technical Education Mohamed Abdel Latif, Qalyubia Governor Eng. Ayman Attia, and Dr. Eman Mohamed Hassan, Head of the Central Administration for Student Activities, and under the direction of Mustafa Abdo, Director of the Qalyubia Directorate of Education, the directorate hosted a presentation of CASA, an innovative electronic examination platform built entirely by Qalyubia students. The presentation was delivered by Hussein Yehya Hussein Ahmed of the Benha Educational Administration, SOT Team Leader under the Central Administration for Student Activities, a graduate of the Republic Schools Leaders Program, and a Microsoft-certified trainer. Under the supervision of the directorate’s General Libraries team, CASA—Central Administrator Students Activities—aims to simulate and improve the Ministry’s electronic examination system while remaining flexible enough for different educational directorates. The platform supports multiple departments and diverse exams, including archives, artificial intelligence, assessment and review, leadership, media, programming, and training. It also enables unlimited exam creation and provides an admin panel for tracking student data, exam status, final results, time spent, and detailed answer analysis. CASA was developed with Python using Django and Flask, alongside PHP, and is currently undergoing testing and practical trials ahead of wider deployment.',
+    role: 'مطور المنصة وقائد فريق SOT — عرض المشروع أمام مديرية التربية والتعليم بالقليوبية',
+    roleEgyptian: 'مطور المنصة وقائد فريق SOT — عرض المشروع قدام مديرية التربية والتعليم بالقليوبية',
+    roleMoroccan: 'مطور المنصة وقائد فريق SOT — تقديم المشروع قدام مديرية التربية والتعليم بالقليوبية',
+    roleEn: 'Platform developer and SOT Team Leader — project presenter',
+    location: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationEgyptian: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationMoroccan: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationEn: 'Qalyubia Directorate of Education — Egypt',
+    images: [casaPresentation, casaMeeting],
+  },
   {
     date: '2026-02-15',
     title: 'تكريم سفراء الثقافة بالقليوبية وأبطال التغطية الإعلامية',
@@ -226,6 +248,8 @@ const libraryPhotos = [
   { src: benhaVisitLab, title: 'Exploring the AI faculty laboratories', label: 'University visit', labelAr: 'زيارة جامعية' },
   { src: benhaVisitTour, title: 'EDU-TECH educational tour', label: 'University visit', labelAr: 'زيارة جامعية' },
   { src: culturalAmbassadors, title: 'Cultural ambassadors recognition', label: 'Cultural ambassadors', labelAr: 'سفراء الثقافة', featured: true },
+  { src: casaPresentation, title: 'CASA electronic examinations platform', label: 'casa', labelAr: 'منصة CASA', featured: true },
+  { src: casaMeeting, title: 'Presenting CASA to the education directorate', label: 'casa', labelAr: 'منصة CASA' },
 ];
 
 const detailCopy = {
@@ -477,7 +501,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -495,10 +519,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
