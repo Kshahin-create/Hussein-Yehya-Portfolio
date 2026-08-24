@@ -22,6 +22,8 @@ import greenSpeaking from '@assets/image_1787527265364.png';
 import greenWorkshop from '@assets/image_1787527270175.png';
 import greenFriends from '@assets/image_1787527275972.png';
 import greenTeam from '@assets/image_1787527280769.png';
+import postalMeeting from '@assets/image_1787529915109.png';
+import postalSession from '@assets/image_1787529925461.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -43,6 +45,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2026-04-22',
+    title: 'خدمات البريد المصري بقت أقرب وأسهل لطلاب القليوبية',
+    titleEgyptian: 'خدمات البريد المصري بقت أقرب وأسهل لطلاب القليوبية',
+    titleMoroccan: 'خدمات البريد المصري ولات أقرب وأسهل لطلبة القليوبية',
+    titleEn: 'Egypt Post services are now closer and easier for Qalyubia students',
+    body: 'تحت رعاية معالي وزير التربية والتعليم والتعليم الفني الأستاذ محمد عبداللطيف، ورئيس مجلس إدارة الهيئة القومية للبريد السيدة/ داليا عبد الله محمد الباز، وبتوجيهات د/ ياسر محمود – مدير مديرية التربية والتعليم بالقليوبية، ود/ جيهان محمد عبدالجواد – موجه عام الحاسب الآلي. وبحضور: حسين يحيى حسين – قائد الفريق التقني بالقليوبية، والأستاذ محمود فهيم – مدير مراكز الخدمات، والأستاذ سعيد عبد النعيم أبو شريف – مدير بريد بنها الرئيسي، وبلال محمود – مسؤول قسم التقييم والمتابعة، وستيفن بيمن – مسؤول قسم الميديا والتصوير. في إطار التعاون بين مديرية التربية والتعليم بالقليوبية والهيئة القومية للبريد، تم تنفيذ لقاء توعوي لتعريف الطلاب بأهم الخدمات الحديثة اللي بيوفرها البريد المصري لتسهيل حياتهم اليومية بشكل آمن وسريع. ومن أهم الخدمات المقدمة للطلاب والأفراد: دفع مصاريف بيان النجاح من خلال مكاتب البريد، حصريًا بمحافظة القليوبية؛ فيزا Easy Pay من سن 15 سنة للشغل أونلاين والدعاية الرقمية واستقبال وتحويل الفلوس والدفع على المواقع والخدمات الإلكترونية؛ خدمة «وصلها» لشحن واستلام الطرود بسهولة والتعامل ببطاقة الرقم القومي فقط، وهي مثالية للبيع والشراء أونلاين؛ وحساب أو دفتر «سوبر توفير» المتاح للطلاب، مع فتحه لمن هم أقل من 18 سنة بوصاية ولي الأمر، بعائد تنافسي يضاف بشكل دوري ووسيلة آمنة للادخار. هدفنا إن كل طالب يبقى عارف يستخدم الخدمات الرقمية ويوفر وقته ومجهوده بطريقة ذكية. لو مهتم، ابدأ من أقرب مكتب بريد ليك واستفيد بالخدمات دي دلوقتي.',
+    bodyEgyptian: 'تحت رعاية معالي وزير التربية والتعليم والتعليم الفني الأستاذ محمد عبداللطيف، ورئيس مجلس إدارة الهيئة القومية للبريد السيدة/ داليا عبد الله محمد الباز، وبتوجيهات د/ ياسر محمود – مدير مديرية التربية والتعليم بالقليوبية، ود/ جيهان محمد عبدالجواد – موجه عام الحاسب الآلي. وبحضور: حسين يحيى حسين – قائد الفريق التقني بالقليوبية، والأستاذ محمود فهيم – مدير مراكز الخدمات، والأستاذ سعيد عبد النعيم أبو شريف – مدير بريد بنها الرئيسي، وبلال محمود – مسؤول قسم التقييم والمتابعة، وستيفن بيمن – مسؤول قسم الميديا والتصوير. في إطار التعاون بين مديرية التربية والتعليم بالقليوبية والهيئة القومية للبريد، اتنفذ لقاء توعوي لتعريف الطلاب بأهم الخدمات الحديثة اللي بيوفرها البريد المصري عشان يسهّل حياتهم اليومية بشكل آمن وسريع. ومن أهم الخدمات: دفع مصاريف بيان النجاح من مكاتب البريد، حصريًا في محافظة القليوبية؛ فيزا Easy Pay من سن 15 سنة للشغل أونلاين والدعاية الرقمية واستقبال وتحويل الفلوس والدفع على المواقع والخدمات الإلكترونية؛ خدمة «وصلها» لشحن واستلام الطرود بسهولة والتعامل ببطاقة الرقم القومي بس، وهي مناسبة للبيع والشراء أونلاين؛ وحساب أو دفتر «سوبر توفير» المتاح للطلاب، واللي أقل من 18 سنة يفتحه بوصاية ولي الأمر، بعائد تنافسي بيتضاف بشكل دوري ووسيلة آمنة للادخار. هدفنا إن كل طالب يعرف يستخدم الخدمات الرقمية ويوفر وقته ومجهوده بطريقة ذكية. لو مهتم، ابدأ من أقرب مكتب بريد ليك واستفيد بالخدمات دي دلوقتي.',
+    bodyMoroccan: 'تحت رعاية معالي وزير التربية والتعليم والتعليم الفني الأستاذ محمد عبداللطيف، ورئيسة مجلس إدارة الهيئة القومية للبريد السيدة داليا عبد الله محمد الباز، وبتوجيهات الدكتور ياسر محمود، مدير مديرية التربية والتعليم بالقليوبية، والدكتورة جيهان محمد عبدالجواد، الموجهة العامة للحاسب الآلي. وبحضور حسين يحيى حسين، قائد الفريق التقني بالقليوبية، والأستاذ محمود فهيم، مدير مراكز الخدمات، والأستاذ سعيد عبد النعيم أبو شريف، مدير بريد بنها الرئيسي، وبلال محمود، مسؤول التقييم والتتبع، وستيفن بيمن، مسؤول الميديا والتصوير. فإطار التعاون بين مديرية التربية والتعليم بالقليوبية والهيئة القومية للبريد، تدار لقاء توعوي باش يتعرفو الطلبة على أهم الخدمات الحديثة اللي كيوفرها البريد المصري، باش تسهّل عليهم حياتهم اليومية بشكل آمن وسريع. ومن بين الخدمات: أداء مصاريف بيان النجاح من مكاتب البريد، حصرياً فمحافظة القليوبية؛ بطاقة Easy Pay من 15 عام للخدمة أونلاين والدعاية الرقمية واستقبال وتحويل الفلوس والأداء فالمواقع والخدمات الإلكترونية؛ خدمة «وصلها» لشحن واستلام الطرود بسهولة وبطاقة الرقم القومي فقط، ومناسبة للبيع والشراء أونلاين؛ وحساب أو دفتر «سوبر توفير» المتاح للطلبة، واللي أقل من 18 عام يفتحو بوصاية ولي الأمر، بعائد تنافسي كيزاد بشكل دوري ووسيلة آمنة للادخار. الهدف ديالنا هو أن كل طالب يعرف يستعمل الخدمات الرقمية ويوفر الوقت والمجهود بطريقة ذكية. إلا كنت مهتم، بدا من أقرب مكتب بريد ليك واستافد من هاد الخدمات دابا.',
+    bodyEn: 'Under the patronage of His Excellency Mohamed Abdel Latif, Minister of Education and Technical Education, and Ms. Dalia Abdullah Mohamed El-Baz, Chairwoman of the National Postal Authority, and under the guidance of Dr. Yasser Mahmoud, Director of the Qalyubia Directorate of Education, and Dr. Jehan Mohamed Abdelgawad, General Computer Science Supervisor. The meeting was attended by Hussein Yehya Hussein, Qalyubia Technical Team Lead; Mahmoud Fahim, Director of Service Centers; Saeed Abdel Naim Abu Sherif, Manager of Banha Main Post Office; Bilal Mahmoud, Evaluation and Follow-up Officer; and Stephen Bimen, Media and Photography Officer. As part of the cooperation between the Qalyubia Directorate of Education and the National Postal Authority, an awareness session introduced students to modern Egypt Post services that make daily life safer and easier. The services included paying the Statement of Success fees through post offices exclusively in Qalyubia; Easy Pay Visa from age 15 for online work, digital advertising, receiving and transferring money, and paying for online services; the Waselha parcel service using only a national ID card; and the Super Takhbeer savings account or booklet for students, with guardianship required under age 18 and periodic competitive returns. Our goal is for every student to understand digital services and save time and effort in a smart way.',
+    role: 'حسين يحيى حسين — قائد الفريق التقني بالقليوبية',
+    roleEgyptian: 'حسين يحيى حسين — قائد الفريق التقني بالقليوبية',
+    roleMoroccan: 'حسين يحيى حسين — قائد الفريق التقني بالقليوبية',
+    roleEn: 'Hussein Yehya Hussein — Qalyubia Technical Team Lead',
+    location: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationEgyptian: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationMoroccan: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationEn: 'Qalyubia Directorate of Education — Egypt',
+    images: [postalMeeting, postalSession],
+  },
   {
     date: '2026-06-09',
     title: 'ورشة المبادرة الوطنية للمشروعات الخضراء الذكية',
@@ -130,6 +152,8 @@ const libraryPhotos = [
   { src: greenWorkshop, title: 'Smart green projects workshop', label: 'Initiative', labelAr: 'المبادرة الخضراء' },
   { src: greenFriends, title: 'Together at Qalyubia Governorate', label: 'Initiative', labelAr: 'المبادرة الخضراء' },
   { src: greenTeam, title: 'The initiative team', label: 'Initiative', labelAr: 'المبادرة الخضراء' },
+  { src: postalMeeting, title: 'Egypt Post services awareness session', label: 'Postal services', labelAr: 'خدمات البريد', featured: true },
+  { src: postalSession, title: 'Introducing student services', label: 'Postal services', labelAr: 'خدمات البريد' },
 ];
 
 const detailCopy = {
@@ -381,7 +405,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -399,10 +423,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
