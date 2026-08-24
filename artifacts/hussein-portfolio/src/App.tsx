@@ -45,6 +45,7 @@ import readingCarnivalFriends from '@assets/image_1787532820660.png';
 import readingCarnivalPortrait from '@assets/image_1787532828430.png';
 import studentActivitiesAnnual from '@assets/image_1787532974298.png';
 import studentActivitiesStage from '@assets/image_1787532995003.png';
+import nasaSpaceApps from '@assets/image_1787533150745.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -66,6 +67,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2025-09-19',
+    title: 'حضور هاكثون NASA Space Apps Cairo',
+    titleEgyptian: 'حضور هاكثون NASA Space Apps Cairo',
+    titleMoroccan: 'الحضور لهاكاثون NASA Space Apps Cairo',
+    titleEn: 'Attending NASA Space Apps Cairo',
+    body: 'حضرت هاكثون NASA Space Apps Cairo في جامعة الجلالة الشرقية، ضمن تجربة جمعت الطلاب والمطورين والمهتمين بالعلوم والتكنولوجيا للعمل على أفكار وحلول مبتكرة مستوحاة من تحديات وكالة ناسا. أتاحت الفعالية فرصة للتعرّف على بيئة الهاكثونات، وتبادل الخبرات مع المشاركين، واستكشاف كيفية توظيف البرمجة والبيانات والعلوم في بناء حلول تخدم المجتمع وتفهم كوكبنا والفضاء من حولنا.',
+    bodyEgyptian: 'حضرت هاكثون NASA Space Apps Cairo في جامعة الجلالة الشرقية، في تجربة جمعت طلاب ومطورين وكل المهتمين بالعلوم والتكنولوجيا عشان يشتغلوا على أفكار وحلول مبتكرة مستوحاة من تحديات وكالة ناسا. الفعالية كانت فرصة أتعرف على أجواء الهاكثونات، وأتبادل الخبرات مع المشاركين، وأستكشف إزاي نستخدم البرمجة والبيانات والعلوم في بناء حلول تخدم المجتمع وتساعدنا نفهم كوكبنا والفضاء حوالينا.',
+    bodyMoroccan: 'حضرت هاكاثون NASA Space Apps Cairo فجامعة الجلالة الشرقية، فواحد التجربة اللي جمعت الطلبة والمطورين وكل المهتمين بالعلوم والتكنولوجيا باش يخدمو على أفكار وحلول مبتكرة مستوحاة من تحديات وكالة ناسا. كانت الفعالية فرصة باش نتعرف على أجواء الهاكاثونات، ونتبادل التجارب مع المشاركين، ونكتاشف كيفاش نوظفو البرمجة والبيانات والعلوم فبناء حلول كتخدم المجتمع وكتعاوننا نفهمو كوكبنا والفضاء اللي حوالينا.',
+    bodyEn: 'I attended NASA Space Apps Cairo at Galala University in the Eastern Region, an experience that brought together students, developers, and science and technology enthusiasts to work on innovative ideas inspired by NASA challenges. The event offered an opportunity to experience a hackathon environment, exchange knowledge with fellow participants, and explore how programming, data, and science can be used to build solutions that serve communities and deepen our understanding of Earth and the space around us.',
+    role: 'مشارك في هاكثون NASA Space Apps Cairo',
+    roleEgyptian: 'مشارك في هاكثون NASA Space Apps Cairo',
+    roleMoroccan: 'مشارك فهاكاثون NASA Space Apps Cairo',
+    roleEn: 'Participant in NASA Space Apps Cairo',
+    location: 'جامعة الجلالة الشرقية — مصر',
+    locationEgyptian: 'جامعة الجلالة الشرقية — مصر',
+    locationMoroccan: 'جامعة الجلالة الشرقية — مصر',
+    locationEn: 'Galala University, Eastern Region — Egypt',
+    images: [nasaSpaceApps],
+  },
   {
     date: '2025-10-09',
     title: 'تنظيم اللقاء السنوي للأنشطة الطلابية',
@@ -338,6 +359,7 @@ const libraryPhotos = [
   { src: readingCarnivalPortrait, title: 'Qalyubia Reading Carnival coverage', label: 'reading', labelAr: 'كرنفال القراءة' },
   { src: studentActivitiesAnnual, title: 'Annual Student Activities Meeting', label: 'annual', labelAr: 'اللقاء السنوي للأنشطة', featured: true },
   { src: studentActivitiesStage, title: 'SOT Team at the annual meeting', label: 'annual', labelAr: 'اللقاء السنوي للأنشطة' },
+  { src: nasaSpaceApps, title: 'NASA Space Apps Cairo', label: 'nasa', labelAr: 'NASA Space Apps Cairo', featured: true },
 ];
 
 const detailCopy = {
@@ -589,7 +611,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual' | 'nasa'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -607,10 +629,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
