@@ -2,68 +2,68 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowDownRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, ExternalLink, Facebook, Github, Instagram, Linkedin, Menu, Moon, Phone, Sun, X } from 'lucide-react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import profileImage from '@assets/hussein-profile.jpeg';
-import madinahStage from '@assets/image_1787524765206.png';
-import madinahExtra from '@assets/image_1787524769990.png';
-import madinahTalk from '@assets/image_1787524775727.png';
-import madinahSide from '@assets/image_1787524800777.png';
-import madinahPodium from '@assets/image_1787524804715.png';
-import madinahScreen from '@assets/image_1787524808716.png';
-import madinahWide from '@assets/image_1787524812715.png';
-import madinahClose from '@assets/image_1787525611582.png';
-import teamGroup from '@assets/image_1787526879975.png';
-import teamPortrait from '@assets/image_1787526886704.png';
-import teamDiscussion from '@assets/image_1787526892281.png';
-import teamWorkshop from '@assets/image_1787526913873.png';
-import teamRoom from '@assets/image_1787526922159.png';
-import teamBriefing from '@assets/image_1787526927703.png';
-import teamMeet from '@assets/image_1787526933323.png';
-import teamVisit from '@assets/image_1787526940727.png';
-import greenSpeaking from '@assets/image_1787527265364.png';
-import greenWorkshop from '@assets/image_1787527270175.png';
-import greenFriends from '@assets/image_1787527275972.png';
-import greenTeam from '@assets/image_1787527280769.png';
-import postalMeeting from '@assets/image_1787529915109.png';
-import postalSession from '@assets/image_1787529925461.png';
-import eduTechProtocol from '@assets/image_1787530965625.png';
-import benhaVisitGroup from '@assets/image_1787531567164.png';
-import benhaVisitLab from '@assets/image_1787531580282.png';
-import benhaVisitTour from '@assets/image_1787531597147.png';
-import culturalAmbassadors from '@assets/image_1787531861754.png';
-import casaPresentation from '@assets/image_1787532146188.png';
-import casaMeeting from '@assets/image_1787532368628.png';
-import schoolLeadersGroup from '@assets/image_1787532501617.png';
-import schoolLeadersWorkshop from '@assets/image_1787532511366.png';
-import schoolLeadersTeams from '@assets/image_1787532521745.png';
-import schoolLeadersRoom from '@assets/image_1787532530336.png';
-import studentOrganizingTeam from '@assets/image_1787532649975.png';
-import studentOrganizingAward from '@assets/image_1787532661765.png';
-import readingCarnivalGroup from '@assets/image_1787532793304.png';
-import readingCarnivalPair from '@assets/image_1787532801556.png';
-import readingCarnivalGirls from '@assets/image_1787532807556.png';
-import readingCarnivalTeam from '@assets/image_1787532814564.png';
-import readingCarnivalFriends from '@assets/image_1787532820660.png';
-import readingCarnivalPortrait from '@assets/image_1787532828430.png';
-import studentActivitiesAnnual from '@assets/image_1787532974298.png';
-import studentActivitiesStage from '@assets/image_1787532995003.png';
-import nasaSpaceApps from '@assets/image_1787533150745.png';
-import qalyubiaPressExhibition from '@assets/image_1787533308263.png';
-import qalyubiaPressTeam from '@assets/image_1787533329979.png';
-import nationalYouthStrategyStage from '@assets/image_1787533519440.png';
-import nationalYouthStrategyAudience from '@assets/image_1787533525669.png';
-import nationalYouthStrategyDelegates from '@assets/image_1787533531892.png';
-import knowYourCountryMeeting from '@assets/image_1787533669046.png';
-import knowYourCountryEducation from '@assets/image_1787533785572.png';
-import knowYourCountryDirectorate from '@assets/image_1787533795897.png';
-import knowYourCountryDiscussion from '@assets/image_1787533804685.png';
-import knowYourCountryTeam from '@assets/image_1787533811806.png';
-import personalPortraitNightOne from '@assets/image_1787534092124.png';
-import personalPortraitNightTwo from '@assets/image_1787534120958.png';
-import personalPortraitNightThree from '@assets/image_1787534150298.png';
-import personalPortraitBeachOne from '@assets/image_1787534191133.png';
-import personalPortraitBeachTwo from '@assets/image_1787534202084.png';
-import personalPortraitExtraOne from '@assets/image_1787534223555.png';
-import personalPortraitExtraTwo from '@assets/image_1787535289029.png';
-import personalPortraitExtraThree from '@assets/image_1787535310447.png';
+import madinahStage from '@assets/image_1787524765206.webp';
+import madinahExtra from '@assets/image_1787524769990.webp';
+import madinahTalk from '@assets/image_1787524775727.webp';
+import madinahSide from '@assets/image_1787524800777.webp';
+import madinahPodium from '@assets/image_1787524804715.webp';
+import madinahScreen from '@assets/image_1787524808716.webp';
+import madinahWide from '@assets/image_1787524812715.webp';
+import madinahClose from '@assets/image_1787525611582.webp';
+import teamGroup from '@assets/image_1787526879975.webp';
+import teamPortrait from '@assets/image_1787526886704.webp';
+import teamDiscussion from '@assets/image_1787526892281.webp';
+import teamWorkshop from '@assets/image_1787526913873.webp';
+import teamRoom from '@assets/image_1787526922159.webp';
+import teamBriefing from '@assets/image_1787526927703.webp';
+import teamMeet from '@assets/image_1787526933323.webp';
+import teamVisit from '@assets/image_1787526940727.webp';
+import greenSpeaking from '@assets/image_1787527265364.webp';
+import greenWorkshop from '@assets/image_1787527270175.webp';
+import greenFriends from '@assets/image_1787527275972.webp';
+import greenTeam from '@assets/image_1787527280769.webp';
+import postalMeeting from '@assets/image_1787529915109.webp';
+import postalSession from '@assets/image_1787529925461.webp';
+import eduTechProtocol from '@assets/image_1787530965625.webp';
+import benhaVisitGroup from '@assets/image_1787531567164.webp';
+import benhaVisitLab from '@assets/image_1787531580282.webp';
+import benhaVisitTour from '@assets/image_1787531597147.webp';
+import culturalAmbassadors from '@assets/image_1787531861754.webp';
+import casaPresentation from '@assets/image_1787532146188.webp';
+import casaMeeting from '@assets/image_1787532368628.webp';
+import schoolLeadersGroup from '@assets/image_1787532501617.webp';
+import schoolLeadersWorkshop from '@assets/image_1787532511366.webp';
+import schoolLeadersTeams from '@assets/image_1787532521745.webp';
+import schoolLeadersRoom from '@assets/image_1787532530336.webp';
+import studentOrganizingTeam from '@assets/image_1787532649975.webp';
+import studentOrganizingAward from '@assets/image_1787532661765.webp';
+import readingCarnivalGroup from '@assets/image_1787532793304.webp';
+import readingCarnivalPair from '@assets/image_1787532801556.webp';
+import readingCarnivalGirls from '@assets/image_1787532807556.webp';
+import readingCarnivalTeam from '@assets/image_1787532814564.webp';
+import readingCarnivalFriends from '@assets/image_1787532820660.webp';
+import readingCarnivalPortrait from '@assets/image_1787532828430.webp';
+import studentActivitiesAnnual from '@assets/image_1787532974298.webp';
+import studentActivitiesStage from '@assets/image_1787532995003.webp';
+import nasaSpaceApps from '@assets/image_1787533150745.webp';
+import qalyubiaPressExhibition from '@assets/image_1787533308263.webp';
+import qalyubiaPressTeam from '@assets/image_1787533329979.webp';
+import nationalYouthStrategyStage from '@assets/image_1787533519440.webp';
+import nationalYouthStrategyAudience from '@assets/image_1787533525669.webp';
+import nationalYouthStrategyDelegates from '@assets/image_1787533531892.webp';
+import knowYourCountryMeeting from '@assets/image_1787533669046.webp';
+import knowYourCountryEducation from '@assets/image_1787533785572.webp';
+import knowYourCountryDirectorate from '@assets/image_1787533795897.webp';
+import knowYourCountryDiscussion from '@assets/image_1787533804685.webp';
+import knowYourCountryTeam from '@assets/image_1787533811806.webp';
+import personalPortraitNightOne from '@assets/image_1787534092124.webp';
+import personalPortraitNightTwo from '@assets/image_1787534120958.webp';
+import personalPortraitNightThree from '@assets/image_1787534150298.webp';
+import personalPortraitBeachOne from '@assets/image_1787534191133.webp';
+import personalPortraitBeachTwo from '@assets/image_1787534202084.webp';
+import personalPortraitExtraOne from '@assets/image_1787534223555.webp';
+import personalPortraitExtraTwo from '@assets/image_1787535289029.webp';
+import personalPortraitExtraThree from '@assets/image_1787535310447.webp';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -613,7 +613,7 @@ function Hero({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   const t = getT(lang, dialect); const ref = useRef<HTMLElement>(null); const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : 160]); const wordsY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : -110]); const opacity = useTransform(scrollYProgress, [.7, 1], [1, 0]);
-  return <section ref={ref} id="top" className="story-hero"><div className="hero-index">01 / 05</div><motion.div style={{ y: wordsY, opacity }} className="hero-copy"><p className="eyebrow">{t.eyebrow}</p><h1 data-testid="text-hero-title">{t.hero}</h1><p data-testid="text-hero-intro">{t.intro}</p><div className="hero-actions"><a data-testid="link-view-work" href="#story">{t.work} <ArrowDownRight size={17} /></a><a data-testid="link-start-conversation" href="#journal">{t.talk} <ArrowUpRight size={16} /></a></div></motion.div><motion.figure style={{ y: portraitY }} className="hero-photo"><div className="photo-tape">{t.photoTape}</div><img data-testid="img-profile-portrait" src={profileImage} alt="Hussein Yehya" /><figcaption><span>Hussein Yehya</span><span>{t.photoRole}</span></figcaption></motion.figure><div className="hero-signal"><i />{t.available}</div><a className="scroll-rail" data-testid="link-scroll-explore" href="#story"><span>{t.rail}</span><b /></a></section>;
+  return <section ref={ref} id="top" className="story-hero"><div className="hero-index">01 / 05</div><motion.div style={{ y: wordsY, opacity }} className="hero-copy"><p className="eyebrow">{t.eyebrow}</p><h1 data-testid="text-hero-title">{t.hero}</h1><p data-testid="text-hero-intro">{t.intro}</p><div className="hero-actions"><a data-testid="link-view-work" href="#story">{t.work} <ArrowDownRight size={17} /></a><a data-testid="link-start-conversation" href="#journal">{t.talk} <ArrowUpRight size={16} /></a></div></motion.div><motion.figure style={{ y: portraitY }} className="hero-photo"><div className="photo-tape">{t.photoTape}</div><img data-testid="img-profile-portrait" src={profileImage} alt="Hussein Yehya" loading="eager" fetchPriority="high" decoding="async" /><figcaption><span>Hussein Yehya</span><span>{t.photoRole}</span></figcaption></motion.figure><div className="hero-signal"><i />{t.available}</div><a className="scroll-rail" data-testid="link-scroll-explore" href="#story"><span>{t.rail}</span><b /></a></section>;
 }
 
 function Story({ lang, dialect }: { lang: Language; dialect: Dialect }) {
@@ -686,12 +686,12 @@ function AchievementGallery({ images, title, details, role, location }: { images
   return <>
     <div className="achievement-gallery" aria-label={title}>
       <button className="achievement-feature" onClick={(event) => showGallery(0, event.currentTarget)} aria-label={`Open ${title} gallery`}>
-        {images[0] && <img src={images[0]} alt={title} />}
+        {images[0] && <img src={images[0]} alt={title} loading="lazy" decoding="async" />}
         <span className="gallery-open-label">View gallery <ArrowUpRight size={15} /></span>
       </button>
       <button className="achievement-stack" onClick={(event) => showGallery(1, event.currentTarget)} aria-label={`View all ${imageCount} photos`}>
-        {images[1] && <img src={images[1]} alt="" />}
-        {images[2] && <img src={images[2]} alt="" />}
+        {images[1] && <img src={images[1]} alt="" loading="lazy" decoding="async" />}
+        {images[2] && <img src={images[2]} alt="" loading="lazy" decoding="async" />}
         <span>+{Math.max(0, imageCount - 1)} photos <ArrowUpRight size={15} /></span>
       </button>
     </div>
@@ -700,7 +700,7 @@ function AchievementGallery({ images, title, details, role, location }: { images
         <div className="gallery-modal-viewer">
           <span className="gallery-viewer-count">{String(activeIndex + 1).padStart(2, '0')} / {String(imageCount).padStart(2, '0')}</span>
           <button type="button" className="gallery-viewer-nav previous" onClick={previous} aria-label="Previous photo"><ChevronLeft size={20} /></button>
-          <img src={images[activeIndex]} alt={`${title} — ${activeIndex + 1}`} />
+          <img src={images[activeIndex]} alt={`${title} — ${activeIndex + 1}`} decoding="async" />
           <button type="button" className="gallery-viewer-nav next" onClick={next} aria-label="Next photo"><ChevronRight size={20} /></button>
         </div>
         <div className="gallery-modal-sidebar">
@@ -717,7 +717,7 @@ function AchievementGallery({ images, title, details, role, location }: { images
             </div>
           </div>
           <div className="gallery-thumbs">
-            {images.map((image, index) => <button type="button" className={index === activeIndex ? 'active' : ''} aria-current={index === activeIndex ? 'true' : undefined} key={`${image}-${index}`} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" /></button>)}
+            {images.map((image, index) => <button type="button" className={index === activeIndex ? 'active' : ''} aria-current={index === activeIndex ? 'true' : undefined} key={`${image}-${index}`} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" loading="lazy" decoding="async" /></button>)}
           </div>
         </div>
       </div>
@@ -765,8 +765,8 @@ function PhotoLibrary({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
      <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press', 'youth-strategy', 'know-country'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
-    <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
-    {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
+    <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} decoding="async" /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
+    {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} decoding="async" /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
 }
 
