@@ -43,6 +43,8 @@ import readingCarnivalGirls from '@assets/image_1787532807556.png';
 import readingCarnivalTeam from '@assets/image_1787532814564.png';
 import readingCarnivalFriends from '@assets/image_1787532820660.png';
 import readingCarnivalPortrait from '@assets/image_1787532828430.png';
+import studentActivitiesAnnual from '@assets/image_1787532974298.png';
+import studentActivitiesStage from '@assets/image_1787532995003.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -64,6 +66,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2025-10-09',
+    title: 'تنظيم اللقاء السنوي للأنشطة الطلابية',
+    titleEgyptian: 'تنظيم اللقاء السنوي للأنشطة الطلابية',
+    titleMoroccan: 'تنظيم اللقاء السنوي للأنشطة الطلابية',
+    titleEn: 'Organizing the Annual Student Activities Meeting',
+    body: 'نظّمت الإدارة المركزية للأنشطة الطلابية اللقاء السنوي لمديري عموم الشؤون التنفيذية وموجهي عموم الأنشطة التربوية على مستوى الجمهورية، بهدف توحيد الرؤى وتبادل الخبرات وتعزيز التنسيق بين قطاعات الأنشطة استعدادًا للعام الدراسي 2025/2026. أُقيم اللقاء يومي 30 سبتمبر و1 أكتوبر 2025 بالمدينة الشبابية بأبو قير في الإسكندرية، وتناول تقييم خطة الأنشطة السابقة، والخطة الجديدة، وآليات المتابعة الميدانية، ونماذج المبادرات الطلابية، ودمج القيم الوطنية والمهارات الحياتية في الأنشطة. تولّى فريق SOT — Students Organization Team، التابع للإدارة المركزية للأنشطة الطلابية، التنظيم والإدارة الميدانية للقاء في تجربة نوعية تُعد الأولى من نوعها داخل الوزارة؛ حيث أدار الفريق مراحل التنظيم من التخطيط إلى التنفيذ، بما يعكس قدرة الطلاب على العمل المؤسسي والقيادة والمسؤولية.',
+    bodyEgyptian: 'نظّمت الإدارة المركزية للأنشطة الطلابية اللقاء السنوي لمديري عموم الشؤون التنفيذية وموجهي عموم الأنشطة التربوية على مستوى الجمهورية، عشان يوحّدوا الرؤى ويتبادلوا الخبرات وينسّقوا بين قطاعات الأنشطة استعدادًا للعام الدراسي 2025/2026. اللقاء اتعمل يومي 30 سبتمبر و1 أكتوبر 2025 في المدينة الشبابية بأبو قير في الإسكندرية، واتناقش فيه تقييم خطة الأنشطة اللي فاتت، والخطة الجديدة، والمتابعة الميدانية، ونماذج المبادرات الطلابية، ودمج القيم الوطنية والمهارات الحياتية في الأنشطة. فريق SOT — Students Organization Team، التابع للإدارة المركزية للأنشطة الطلابية، تولّى تنظيم اللقاء وإدارته ميدانيًا في تجربة نوعية هي الأولى من نوعها داخل الوزارة؛ والفريق أدار كل مراحل التنظيم من التخطيط لحد التنفيذ، وده عكس قدرة الطلاب على الشغل المؤسسي والقيادة وتحمل المسؤولية.',
+    bodyMoroccan: 'نظّمت الإدارة المركزية للأنشطة الطلابية اللقاء السنوي لمديري عموم الشؤون التنفيذية وموجهي عموم الأنشطة التربوية على الصعيد الوطني، بهدف توحيد الرؤى وتبادل التجارب وتقوية التنسيق بين قطاعات الأنشطة استعدادًا للموسم الدراسي 2025/2026. تدار اللقاء يومي 30 شتنبر و1 أكتوبر 2025 فالمدينة الشبابية بأبو قير فالإسكندرية، وتناقشو فيه تقييم خطة الأنشطة السابقة، والخطة الجديدة، وآليات التتبع الميداني، ونماذج المبادرات الطلابية، وإدماج القيم الوطنية والمهارات الحياتية فالأنشطة. تكلف فريق SOT — Students Organization Team، التابع للإدارة المركزية للأنشطة الطلابية، بالتنظيم والتدبير الميداني ديال اللقاء فواحد التجربة النوعية اللي كتعتبر الأولى من نوعها داخل الوزارة؛ بحيث سير الفريق مراحل التنظيم كاملة من التخطيط حتى التنفيذ، وبيّن قدرة الطلبة على الخدمة المؤسساتية والقيادة وتحمل المسؤولية.',
+    bodyEn: 'The Central Administration for Student Activities organized its annual meeting for general directors of executive affairs and general supervisors of educational activities from across Egypt. The meeting aimed to align visions, exchange expertise, and strengthen coordination across activity sectors ahead of the 2025/2026 academic year. It took place on September 30 and October 1, 2025, at the Abu Qir Youth City in Alexandria, and covered the previous activities plan, the new plan, field implementation follow-up, successful student initiatives, and the integration of national values and life skills into student activities. The SOT — Students Organization Team, affiliated with the Central Administration for Student Activities, handled the meeting’s organization and field management in a pioneering first-of-its-kind experience within the ministry. The team managed every stage from planning to on-site execution, demonstrating students’ ability to lead institutional work with professionalism and responsibility.',
+    role: 'القائد العام لفريق SOT — التنظيم والإدارة الميدانية للقاء',
+    roleEgyptian: 'القائد العام لفريق SOT — التنظيم والإدارة الميدانية للقاء',
+    roleMoroccan: 'القائد العام لفريق SOT — تنظيم وتدبير اللقاء ميدانيًا',
+    roleEn: 'SOT Team General Leader — meeting organization and field management',
+    location: 'المدينة الشبابية بأبو قير — الإسكندرية، مصر',
+    locationEgyptian: 'المدينة الشبابية بأبو قير — الإسكندرية، مصر',
+    locationMoroccan: 'المدينة الشبابية بأبو قير — الإسكندرية، مصر',
+    locationEn: 'Abu Qir Youth City — Alexandria, Egypt',
+    images: [studentActivitiesAnnual, studentActivitiesStage],
+  },
   {
     date: '2025-11-12',
     title: 'فريق SOT في تغطية كرنفال القراءة بالقليوبية',
@@ -314,6 +336,8 @@ const libraryPhotos = [
   { src: readingCarnivalTeam, title: 'Student media coverage team', label: 'reading', labelAr: 'كرنفال القراءة' },
   { src: readingCarnivalFriends, title: 'SOT Team collaboration', label: 'reading', labelAr: 'كرنفال القراءة' },
   { src: readingCarnivalPortrait, title: 'Qalyubia Reading Carnival coverage', label: 'reading', labelAr: 'كرنفال القراءة' },
+  { src: studentActivitiesAnnual, title: 'Annual Student Activities Meeting', label: 'annual', labelAr: 'اللقاء السنوي للأنشطة', featured: true },
+  { src: studentActivitiesStage, title: 'SOT Team at the annual meeting', label: 'annual', labelAr: 'اللقاء السنوي للأنشطة' },
 ];
 
 const detailCopy = {
@@ -565,7 +589,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -583,10 +607,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
