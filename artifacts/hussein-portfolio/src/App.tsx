@@ -28,6 +28,7 @@ import eduTechProtocol from '@assets/image_1787530965625.png';
 import benhaVisitGroup from '@assets/image_1787531567164.png';
 import benhaVisitLab from '@assets/image_1787531580282.png';
 import benhaVisitTour from '@assets/image_1787531597147.png';
+import culturalAmbassadors from '@assets/image_1787531861754.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -49,6 +50,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2026-02-15',
+    title: 'تكريم سفراء الثقافة بالقليوبية وأبطال التغطية الإعلامية',
+    titleEgyptian: 'تكريم سفراء الثقافة بالقليوبية وأبطال التغطية الإعلامية',
+    titleMoroccan: 'تكريم سفراء الثقافة فالقليوبية وأبطال التغطية الإعلامية',
+    titleEn: 'Honoring Qalyubia’s cultural ambassadors and media coverage champions',
+    body: 'في احتفالية اتسمت بالفخر والتقدير للجهود التطوعية المخلصة، قام الدكتور ياسر محمود، مدير مديرية التربية والتعليم بالقليوبية، بتكريم نخبة من الطلاب المتميزين الذين شاركوا بفاعلية في التغطية الإعلامية وتنظيم فعاليات جناح وزارة التربية والتعليم، بالتعاون مع مبادرة تحدي القراءة العربي في موسمها العاشر، خلال دورة معرض القاهرة الدولي للكتاب 2026. جاءت هذه المشاركة تحت رعاية معالي وزير التربية والتعليم والتعليم الفني محمد عبد اللطيف، ومعالي محافظ القليوبية المهندس أيمن عطية، وإشراف الدكتورة إيمان حسن، رئيس الإدارة المركزية للأنشطة الطلابية بالوزارة، وبدعم من الأستاذة الدكتورة زينب نور الدين مشهور، مدير الإدارة العامة للمكتبات بوزارة التربية والتعليم. وشهد الحفل الإشادة بالدور المحوري لتوجيه عام المكتبات بالقليوبية وفريق عمله في إبراز قدرات الطلاب وتنظيم وجودهم بجناح الوزارة بجهد تطوعي خالص، عكس وعي شباب المحافظة بأهمية القراءة والثقافة. وكان من بين الطلاب المكرمين حسين يحيى حسين أحمد، ممثلًا لمدرسة مدحت طلعت الرسمية للغات ببنها. وأكد الدكتور ياسر محمود أن ما قدمه الطلاب لم يكن مجرد مهمة دراسية، بل واجبًا وطنيًا لنشر ثقافة القراءة، مشيدًا بقدرتهم على تمثيل المحافظة والوزارة بصورة تليق باسم مصر.',
+    bodyEgyptian: 'في احتفالية كلها فخر وتقدير للمجهود التطوعي المخلص، كرّم الدكتور ياسر محمود، مدير مديرية التربية والتعليم بالقليوبية، مجموعة من الطلاب المتميزين اللي شاركوا بفاعلية في التغطية الإعلامية وتنظيم فعاليات جناح وزارة التربية والتعليم، بالتعاون مع مبادرة تحدي القراءة العربي في موسمها العاشر، خلال معرض القاهرة الدولي للكتاب 2026. المشاركة كانت تحت رعاية وزير التربية والتعليم والتعليم الفني محمد عبد اللطيف، ومحافظ القليوبية المهندس أيمن عطية، وإشراف الدكتورة إيمان حسن، رئيس الإدارة المركزية للأنشطة الطلابية بالوزارة، وبدعم من الأستاذة الدكتورة زينب نور الدين مشهور، مدير الإدارة العامة للمكتبات. الحفل أشاد بدور توجيه عام المكتبات بالقليوبية وفريقه في إظهار قدرات الطلاب وتنظيم وجودهم في جناح الوزارة بمجهود تطوعي خالص، عكس وعي شباب المحافظة بأهمية القراءة والثقافة. وكان من ضمن الطلاب المكرمين حسين يحيى حسين أحمد، من مدرسة مدحت طلعت الرسمية للغات ببنها. وأكد الدكتور ياسر محمود إن اللي قدمه الطلاب ماكانش مجرد مهمة دراسية، لكنه كان واجب وطني لنشر ثقافة القراءة وتمثيل المحافظة والوزارة بصورة تليق باسم مصر.',
+    bodyMoroccan: 'فاحتفالية عامرة بالفخر والتقدير للمجهود التطوعي الصادق، كرّم الدكتور ياسر محمود، مدير مديرية التربية والتعليم بالقليوبية، مجموعة من الطلبة المتميزين اللي شاركو بفعالية فالتغطية الإعلامية وتنظيم فعاليات جناح وزارة التربية والتعليم، بتعاون مع مبادرة تحدي القراءة العربي فالموسم العاشر، خلال دورة معرض القاهرة الدولي للكتاب 2026. هاد المشاركة كانت تحت رعاية وزير التربية والتعليم والتعليم الفني محمد عبد اللطيف، وعامل القليوبية المهندس أيمن عطية، وتحت إشراف الدكتورة إيمان حسن، رئيسة الإدارة المركزية للأنشطة الطلابية فالوزارة، وبدعم من الأستاذة الدكتورة زينب نور الدين مشهور، مديرة الإدارة العامة للمكتبات. الحفل نوّه بالدور المهم ديال توجيه عام المكتبات فالقليوبية وفريق العمل ديالو فإبراز قدرات الطلبة وتنظيم حضورهم فجناح الوزارة بمجهود تطوعي خالص، اللي بيّن وعي شباب المحافظة بأهمية القراءة والثقافة. وكان من بين الطلبة المكرمين حسين يحيى حسين أحمد من مدرسة مدحت طلعت الرسمية للغات فبنها. وأكد الدكتور ياسر محمود أن اللي قدموه الطلبة ماشي غير مهمة دراسية، بل واجب وطني لنشر ثقافة القراءة وتمثيل المحافظة والوزارة بطريقة كتشرّف اسم مصر.',
+    bodyEn: 'In a ceremony celebrating sincere volunteer work, Dr. Yasser Mahmoud, Director of the Qalyubia Directorate of Education, honored a group of outstanding students who actively contributed to media coverage and the organization of the Ministry of Education pavilion in partnership with the Arab Reading Challenge during its tenth season at the 2026 Cairo International Book Fair. The participation took place under the patronage of Minister of Education and Technical Education Mohamed Abdel Latif and Qalyubia Governor Eng. Ayman Attia, under the supervision of Dr. Eman Hassan, Head of the Ministry’s Central Administration for Student Activities, and with support from Prof. Dr. Zeinab Nour El-Din Mashhour, Director General of the Ministry’s Libraries Administration. The ceremony recognized the important role of Qalyubia’s General Libraries Directorate and its team in highlighting students’ abilities and organizing their presence at the ministry pavilion through genuine volunteer work that reflected young people’s awareness of reading and culture. Among the honored students was Hussein Yehya Hussein Ahmed of Medhat Talat Official Language School in Benha. Dr. Yasser Mahmoud emphasized that the students’ contribution was more than an academic task: it was a national duty to spread reading culture and represent Qalyubia and the ministry in a way worthy of Egypt.',
+    role: 'طالب مكرم ومشارك في التغطية الإعلامية وتنظيم جناح وزارة التربية والتعليم',
+    roleEgyptian: 'طالب مكرم ومشارك في التغطية الإعلامية وتنظيم جناح وزارة التربية والتعليم',
+    roleMoroccan: 'طالب مكرم ومشارك فالتغطية الإعلامية وتنظيم جناح وزارة التربية والتعليم',
+    roleEn: 'Honored student and participant in media coverage and pavilion organization',
+    location: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationEgyptian: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationMoroccan: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationEn: 'Qalyubia Directorate of Education — Egypt',
+    images: [culturalAmbassadors],
+  },
   {
     date: '2026-03-10',
     title: 'زيارة الفريق التقني لكلية الحاسبات والذكاء الاصطناعي بجامعة بنها',
@@ -204,6 +225,7 @@ const libraryPhotos = [
   { src: benhaVisitGroup, title: 'Benha University faculty visit', label: 'University visit', labelAr: 'زيارة جامعية', featured: true },
   { src: benhaVisitLab, title: 'Exploring the AI faculty laboratories', label: 'University visit', labelAr: 'زيارة جامعية' },
   { src: benhaVisitTour, title: 'EDU-TECH educational tour', label: 'University visit', labelAr: 'زيارة جامعية' },
+  { src: culturalAmbassadors, title: 'Cultural ambassadors recognition', label: 'Cultural ambassadors', labelAr: 'سفراء الثقافة', featured: true },
 ];
 
 const detailCopy = {
@@ -455,7 +477,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -473,10 +495,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
