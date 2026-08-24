@@ -31,6 +31,10 @@ import benhaVisitTour from '@assets/image_1787531597147.png';
 import culturalAmbassadors from '@assets/image_1787531861754.png';
 import casaPresentation from '@assets/image_1787532146188.png';
 import casaMeeting from '@assets/image_1787532368628.png';
+import schoolLeadersGroup from '@assets/image_1787532501617.png';
+import schoolLeadersWorkshop from '@assets/image_1787532511366.png';
+import schoolLeadersTeams from '@assets/image_1787532521745.png';
+import schoolLeadersRoom from '@assets/image_1787532530336.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -52,6 +56,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2025-11-23',
+    title: 'تدريبات متقدمة لطلاب وطالبات قادة مدارس الجمهورية بالقليوبية',
+    titleEgyptian: 'تدريبات متقدمة لطلاب وطالبات قادة مدارس الجمهورية بالقليوبية',
+    titleMoroccan: 'تداريب معمقة لطلبة وطالبات قادة مدارس الجمهورية فالقليوبية',
+    titleEn: 'Advanced training for Qalyubia’s Republic Schools Leaders',
+    body: 'مع طلاب وطالبات محافظة القليوبية، استكملنا مرحلة التدريبات المتعمقة في برنامج قادة مدارس الجمهورية، الذي يهدف إلى إعداد قادة قادرين على إدارة مبادراتهم بثقة وتحقيق تأثير حقيقي في مدارسهم. تناول التدريب أنماط القيادة، وساعد الطلاب على اكتشاف ميولهم القيادية وتعلّم اختيار الأسلوب المناسب لشخصياتهم وطبيعة الفرق التي يعملون معها. كما شمل التدريب التسويق للمبادرات، وكيفية تقديم الأفكار بطريقة جذابة ومقنعة وإيصال صوت الطلاب داخل المدرسة وخارجها. برنامج قادة مدارس الجمهورية هو أول وأكبر برنامج لدعم اتحاد طلاب وطالبات مدارس مصر، وتنّفذه مؤسسة شباب القادة بالشراكة مع يونيسف، وتحت رعاية وزارة التضامن الاجتماعي ووزارة التربية والتعليم والتعليم الفني والمجلس القومي للطفولة والأمومة والمجلس القومي للمرأة، وتحت مظلة المجموعة الوزارية للتنمية البشرية، في إطار برنامج تمكين المرأة المصرية بتمويل من الاتحاد الأوروبي.',
+    bodyEgyptian: 'مع طلاب وطالبات محافظة القليوبية، كملنا مرحلة التدريبات المتعمقة في برنامج قادة مدارس الجمهورية، اللي هدفه يجهز قادة قادرين يديروا مبادراتهم بثقة ويحققوا تأثير حقيقي في مدارسهم. اتدربوا على أنماط القيادة، واكتشفوا ميولهم القيادية واتعلموا يختاروا الأسلوب اللي يناسب شخصياتهم وطبيعة الفريق اللي بيشتغلوا معاه. كمان اتدربوا على تسويق المبادرات، وإزاي يعرّفوا الناس بأفكارهم بطريقة جذابة ومقنعة ويوصلوا صوتهم جوه المدرسة وبرهها. برنامج قادة مدارس الجمهورية هو أول وأكبر برنامج لدعم اتحاد طلاب وطالبات مدارس مصر، بتنّفذه مؤسسة شباب القادة بالشراكة مع يونيسف، وتحت رعاية وزارة التضامن الاجتماعي ووزارة التربية والتعليم والتعليم الفني والمجلس القومي للطفولة والأمومة والمجلس القومي للمرأة، وتحت مظلة المجموعة الوزارية للتنمية البشرية، في إطار برنامج تمكين المرأة المصرية بتمويل من الاتحاد الأوروبي.',
+    bodyMoroccan: 'مع طلبة وطالبات إقليم القليوبية، كملنا مرحلة التداريب المعمقة فبرنامج قادة مدارس الجمهورية، اللي الهدف ديالو يوجّد قادة قادرين يسيرو المبادرات ديالهم بثقة ويحققو أثر حقيقي فمدارسهم. تدربو على أنماط القيادة، واكتاشفو الميولات القيادية ديالهم وتعلمو كيفاش يختارو الأسلوب اللي كيناسب شخصياتهم وطبيعة الفريق اللي خدامين معاه. وتدربو حتى على التسويق للمبادرات، وكيفاش يعرفو الناس بالأفكار ديالهم بطريقة جذابة ومقنعة ويوصلو صوتهم داخل المدرسة وخارجها. برنامج قادة مدارس الجمهورية هو أول وأكبر برنامج لدعم اتحاد طلبة وطالبات مدارس مصر، كتديرو مؤسسة شباب القادة بشراكة مع يونيسف، وتحت رعاية وزارة التضامن الاجتماعي ووزارة التربية والتعليم والتعليم الفني والمجلس القومي للطفولة والأمومة والمجلس القومي للمرأة، وتحت مظلة المجموعة الوزارية للتنمية البشرية، فإطار برنامج تمكين المرأة المصرية بتمويل من الاتحاد الأوروبي.',
+    bodyEn: 'Together with students from Qalyubia, we continued the advanced training phase of the Republic Schools Leaders program, which prepares young leaders to manage their initiatives with confidence and create meaningful impact in their schools. The sessions explored leadership styles, helping students discover their leadership tendencies and learn how to choose an approach that fits their personalities and the teams they work with. They also trained in initiative marketing: presenting ideas in an engaging and persuasive way and making their voices heard inside and outside school. Republic Schools Leaders is Egypt’s first and largest program supporting student unions across Egyptian schools. It is implemented by Leaders of Tomorrow Foundation in partnership with UNICEF, under the patronage of the Ministry of Social Solidarity, the Ministry of Education and Technical Education, the National Council for Childhood and Motherhood, and the National Council for Women, under the umbrella of the Ministerial Group for Human Development and within the Egyptian Women’s Empowerment Program funded by the European Union.',
+    role: 'مشارك في التدريبات المتقدمة لبرنامج قادة مدارس الجمهورية',
+    roleEgyptian: 'مشارك في التدريبات المتقدمة لبرنامج قادة مدارس الجمهورية',
+    roleMoroccan: 'مشارك فالتداريب المعمقة ديال برنامج قادة مدارس الجمهورية',
+    roleEn: 'Participant in the advanced Republic Schools Leaders training',
+    location: 'مبنى الأنشطة الطلابية بالعجوزة — الجيزة، مصر',
+    locationEgyptian: 'مبنى الأنشطة الطلابية بالعجوزة — الجيزة، مصر',
+    locationMoroccan: 'مبنى الأنشطة الطلابية بالعجوزة — الجيزة، مصر',
+    locationEn: 'Student Activities Building, Agouza — Giza, Egypt',
+    images: [schoolLeadersGroup, schoolLeadersWorkshop, schoolLeadersTeams, schoolLeadersRoom],
+  },
   {
     date: '2025-12-07',
     title: 'إطلاق منصة CASA للاختبارات الإلكترونية بأيدي طلابية مبتكرة',
@@ -250,6 +274,10 @@ const libraryPhotos = [
   { src: culturalAmbassadors, title: 'Cultural ambassadors recognition', label: 'Cultural ambassadors', labelAr: 'سفراء الثقافة', featured: true },
   { src: casaPresentation, title: 'CASA electronic examinations platform', label: 'casa', labelAr: 'منصة CASA', featured: true },
   { src: casaMeeting, title: 'Presenting CASA to the education directorate', label: 'casa', labelAr: 'منصة CASA' },
+  { src: schoolLeadersGroup, title: 'Republic Schools Leaders training', label: 'leaders', labelAr: 'قادة مدارس الجمهورية', featured: true },
+  { src: schoolLeadersWorkshop, title: 'Leadership styles workshop', label: 'leaders', labelAr: 'قادة مدارس الجمهورية' },
+  { src: schoolLeadersTeams, title: 'Students developing an initiative', label: 'leaders', labelAr: 'قادة مدارس الجمهورية' },
+  { src: schoolLeadersRoom, title: 'Qalyubia Republic Schools Leaders', label: 'leaders', labelAr: 'قادة مدارس الجمهورية' },
 ];
 
 const detailCopy = {
@@ -501,7 +529,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -519,10 +547,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
