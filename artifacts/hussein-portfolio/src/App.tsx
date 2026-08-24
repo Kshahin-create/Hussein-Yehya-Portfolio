@@ -72,10 +72,6 @@ type Achievement = { date: string; title: string; titleEgyptian?: string; titleM
 
 const repos: Repo[] = [
   { name: 'Tech-Day', language: 'HTML', url: 'https://github.com/husseinyehya1/Tech-Day', updated: '2026-06-29' },
-  { name: 'vertify', language: 'HTML', url: 'https://github.com/husseinyehya1/vertify', updated: '2026-06-25' },
-  { name: 'EDU-TECH-Obour-Team87', language: null, url: 'https://github.com/husseinyehya1/EDU-TECH-Obour-Team87', updated: '2026-05-30', fork: true },
-  { name: 'my-nono', language: 'HTML', url: 'https://github.com/husseinyehya1/my-nono', updated: '2025-12-12' },
-  { name: '-', language: 'HTML', url: 'https://github.com/husseinyehya1/-', updated: '2025-12-05' },
   { name: 'Casaapp', language: 'C++', url: 'https://github.com/husseinyehya1/Casaapp', updated: '2025-12-05', homepage: 'https://casa.study' },
   { name: 'SOT-App', language: 'Dart', url: 'https://github.com/husseinyehya1/SOT-App', updated: '2025-12-05' },
   { name: 'Portfolio', language: 'HTML', url: 'https://github.com/husseinyehya1/Portfolio', updated: '2025-12-04' },
