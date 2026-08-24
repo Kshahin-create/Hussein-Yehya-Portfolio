@@ -52,6 +52,10 @@ import nationalYouthStrategyStage from '@assets/image_1787533519440.png';
 import nationalYouthStrategyAudience from '@assets/image_1787533525669.png';
 import nationalYouthStrategyDelegates from '@assets/image_1787533531892.png';
 import knowYourCountryMeeting from '@assets/image_1787533669046.png';
+import knowYourCountryEducation from '@assets/image_1787533785572.png';
+import knowYourCountryDirectorate from '@assets/image_1787533795897.png';
+import knowYourCountryDiscussion from '@assets/image_1787533804685.png';
+import knowYourCountryTeam from '@assets/image_1787533811806.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -73,6 +77,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2025-06-30',
+    title: 'لقاءات دعم مبادرة «اعرف بلدك» داخل مدارس القليوبية',
+    titleEgyptian: 'لقاءات دعم مبادرة «اعرف بلدك» داخل مدارس القليوبية',
+    titleMoroccan: 'لقاءات دعم مبادرة «اعرف بلدك» فمدارس القليوبية',
+    titleEn: 'Meetings to Support the Know Your Country Initiative in Qalyubia Schools',
+    body: 'خلال يومين متتاليين، تشرفت بالمشاركة في لقاءين مهمين ضمن خطوات تنفيذ مبادرة «اعرف بلدك» داخل مدارس محافظة القليوبية. كان اللقاء الأول مع وكيل وزارة التربية والتعليم بالقليوبية، لمناقشة تفاصيل المبادرة وطلب التعاون في تنفيذها رسميًا داخل المدارس وتحديد آلية التنسيق مع التوجيه العام للصحافة. ثم شاركت في لقاء مع القيادة العسكرية بمديرية التربية والتعليم، قُدّم خلاله طلب تعاون لتنفيذ ندوات توعوية للطلاب حول الدستور والمواطنة، والأمن المجتمعي، والاقتصاد والتنمية، والعلاقات الدولية، والسياحة والهوية، وملف مصر قبل وبعد 30 يونيو.',
+    bodyEgyptian: 'خلال يومين ورا بعض، اتشرفت إني أشارك في لقائين مهمين ضمن خطوات تنفيذ مبادرة «اعرف بلدك» داخل مدارس القليوبية. اللقاء الأول كان مع وكيل وزارة التربية والتعليم بالقليوبية، واتكلمنا فيه عن تفاصيل المبادرة وطلبنا التعاون عشان تتنفذ رسميًا داخل المدارس، وكمان نحدد طريقة التنسيق مع التوجيه العام للصحافة. وبعدها شاركت في لقاء مع القيادة العسكرية بمديرية التربية والتعليم، وقدمنا طلب تعاون لتنفيذ ندوات توعوية للطلاب عن الدستور والمواطنة، والأمن المجتمعي، والاقتصاد والتنمية، والعلاقات الدولية، والسياحة والهوية، وملف مصر قبل وبعد 30 يونيو.',
+    bodyMoroccan: 'فجوج أيام متتابعين، تشرفت نشارك فلقاءين مهمين ضمن الخطوات ديال تنفيذ مبادرة «اعرف بلدك» داخل مدارس القليوبية. اللقاء الأول كان مع وكيل وزارة التربية والتعليم فالقليوبية، وناقشنا فيه تفاصيل المبادرة وطلبنا التعاون باش تتنفذ رسميًا فالمدارس، ونحددو طريقة التنسيق مع التوجيه العام للصحافة. من بعد شاركت فلقاء مع القيادة العسكرية فمديرية التربية والتعليم، وقدمنا طلب تعاون لتنظيم ندوات توعوية للطلبة حول الدستور والمواطنة، والأمن المجتمعي، والاقتصاد والتنمية، والعلاقات الدولية، والسياحة والهوية، وملف مصر قبل وبعد 30 يونيو.',
+    bodyEn: 'Over two consecutive days, I was honored to take part in two important meetings supporting the implementation of the Know Your Country initiative in Qalyubia schools. The first meeting was with the Undersecretary of the Qalyubia Directorate of Education, where we discussed the initiative’s details, requested cooperation to implement it officially in schools, and explored coordination with the General Press Guidance Department. I then joined a meeting with the military leadership at the Directorate of Education, during which we submitted a cooperation request to organize student awareness seminars on the constitution and citizenship, community security, economics and development, international relations, tourism and identity, and Egypt before and after June 30.',
+    role: 'القائد العام لمبادرة «اعرف بلدك» — تنسيق لقاءات التعاون',
+    roleEgyptian: 'القائد العام لمبادرة «اعرف بلدك» — تنسيق لقاءات التعاون',
+    roleMoroccan: 'القائد العام لمبادرة «اعرف بلدك» — تنسيق لقاءات التعاون',
+    roleEn: 'General Leader of the Know Your Country Initiative — cooperation meeting coordinator',
+    location: 'مديرية التربية والتعليم بالقليوبية — القليوبية، مصر',
+    locationEgyptian: 'مديرية التربية والتعليم بالقليوبية — القليوبية، مصر',
+    locationMoroccan: 'مديرية التربية والتعليم بالقليوبية — القليوبية، مصر',
+    locationEn: 'Qalyubia Directorate of Education — Qalyubia, Egypt',
+    images: [knowYourCountryEducation, knowYourCountryDirectorate, knowYourCountryDiscussion, knowYourCountryTeam],
+  },
   {
     date: '2025-07-04',
     title: 'لقاء موسع لدعم مبادرة «اعرف بلدك»',
@@ -432,6 +456,10 @@ const libraryPhotos = [
   { src: nationalYouthStrategyAudience, title: 'National Youth Strategy launch', label: 'youth-strategy', labelAr: 'استراتيجية الشباب' },
   { src: nationalYouthStrategyDelegates, title: 'Youth strategy conference delegates', label: 'youth-strategy', labelAr: 'استراتيجية الشباب' },
   { src: knowYourCountryMeeting, title: 'Know Your Country initiative meeting', label: 'know-country', labelAr: 'مبادرة اعرف بلدك', featured: true },
+  { src: knowYourCountryEducation, title: 'Know Your Country education meeting', label: 'know-country', labelAr: 'مبادرة اعرف بلدك', featured: true },
+  { src: knowYourCountryDirectorate, title: 'Know Your Country cooperation meeting', label: 'know-country', labelAr: 'مبادرة اعرف بلدك' },
+  { src: knowYourCountryDiscussion, title: 'Initiative cooperation discussion', label: 'know-country', labelAr: 'مبادرة اعرف بلدك' },
+  { src: knowYourCountryTeam, title: 'Know Your Country initiative team', label: 'know-country', labelAr: 'مبادرة اعرف بلدك' },
 ];
 
 const detailCopy = {
