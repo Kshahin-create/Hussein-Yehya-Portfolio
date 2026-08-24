@@ -51,6 +51,7 @@ import qalyubiaPressTeam from '@assets/image_1787533329979.png';
 import nationalYouthStrategyStage from '@assets/image_1787533519440.png';
 import nationalYouthStrategyAudience from '@assets/image_1787533525669.png';
 import nationalYouthStrategyDelegates from '@assets/image_1787533531892.png';
+import knowYourCountryMeeting from '@assets/image_1787533669046.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -72,6 +73,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2025-07-04',
+    title: 'لقاء موسع لدعم مبادرة «اعرف بلدك»',
+    titleEgyptian: 'لقاء موسع لدعم مبادرة «اعرف بلدك»',
+    titleMoroccan: 'لقاء موسع لدعم مبادرة «اعرف بلدك»',
+    titleEn: 'Expanded Meeting to Support the Know Your Country Initiative',
+    body: 'انعقد لقاء توعوي مع النائب الدكتور محمد عطية الفيومي، عضو مجلس النواب المصري عن محافظة القليوبية ورئيس مجلس الأمناء والآباء والمعلمين بالمحافظة، لبحث سبل التعاون المشترك في تنفيذ فعاليات هادفة لطلاب مدارس القليوبية. جاء اللقاء في إطار العمل الوطني لمبادرة «اعرف بلدك» لنشر الوعي والانتماء الوطني، وترسيخ الثقافة الدستورية، وتفعيل دور المبادرات الطلابية في المجتمع المحلي. اتفق الحضور على التحضير لمؤتمر موسع خلال الشهر التالي، بمشاركة قيادات تنفيذية وتعليمية وتشريعية وممثلي المجتمع المدني وطلاب من الإدارات التعليمية المختلفة. شارك من جانب المبادرة الأستاذة سلوى إبراهيم، المشرف العام، والأستاذة سحر عدلي، المشرف التربوي العام، والطالب حسين يحيى حسين، القائد العام للمبادرة، والطالب أحمد محمد عبد العليم، نائب القائد العام للشؤون الإدارية والتنظيمية.',
+    bodyEgyptian: 'اتعمل لقاء توعوي مع النائب الدكتور محمد عطية الفيومي، عضو مجلس النواب عن القليوبية ورئيس مجلس الأمناء والآباء والمعلمين بالمحافظة، عشان نبحث التعاون في تنفيذ فعاليات هادفة لطلاب مدارس القليوبية. اللقاء جه ضمن شغل مبادرة «اعرف بلدك» على نشر الوعي والانتماء الوطني، وترسيخ الثقافة الدستورية، وتفعيل دور المبادرات الطلابية في المجتمع المحلي. واتفق الحضور على التحضير لمؤتمر موسع خلال الشهر اللي بعده، بمشاركة قيادات تنفيذية وتعليمية وتشريعية وممثلين عن المجتمع المدني وطلاب من الإدارات التعليمية المختلفة. وشارك من المبادرة الأستاذة سلوى إبراهيم، المشرف العام، والأستاذة سحر عدلي، المشرف التربوي العام، والطالب حسين يحيى حسين، القائد العام للمبادرة، والطالب أحمد محمد عبد العليم، نائب القائد العام للشؤون الإدارية والتنظيمية.',
+    bodyMoroccan: 'تدار لقاء توعوي مع النائب الدكتور محمد عطية الفيومي، عضو مجلس النواب المصري عن القليوبية ورئيس مجلس الأمناء والآباء والمعلمين فالمحافظة، باش يتناقشو سبل التعاون لتنفيذ فعاليات هادفة لفائدة تلاميذ مدارس القليوبية. جا اللقاء فإطار العمل الوطني ديال مبادرة «اعرف بلدك» لنشر الوعي والانتماء الوطني، وترسيخ الثقافة الدستورية، وتفعيل دور المبادرات الطلابية فالمجتمع المحلي. وتافقو الحاضرين على التحضير لمؤتمر موسع فالشهر اللي من بعد، بمشاركة قيادات تنفيذية وتعليمية وتشريعية وممثلي المجتمع المدني وطلبة من الإدارات التعليمية المختلفة. شاركو من جانب المبادرة الأستاذة سلوى إبراهيم، المشرفة العامة، والأستاذة سحر عدلي، المشرفة التربوية العامة، والطالب حسين يحيى حسين، القائد العام للمبادرة، والطالب أحمد محمد عبد العليم، نائب القائد العام للشؤون الإدارية والتنظيمية.',
+    bodyEn: 'An awareness meeting was held with Dr. Mohamed Attia El-Fayoumy, Member of the Egyptian House of Representatives for Qalyubia and Chairman of the Governorate Board of Trustees, Parents, and Teachers, to explore cooperation on meaningful activities for Qalyubia school students. The meeting was part of the Know Your Country initiative’s national work to promote awareness and belonging, strengthen constitutional culture, and activate student initiatives within the local community. The attendees agreed to prepare an expanded conference the following month, with executive, educational, and legislative leaders, civil society representatives, and students from different educational administrations. Representing the initiative were Salwa Ibrahim, General Supervisor; Sahar Adly, General Educational Supervisor; Hussein Yehya Hussein, General Initiative Leader; and Ahmed Mohamed Abdel Aleem, Deputy General Leader for Administration and Organization.',
+    role: 'القائد العام لمبادرة «اعرف بلدك»',
+    roleEgyptian: 'القائد العام لمبادرة «اعرف بلدك»',
+    roleMoroccan: 'القائد العام لمبادرة «اعرف بلدك»',
+    roleEn: 'General Leader of the Know Your Country Initiative',
+    location: 'مدارس طوخ الخاصة — القليوبية، مصر',
+    locationEgyptian: 'مدارس طوخ الخاصة — القليوبية، مصر',
+    locationMoroccan: 'مدارس طوخ الخاصة — القليوبية، مصر',
+    locationEn: 'Toukh Private Schools — Qalyubia, Egypt',
+    images: [knowYourCountryMeeting],
+  },
   {
     date: '2025-08-14',
     title: 'حضور مؤتمر الاستراتيجية الوطنية للشباب',
@@ -410,6 +431,7 @@ const libraryPhotos = [
   { src: nationalYouthStrategyStage, title: 'National Youth Strategy Conference', label: 'youth-strategy', labelAr: 'استراتيجية الشباب', featured: true },
   { src: nationalYouthStrategyAudience, title: 'National Youth Strategy launch', label: 'youth-strategy', labelAr: 'استراتيجية الشباب' },
   { src: nationalYouthStrategyDelegates, title: 'Youth strategy conference delegates', label: 'youth-strategy', labelAr: 'استراتيجية الشباب' },
+  { src: knowYourCountryMeeting, title: 'Know Your Country initiative meeting', label: 'know-country', labelAr: 'مبادرة اعرف بلدك', featured: true },
 ];
 
 const detailCopy = {
@@ -661,7 +683,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual' | 'nasa' | 'press' | 'youth-strategy'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual' | 'nasa' | 'press' | 'youth-strategy' | 'know-country'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -679,10 +701,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', press: 'Press exhibition', 'youth-strategy': 'Youth strategy', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', press: 'Press exhibition', 'youth-strategy': 'Youth strategy', 'know-country': 'Know Your Country', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press', 'youth-strategy'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press', 'youth-strategy', 'know-country'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
