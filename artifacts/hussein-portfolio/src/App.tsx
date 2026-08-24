@@ -56,6 +56,14 @@ import knowYourCountryEducation from '@assets/image_1787533785572.png';
 import knowYourCountryDirectorate from '@assets/image_1787533795897.png';
 import knowYourCountryDiscussion from '@assets/image_1787533804685.png';
 import knowYourCountryTeam from '@assets/image_1787533811806.png';
+import personalPortraitNightOne from '@assets/image_1787534092124.png';
+import personalPortraitNightTwo from '@assets/image_1787534120958.png';
+import personalPortraitNightThree from '@assets/image_1787534150298.png';
+import personalPortraitBeachOne from '@assets/image_1787534191133.png';
+import personalPortraitBeachTwo from '@assets/image_1787534202084.png';
+import personalPortraitExtraOne from '@assets/image_1787534223555.png';
+import personalPortraitExtraTwo from '@assets/image_1787535289029.png';
+import personalPortraitExtraThree from '@assets/image_1787535310447.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -460,6 +468,14 @@ const libraryPhotos = [
   { src: knowYourCountryDirectorate, title: 'Know Your Country cooperation meeting', label: 'know-country', labelAr: 'مبادرة اعرف بلدك' },
   { src: knowYourCountryDiscussion, title: 'Initiative cooperation discussion', label: 'know-country', labelAr: 'مبادرة اعرف بلدك' },
   { src: knowYourCountryTeam, title: 'Know Your Country initiative team', label: 'know-country', labelAr: 'مبادرة اعرف بلدك' },
+  { src: personalPortraitNightOne, title: 'Personal portrait at night', label: 'portrait', labelAr: 'بورتريه' },
+  { src: personalPortraitNightTwo, title: 'Night portrait with passport', label: 'portrait', labelAr: 'بورتريه' },
+  { src: personalPortraitNightThree, title: 'Personal portrait with passport', label: 'portrait', labelAr: 'بورتريه' },
+  { src: personalPortraitBeachOne, title: 'Beach portrait', label: 'portrait', labelAr: 'بورتريه' },
+  { src: personalPortraitBeachTwo, title: 'Beach portrait by the sea', label: 'portrait', labelAr: 'بورتريه' },
+  { src: personalPortraitExtraOne, title: 'Personal portrait', label: 'portrait', labelAr: 'بورتريه' },
+  { src: personalPortraitExtraTwo, title: 'Personal portrait outdoors', label: 'portrait', labelAr: 'بورتريه' },
+  { src: personalPortraitExtraThree, title: 'Personal portrait by the coast', label: 'portrait', labelAr: 'بورتريه' },
 ];
 
 const detailCopy = {
