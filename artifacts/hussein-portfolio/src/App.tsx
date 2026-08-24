@@ -24,6 +24,7 @@ import greenFriends from '@assets/image_1787527275972.png';
 import greenTeam from '@assets/image_1787527280769.png';
 import postalMeeting from '@assets/image_1787529915109.png';
 import postalSession from '@assets/image_1787529925461.png';
+import eduTechProtocol from '@assets/image_1787530965625.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -45,6 +46,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2026-03-25',
+    title: 'بروتوكول تعاون بين الفريق التقني واتحاد طلاب القليوبية',
+    titleEgyptian: 'بروتوكول تعاون بين الفريق التقني واتحاد طلاب القليوبية',
+    titleMoroccan: 'بروتوكول تعاون بين الفريق التقني واتحاد طلبة القليوبية',
+    titleEn: 'Cooperation protocol between EDU-TECH and Qalyubia Students Union',
+    body: 'تحت رعاية معالي وزير التربية والتعليم والتعليم الفني الأستاذ محمد عبد اللطيف، ومعالي محافظ القليوبية الدكتور حسام الدين عبدالفتاح، وبتوجيهات الدكتور ياسر محمود، مدير مديرية التربية والتعليم بالقليوبية، والأستاذ أشرف محمود والأستاذ مروان غراب، وكيلي مديرية التربية والتعليم بالقليوبية. في إطار دعم التحول الرقمي وتعزيز التكامل بين العمل الطلابي والتنظيمي والعمل التقني والفني، تم إبرام بروتوكول تعاون وتكامل بين اتحاد طلاب محافظة القليوبية وفريق EDU-TECH، بهدف توحيد الجهود وتعظيم الاستفادة من الإمكانات المتاحة لدى الجانبين، بما يسهم في تنفيذ الفعاليات والمبادرات والأنشطة الطلابية والتعليمية بصورة مؤسسية منظمة تجمع بين جودة التخطيط وكفاءة التنفيذ واحترافية الإدارة والتوثيق. يقوم التعاون على شراكة فاعلة بين اتحاد طلاب محافظة القليوبية باعتباره جهة طلابية تنظيمية وميدانية، وفريق EDU-TECH باعتباره كيانًا تقنيًا وفنيًا داعمًا للتحول الرقمي داخل المنظومة التعليمية. ويتولى الاتحاد الجوانب التنظيمية والميدانية والتنسيق مع الجهات المعنية، بينما يتولى فريق EDU-TECH الحلول الرقمية والدعم الفني والتنظيم الإلكتروني والتوثيق الإعلامي والتقني. ووقّع عن اتحاد الطلاب الأستاذ يحيى العمراوي، والأستاذة مرفت، والطالب عمر محمد عيد، وعن فريق EDU-TECH الدكتورة جيهان محمد عبد الجواد، والطالب حسين يحيى حسين، القائد العام للفريق. ويأتي البروتوكول بإشراف عام من الدكتور ياسر محمود، تأكيدًا على أهمية التكامل بين الجهود الطلابية والتنظيمية والدعم التقني والفني.',
+    bodyEgyptian: 'تحت رعاية معالي وزير التربية والتعليم والتعليم الفني الأستاذ محمد عبد اللطيف، ومعالي محافظ القليوبية الدكتور حسام الدين عبدالفتاح، وبتوجيهات الدكتور ياسر محمود، مدير مديرية التربية والتعليم بالقليوبية، والأستاذ أشرف محمود والأستاذ مروان غراب، وكيلي المديرية. في إطار دعم التحول الرقمي وربط شغل الطلاب والتنظيم بالشغل التقني والفني، اتعمل بروتوكول تعاون وتكامل بين اتحاد طلاب محافظة القليوبية وفريق EDU-TECH، بهدف توحيد الجهود والاستفادة من الإمكانيات المتاحة عند الطرفين، وتنفيذ الفعاليات والمبادرات والأنشطة الطلابية والتعليمية بشكل مؤسسي ومنظم يجمع بين التخطيط الجيد والتنفيذ الكفء والإدارة والتوثيق باحترافية. التعاون قائم على شراكة بين اتحاد الطلاب باعتباره جهة تنظيمية وميدانية، وفريق EDU-TECH باعتباره كيانًا تقنيًا وفنيًا بيدعم التحول الرقمي في التعليم. الاتحاد بيتابع الجوانب التنظيمية والميدانية والتنسيق مع الجهات المعنية، وفريق EDU-TECH بيتولى الحلول الرقمية والدعم الفني والتنظيم الإلكتروني والتوثيق الإعلامي والتقني. وقّع عن اتحاد الطلاب الأستاذ يحيى العمراوي، والأستاذة مرفت، والطالب عمر محمد عيد، وعن فريق EDU-TECH الدكتورة جيهان محمد عبد الجواد، والطالب حسين يحيى حسين، القائد العام للفريق. والبروتوكول تحت إشراف الدكتور ياسر محمود، تأكيدًا على أهمية تكامل شغل الطلاب والتنظيم مع الدعم التقني والفني.',
+    bodyMoroccan: 'تحت رعاية معالي وزير التربية والتعليم والتعليم الفني الأستاذ محمد عبد اللطيف، ومعالي عامل إقليم القليوبية الدكتور حسام الدين عبدالفتاح، وبتوجيهات الدكتور ياسر محمود، مدير مديرية التربية والتعليم بالقليوبية، والأستاذ أشرف محمود والأستاذ مروان غراب، نائبي المديرية. فإطار دعم التحول الرقمي وتقوية التكامل بين العمل الطلابي والتنظيمي والعمل التقني والفني، تدار بروتوكول تعاون وتكامل بين اتحاد طلبة إقليم القليوبية وفريق EDU-TECH، باش يوحدو الجهود ويستافدو أحسن استفادة من الإمكانيات المتوفرة عند الطرفين، وينظمو الفعاليات والمبادرات والأنشطة الطلابية والتعليمية بطريقة مؤسساتية ومنظمة، فيها تخطيط مزيان وتنفيذ فعّال وإدارة وتوثيق احترافي. هاد التعاون مبني على شراكة بين اتحاد الطلبة كجهة تنظيمية وميدانية، وفريق EDU-TECH ككيان تقني وفني كيدعم التحول الرقمي داخل المنظومة التعليمية. الاتحاد كيتكلف بالجوانب التنظيمية والميدانية والتنسيق مع الجهات المعنية، وفريق EDU-TECH كيتكلف بالحلول الرقمية والدعم التقني والتنظيم الإلكتروني والتوثيق الإعلامي والتقني. وقّع عن اتحاد الطلبة الأستاذ يحيى العمراوي، والأستاذة مرفت، والطالب عمر محمد عيد، وعن فريق EDU-TECH الدكتورة جيهان محمد عبد الجواد، والطالب حسين يحيى حسين، القائد العام للفريق. وهاد البروتوكول تحت الإشراف العام للدكتور ياسر محمود، تأكيدًا على أهمية التكامل بين الجهود الطلابية والتنظيمية والدعم التقني والفني.',
+    bodyEn: 'Under the patronage of Mohamed Abdel Latif, Minister of Education and Technical Education, and Qalyubia Governor Dr. Hossam El-Din Abdel Fattah, and under the guidance of Dr. Yasser Mahmoud, Director of the Qalyubia Directorate of Education, and the directorate deputies Ashraf Mahmoud and Marwan Ghorab, a cooperation and integration protocol was signed between the Qalyubia Students Union and EDU-TECH. The protocol supports digital transformation and connects student and organizational work with technical and creative support. Its goal is to unify efforts and make better use of both sides’ capabilities to deliver student and educational events, initiatives, and activities through organized institutional work combining strong planning, efficient execution, and professional management and documentation. The Students Union leads organizational and field coordination, while EDU-TECH provides digital solutions, technical support, electronic organization, and media and technical documentation. The agreement was signed for the Students Union by Yehia El-Emrawy, Ms. Mervat, and student Omar Mohamed Eid; and for EDU-TECH by Dr. Jehan Mohamed Abdelgawad and student Hussein Yehya Hussein, the team’s General Leader. The protocol is generally supervised by Dr. Yasser Mahmoud, reinforcing the importance of integrating student and organizational efforts with technical and creative support.',
+    role: 'حسين يحيى حسين — القائد العام لفريق EDU-TECH',
+    roleEgyptian: 'حسين يحيى حسين — القائد العام لفريق EDU-TECH',
+    roleMoroccan: 'حسين يحيى حسين — القائد العام لفريق EDU-TECH',
+    roleEn: 'Hussein Yehya Hussein — EDU-TECH General Team Leader',
+    location: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationEgyptian: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationMoroccan: 'مديرية التربية والتعليم بالقليوبية — مصر',
+    locationEn: 'Qalyubia Directorate of Education — Egypt',
+    images: [eduTechProtocol],
+  },
   {
     date: '2026-04-22',
     title: 'خدمات البريد المصري بقت أقرب وأسهل لطلاب القليوبية',
@@ -156,6 +177,7 @@ const libraryPhotos = [
   { src: greenTeam, title: 'The initiative team', label: 'Initiative', labelAr: 'المبادرة الخضراء' },
   { src: postalMeeting, title: 'Egypt Post services awareness session', label: 'Postal services', labelAr: 'خدمات البريد', featured: true },
   { src: postalSession, title: 'Introducing student services', label: 'Postal services', labelAr: 'خدمات البريد' },
+  { src: eduTechProtocol, title: 'EDU-TECH cooperation protocol', label: 'Protocol', labelAr: 'بروتوكول التعاون', featured: true },
 ];
 
 const detailCopy = {
@@ -407,7 +429,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -425,10 +447,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+  const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+    <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
