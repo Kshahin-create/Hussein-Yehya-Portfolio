@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDownRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, ExternalLink, Facebook, Github, Instagram, Linkedin, Menu, Moon, Phone, Sun, X } from 'lucide-react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
-import profileImage from '@assets/hussein-profile.jpeg';
+import profileImage from '@assets/hussein-profile-new.webp';
+import libraryPortrait from '@assets/hussein-profile.jpeg';
 import madinahStage from '@assets/image_1787524765206.webp';
 import madinahExtra from '@assets/image_1787524769990.webp';
 import madinahTalk from '@assets/image_1787524775727.webp';
@@ -409,7 +410,7 @@ function getAchievementCopy(item: Achievement, lang: Language, dialect: Dialect)
 }
 
 const libraryPhotos = [
-  { src: profileImage, title: 'Hussein Yehya', label: 'Portrait', labelAr: 'بورتريه', featured: true },
+  { src: libraryPortrait, title: 'Hussein Yehya', label: 'Portrait', labelAr: 'بورتريه', featured: true },
   { src: madinahStage, title: 'Madinah AI — Tech Day', label: 'Launch', labelAr: 'إطلاق', featured: true },
   { src: madinahExtra, title: 'Madinah AI — Tech Day', label: 'Launch', labelAr: 'إطلاق' },
   { src: madinahTalk, title: 'On stage at Tech Day', label: 'Launch', labelAr: 'إطلاق' },
