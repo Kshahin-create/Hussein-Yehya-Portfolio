@@ -46,6 +46,8 @@ import readingCarnivalPortrait from '@assets/image_1787532828430.png';
 import studentActivitiesAnnual from '@assets/image_1787532974298.png';
 import studentActivitiesStage from '@assets/image_1787532995003.png';
 import nasaSpaceApps from '@assets/image_1787533150745.png';
+import qalyubiaPressExhibition from '@assets/image_1787533308263.png';
+import qalyubiaPressTeam from '@assets/image_1787533329979.png';
 
 type Language = 'en' | 'ar';
 type Dialect = 'egyptian' | 'moroccan';
@@ -67,6 +69,26 @@ const repos: Repo[] = [
 ];
 
 const achievements: Achievement[] = [
+  {
+    date: '2025-09-16',
+    title: 'معرض الصحافة والتصوير والكاريكاتير بالقليوبية',
+    titleEgyptian: 'معرض الصحافة والتصوير والكاريكاتير بالقليوبية',
+    titleMoroccan: 'معرض الصحافة والتصوير والكاريكاتير فالقليوبية',
+    titleEn: 'Qalyubia Press, Photography, and Cartoon Exhibition',
+    body: 'استقبلت إدارة القناطر الخيرية التعليمية فعاليات تقييم معرض الصحافة والتصوير الصحفي ومسابقة الكاريكاتير المدرسي، بمشاركة متميزة من الطلاب في الصحف الحائطية والمقالات والتقارير الصحفية والرسوم الكاريكاتيرية والمقابلات والتحقيقات والتصميمات الإبداعية. عكست الأعمال الطلابية وعيهم المجتمعي والتربوي ومواهبهم الفنية والكتابية وروح الابتكار والعمل الجماعي. شهدت الفعاليات حضور أولياء الأمور والطلاب ومشرفي النشاط، إلى جانب مشاركة فريق مبادرة «اعرف بلدك»: حسين يحيى، قائد المبادرة، ومحمد فايز، نائب المبادرة، وزياد محمد، رئيس قسم الميديا بالمحافظة. جاء المعرض تحت رعاية وزير التربية والتعليم والتعليم الفني الدكتور محمد أحمد عبد اللطيف رمضان، ومحافظ القليوبية اللواء المهندس أيمن محمد إبراهيم عطية، والدكتورة إيمان حسن، مدير الإدارة المركزية للأنشطة الطلابية، والأستاذ مصطفى عبده، وكيل وزارة التربية والتعليم بالقليوبية، وباستضافة إدارة القناطر الخيرية التعليمية.',
+    bodyEgyptian: 'استقبلت إدارة القناطر الخيرية التعليمية تقييم معرض الصحافة والتصوير الصحفي ومسابقة الكاريكاتير المدرسي، بمشاركة مميزة من الطلاب في الصحف الحائطية والمقالات والتقارير والرسوم الكاريكاتيرية والمقابلات والتحقيقات والتصميمات الإبداعية. الأعمال عكست وعي الطلاب ومواهبهم الفنية والكتابية وروح الابتكار والشغل الجماعي. حضر الفعاليات أولياء أمور وطلاب ومشرفو النشاط، وكمان شارك فريق مبادرة «اعرف بلدك»: حسين يحيى، قائد المبادرة، ومحمد فايز، نائب المبادرة، وزياد محمد، رئيس قسم الميديا بالمحافظة. المعرض اتعمل تحت رعاية وزير التربية والتعليم والتعليم الفني الدكتور محمد أحمد عبد اللطيف رمضان، ومحافظ القليوبية اللواء المهندس أيمن محمد إبراهيم عطية، والدكتورة إيمان حسن، مدير الإدارة المركزية للأنشطة الطلابية، والأستاذ مصطفى عبده، وكيل وزارة التربية والتعليم بالقليوبية، وباستضافة إدارة القناطر الخيرية التعليمية.',
+    bodyMoroccan: 'استقبلات إدارة القناطر الخيرية التعليمية فعاليات تقييم معرض الصحافة والتصوير الصحفي ومسابقة الكاريكاتير المدرسي، بمشاركة مميزة من الطلبة فالصحف الحائطية والمقالات والتقارير الصحفية والرسومات الكاريكاتيرية والمقابلات والتحقيقات والتصميمات الإبداعية. الأعمال بينات الوعي المجتمعي والتربوي ديال الطلبة، والمواهب الفنية والكتابية وروح الابتكار والخدمة الجماعية. حضرو الفعاليات الآباء والأمهات والطلبة ومشرفو النشاط، وشارك حتى فريق مبادرة «اعرف بلدك»: حسين يحيى، قائد المبادرة، ومحمد فايز، نائب المبادرة، وزياد محمد، رئيس قسم الميديا فالمحافظة. تدار المعرض تحت رعاية وزير التربية والتعليم والتعليم الفني الدكتور محمد أحمد عبد اللطيف رمضان، وعامل القليوبية اللواء المهندس أيمن محمد إبراهيم عطية، والدكتورة إيمان حسن، مديرة الإدارة المركزية للأنشطة الطلابية، والأستاذ مصطفى عبده، وكيل وزارة التربية والتعليم بالقليوبية، وباستضافة إدارة القناطر الخيرية التعليمية.',
+    bodyEn: 'The Qanater El Khayreya Educational Administration hosted the evaluation of the Press and Photojournalism Exhibition and the School Cartoon Competition. Students participated with wall newspapers, articles and reports, cartoons, interviews and investigations, and creative designs. Their work reflected social and educational awareness, artistic and writing talent, innovation, and teamwork. Parents, students, and activity supervisors attended, alongside the Know Your Country initiative team: Hussein Yehya, Initiative Leader; Mohamed Fayez, Deputy Leader; and Ziad Mohamed, Governorate Media Department Head. The exhibition was held under the patronage of Dr. Mohamed Ahmed Abdel Latif Ramadan, Minister of Education and Technical Education; Qalyubia Governor Major General Eng. Ayman Mohamed Ibrahim Attia; Dr. Eman Hassan, Director of the Central Administration for Student Activities; and Mustafa Abdo, Undersecretary of the Qalyubia Directorate of Education, and was hosted by the Qanater El Khayreya Educational Administration.',
+    role: 'قائد مبادرة «اعرف بلدك» — مشارك في الفعاليات والتغطية الإعلامية',
+    roleEgyptian: 'قائد مبادرة «اعرف بلدك» — مشارك في الفعاليات والتغطية الإعلامية',
+    roleMoroccan: 'قائد مبادرة «اعرف بلدك» — مشارك فالفعاليات والتغطية الإعلامية',
+    roleEn: 'Know Your Country Initiative Leader — event and media coverage participant',
+    location: 'إدارة القناطر الخيرية التعليمية — القليوبية، مصر',
+    locationEgyptian: 'إدارة القناطر الخيرية التعليمية — القليوبية، مصر',
+    locationMoroccan: 'إدارة القناطر الخيرية التعليمية — القليوبية، مصر',
+    locationEn: 'Qanater El Khayreya Educational Administration — Qalyubia, Egypt',
+    images: [qalyubiaPressExhibition, qalyubiaPressTeam],
+  },
   {
     date: '2025-09-19',
     title: 'حضور هاكثون NASA Space Apps Cairo',
@@ -360,6 +382,8 @@ const libraryPhotos = [
   { src: studentActivitiesAnnual, title: 'Annual Student Activities Meeting', label: 'annual', labelAr: 'اللقاء السنوي للأنشطة', featured: true },
   { src: studentActivitiesStage, title: 'SOT Team at the annual meeting', label: 'annual', labelAr: 'اللقاء السنوي للأنشطة' },
   { src: nasaSpaceApps, title: 'NASA Space Apps Cairo', label: 'nasa', labelAr: 'NASA Space Apps Cairo', featured: true },
+  { src: qalyubiaPressExhibition, title: 'Qalyubia Press Exhibition', label: 'press', labelAr: 'معرض الصحافة', featured: true },
+  { src: qalyubiaPressTeam, title: 'Press and photography exhibition team', label: 'press', labelAr: 'معرض الصحافة' },
 ];
 
 const detailCopy = {
@@ -611,7 +635,7 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 }
 
 function PhotoLibrary({ lang }: { lang: Language }) {
-  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual' | 'nasa'>('all');
+  const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual' | 'nasa' | 'press'>('all');
   const [active, setActive] = useState<number | null>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
@@ -629,10 +653,10 @@ function PhotoLibrary({ lang }: { lang: Language }) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
-   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
+   const copy = lang === 'ar' ? { eyebrow: 'مكتبة الصور / ٠١', title: 'لحظات من الشغل الحقيقي.', intro: 'صور من المشاريع والإطلاقات والرحلة اللي بتكبر مع كل تجربة.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' } : { eyebrow: 'PHOTO LIBRARY / 01', title: 'Moments from the real work.', intro: 'A visual record of projects, launches, and the road between them.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', press: 'Press exhibition', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' };
   return <div className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
   </div>;
