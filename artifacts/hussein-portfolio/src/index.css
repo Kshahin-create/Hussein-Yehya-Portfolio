@@ -57,6 +57,51 @@ footer { padding:22px max(20px,calc((100% - 1240px)/2)); display:flex; justify-c
   text-align:center;
 }
 .facts span { padding-inline:12px; }
+
+/* Match alignment and flow to the selected language. */
+.rtl {
+  direction:rtl;
+}
+.hero-copy,
+.story-body,
+.facts,
+.systems-intro,
+.archive-top,
+.journal-intro,
+.journal-list,
+.profile-lead,
+.profile-subhead,
+.vision-block,
+.system-info,
+.repo-list,
+.steps,
+.contact-section {
+  text-align:left;
+}
+.rtl .hero-copy,
+.rtl .story-body,
+.rtl .facts,
+.rtl .systems-intro,
+.rtl .archive-top,
+.rtl .journal-intro,
+.rtl .journal-list,
+.rtl .profile-lead,
+.rtl .profile-subhead,
+.rtl .vision-block,
+.rtl .system-info,
+.rtl .repo-list,
+.rtl .steps,
+.rtl .contact-section {
+  text-align:right;
+}
+.rtl .hero-copy h1,
+.rtl .section-heading h2,
+.rtl .facts span,
+.rtl .achievement-copy,
+.rtl .repo-list article,
+.rtl .steps article {
+  text-align:right;
+}
 @media(max-width:767px) {
   .hero-copy h1 {
     font-size:clamp(2.9rem,12vw,4.4rem);
