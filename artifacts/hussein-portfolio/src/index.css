@@ -30,6 +30,45 @@ footer { padding:22px max(20px,calc((100% - 1240px)/2)); display:flex; justify-c
 /* Keep the portrait's original colors in the light theme. */
 .hero-photo img { mix-blend-mode: normal; filter: saturate(.95) contrast(1.04); }
 
+/* Refined hero and story rhythm. */
+.hero-copy h1 {
+  font-size:clamp(2.7rem,3.2vw,3.6rem);
+  line-height:.92;
+  letter-spacing:-.075em;
+  white-space:pre-line;
+  max-width:790px;
+}
+.story-body {
+  margin:75px auto 0;
+  max-width:860px;
+  text-align:center;
+}
+.story-body>p {
+  max-width:820px;
+  margin:0 auto 30px;
+}
+.story-body>p+p {
+  max-width:680px;
+  margin-inline:auto;
+}
+.facts {
+  max-width:800px;
+  margin:60px auto 0;
+  text-align:center;
+}
+.facts span { padding-inline:12px; }
+@media(max-width:767px) {
+  .hero-copy h1 {
+    font-size:clamp(2.9rem,12vw,4.4rem);
+    line-height:.94;
+    letter-spacing:-.07em;
+    max-width:600px;
+  }
+  .story-body { margin-top:52px; }
+  .story-body>p { font-size:clamp(18px,5.2vw,24px); }
+  .facts { margin-top:44px; }
+}
+
 /* Journal Section Base */
 .journal-section { max-width:1240px; margin:auto; padding:clamp(88px,13vw,175px) clamp(20px,5vw,60px); background:linear-gradient(90deg,hsl(var(--aqua)/.09) 0 10px,transparent 10px); }
 .journal-intro { max-width:590px; margin:42px 0 68px 188px; font-size:16px; line-height:1.8; opacity:.76; }
