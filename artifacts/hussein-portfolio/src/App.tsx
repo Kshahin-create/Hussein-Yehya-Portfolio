@@ -542,7 +542,7 @@ const text = {
     storyLabel: '01 / About me', storyTitle: 'Figuring things out as I go.', story1: 'I am still at the beginning, and that is the part I like most. Every project, event, team, and new idea gives me another chance to learn something I did not know before.', story2: 'This page is simply a record of things I have made, places I have been, people I have learned from, and moments I do not want to forget.',
     systemsLabel: '02 / Projects', systemsTitle: 'Things I actually made.', systemsIntro: 'They are not perfect, and that is fine. They are real projects that taught me how ideas change once people start using them.', visit: 'Open the project', role: 'What I worked on', builtFor: 'Made for',
     sakr: 'A management and sales system I worked on for Sakr supermarket in Egypt. It helped me understand how a real store moves through products, sales, and daily operations.',
-    clean: 'A management and sales system I worked on for CleanNova laundry in Egypt. It was another chance to learn from real orders, services, and daily work.',
+     clean: 'A management and sales system I worked on for CleanNova laundry in Egypt. It was another chance to learn from real orders, services, and daily work.', sid: 'A student services and data platform for inclusive education students in Qalyubia. It helped me explore how digital tools can make services, requests, and follow-up clearer for students and families.',
     archiveLabel: '03 / Code', archiveTitle: 'Experiments, attempts, and progress.', archiveIntro: 'Some repositories are projects and some are small experiments. I keep them here because every attempt taught me something.', open: 'Open', updated: 'Updated', profile: 'My GitHub', fork: 'Forked repository',
     journalLabel: '03 / Milestones', journalTitle: 'Moments I want to remember.', journalIntro: 'Events, launches, visits, teams, and experiences that became part of my story.', achievementRole: 'My part',
     methodLabel: '04 / What I learned', methodTitle: 'Every project changes how I think.', steps: [['Start before everything is clear', 'A lot of things only make sense after I begin, test an idea, and see what happens.'], ['Ask, listen, and adjust', 'Working with people taught me that the first idea is rarely the final one, and that is completely normal.'], ['Keep the lesson', 'Even when something does not go as planned, I try to leave with a better question, a new skill, or a clearer direction.']],
@@ -558,7 +558,7 @@ const text = {
     photoTape: 'القاهرة / ملاحظاتي', photoRole: 'طالب / مطوّر',
     storyLabel: '٠١ / عنّي', storyTitle: 'ماشي في الطريق واحدة واحدة.', story1: 'أنا لسه في أول الطريق، ودي أكتر حاجة بحبها فيه. كل مشروع أو فعالية أو فريق أو فكرة جديدة بتديني فرصة أتعلم حاجة ماكنتش أعرفها.', story2: 'الموقع ده مكان بجمع فيه الحاجات اللي عملتها، والأماكن اللي رحتها، والناس اللي اتعلمت منها، واللحظات اللي مش عايز أنساها.',
     systemsLabel: '٠٢ / المشاريع', systemsTitle: 'حاجات عملتها فعلًا.', systemsIntro: 'مش كاملة، وده عادي. دي مشاريع حقيقية علمتني إزاي الفكرة بتتغير أول ما الناس تبدأ تستخدمها.', visit: 'افتح المشروع', role: 'كنت بعمل إيه', builtFor: 'اتعمل لـ',
-    sakr: 'سيستم إدارة ومبيعات اشتغلت عليه لسوبر ماركت صقر في مصر. المشروع علّمني أكتر عن المنتجات والمبيعات وتشغيل محل حقيقي يوم بيوم.', clean: 'سيستم إدارة ومبيعات اشتغلت عليه لمغسلة كلين نوفا في مصر. تجربة تانية اتعلمت منها عن الطلبات والخدمات والشغل اليومي.',
+     sakr: 'سيستم إدارة ومبيعات اشتغلت عليه لسوبر ماركت صقر في مصر. المشروع علّمني أكتر عن المنتجات والمبيعات وتشغيل محل حقيقي يوم بيوم.', clean: 'سيستم إدارة ومبيعات اشتغلت عليه لمغسلة كلين نوفا في مصر. تجربة تانية اتعلمت منها عن الطلبات والخدمات والشغل اليومي.', sid: 'منصة لخدمات وبيانات طلاب الدمج في القليوبية. خلتني أجرّب إزاي الأدوات الرقمية ممكن تنظّم الخدمات والطلبات والمتابعة بشكل أوضح للطلاب وأهاليهم.',
     archiveLabel: '٠٣ / الكود', archiveTitle: 'تجارب ومحاولات وخطوات.', archiveIntro: 'فيه مستودعات لمشاريع، وفيه حاجات صغيرة كنت بجربها. سايبهم هنا لأن كل محاولة علمتني حاجة.', open: 'افتح', updated: 'اتحدّث', profile: 'حسابي على GitHub', fork: 'مستودع متفرّع',
     journalLabel: '٠٣ / الإنجازات', journalTitle: 'محطات بحب أفتكرها.', journalIntro: 'فعاليات وإطلاقات وزيارات وفرق وتجارب بقوا جزء من حكايتي.', achievementRole: 'كنت بعمل إيه',
     methodLabel: '٠٤ / اللي اتعلمته', methodTitle: 'كل تجربة بتغيّر طريقة تفكيري.', steps: [['ابدأ حتى لو الصورة مش كاملة', 'حاجات كتير مابتفهمش غير لما أبدأ وأجرب وأشوف اللي هيحصل.'], ['اسأل واسمع وعدّل', 'الشغل مع الناس علّمني إن أول فكرة نادرًا ما بتكون الأخيرة، وده طبيعي جدًا.'], ['خد الدرس وكمل', 'حتى لو حاجة ماطلعتش زي ما كنت متخيل، بحاول أطلع منها بسؤال أحسن أو مهارة جديدة أو اتجاه أوضح.']],
@@ -585,8 +585,8 @@ function getT(lang: Language, dialect: Dialect) {
     systemsLabel: '٠٢ / المشاريع', systemsTitle: 'حوايج درتهم بجد.',
     systemsIntro: 'ماشي كاملين، وهادشي عادي. مشاريع حقيقية علموني كيفاش الفكرة كتبدل ملي الناس كيبداو يستعملوها.',
     visit: 'حلّ المشروع', role: 'شنو درت فيه', builtFor: 'تدار لـ',
-    sakr: 'سيستم للتسيير والمبيعات خدمت عليه لسوبر ماركت صقر فمصر. علمني أكثر على المنتجات والمبيعات وكيفاش كيتسير محل حقيقي كل نهار.',
-    clean: 'سيستم للتسيير والمبيعات خدمت عليه لمغسلة كلين نوفا فمصر. تجربة أخرى تعلمت منها على الطلبات والخدمات والخدمة اليومية.',
+     sakr: 'سيستم للتسيير والمبيعات خدمت عليه لسوبر ماركت صقر فمصر. علمني أكثر على المنتجات والمبيعات وكيفاش كيتسير محل حقيقي كل نهار.',
+     clean: 'سيستم للتسيير والمبيعات خدمت عليه لمغسلة كلين نوفا فمصر. تجربة أخرى تعلمت منها على الطلبات والخدمات والخدمة اليومية.', sid: 'منصة ديال الخدمات والبيانات ديال تلاميذ الدمج فالقليوبية. خلاتني نجرب كيفاش الأدوات الرقمية تقدر تنظم الخدمات والطلبات والتتبع بطريقة أوضح للتلاميذ والعائلات.',
     archiveLabel: '٠٣ / الكود', archiveTitle: 'تجارب ومحاولات وخطوات.',
     archiveIntro: 'كاينين مستودعات ديال مشاريع وكاينين حوايج صغار كنت كنجربهم. مخليهم هنا حيث كل محاولة علماتني حاجة.',
     journalLabel: '٠٣ / المحطات', journalTitle: 'لحظات بغيت نبقى فاكرها.', journalIntro: 'فعاليات وإطلاقات وزيارات وفرق وتجارب ولاو جزء من حكايتي.', achievementRole: 'شنو كان دوري',
@@ -772,14 +772,24 @@ function PhotoLibrary({ lang, dialect }: { lang: Language; dialect: Dialect }) {
    </main>;
 }
 
-function SystemCard({ type, lang, dialect, reduced }: { type: 'sakr' | 'clean'; lang: Language; dialect: Dialect; reduced: boolean | null }) {
-  const t = getT(lang, dialect); const sakr = type === 'sakr'; const title = sakr ? 'sakrmarket.com' : 'cleannovaeg.com'; const url = sakr ? 'https://sakrmarket.com' : 'https://cleannovaeg.com';
-  return <motion.article data-testid={`card-project-${type}`} initial={reduced ? false : { opacity: 0, y: 70 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .65 }} className={`system-card ${type}`}><div className="system-screen"><span>LIVE SYSTEM / 0{sakr ? 1 : 2}</span><strong>{sakr ? 'SAKR' : 'CLEAN\\NOVA'}</strong><div className="screen-lines"><i /><i /><i /></div></div><div className="system-info"><p>{sacrTags(sakr, lang).map(x => <span key={x}>{x}</span>)}</p><h3 data-testid={`text-project-title-${type}`}>{title}</h3><p>{sakr ? t.sakr : t.clean}</p><div><small>{t.builtFor}<b>{sakr ? 'Sakr supermarket' : 'CleanNova laundry'}</b></small><small>{lang === 'ar' ? 'دوري' : 'Role'}<b>{t.role}</b></small><a data-testid={`link-project-${type}`} target="_blank" rel="noreferrer" href={url}>{t.visit}<ExternalLink size={14} /></a></div></div></motion.article>;
+function SystemCard({ type, lang, dialect, reduced }: { type: 'sakr' | 'clean' | 'sid'; lang: Language; dialect: Dialect; reduced: boolean | null }) {
+  const t = getT(lang, dialect);
+  const project = type === 'sakr'
+    ? { title: 'sakrmarket.com', url: 'https://sakrmarket.com', name: 'Sakr supermarket', mark: 'SAKR', index: '01' }
+    : type === 'clean'
+      ? { title: 'cleannovaeg.com', url: 'https://cleannovaeg.com', name: 'CleanNova laundry', mark: 'CLEAN\\NOVA', index: '02' }
+      : { title: 'sid.edutech-egy.com', url: 'https://sid.edutech-egy.com', name: lang === 'ar' ? 'تعليم القليوبية' : 'Qalyubia Education', mark: 'SID', index: '03' };
+  const description = type === 'sakr' ? t.sakr : type === 'clean' ? t.clean : t.sid;
+  return <motion.article data-testid={`card-project-${type}`} initial={reduced ? false : { opacity: 0, y: 70 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .65 }} className={`system-card ${type}`}><div className="system-screen"><span>LIVE SYSTEM / {project.index}</span><strong>{project.mark}</strong><div className="screen-lines"><i /><i /><i /></div></div><div className="system-info"><p>{systemTags(type, lang).map(x => <span key={x}>{x}</span>)}</p><h3 data-testid={`text-project-title-${type}`}>{project.title}</h3><p>{description}</p><div><small>{t.builtFor}<b>{project.name}</b></small><small>{lang === 'ar' ? 'دوري' : 'Role'}<b>{t.role}</b></small><a data-testid={`link-project-${type}`} target="_blank" rel="noreferrer" href={project.url}>{t.visit}<ExternalLink size={14} /></a></div></div></motion.article>;
 }
-function sacrTags(sakr: boolean, lang: Language) { return sakr ? (lang === 'ar' ? ['العمليات', 'المبيعات', 'نظام أعمال'] : ['Operations', 'Sales platform', 'Business system']) : (lang === 'ar' ? ['الطلبات', 'الإدارة', 'المبيعات'] : ['Order flow', 'Management', 'Sales platform']); }
+function systemTags(type: 'sakr' | 'clean' | 'sid', lang: Language) {
+  if (type === 'sakr') return lang === 'ar' ? ['العمليات', 'المبيعات', 'نظام أعمال'] : ['Operations', 'Sales platform', 'Business system'];
+  if (type === 'clean') return lang === 'ar' ? ['الطلبات', 'الإدارة', 'المبيعات'] : ['Order flow', 'Management', 'Sales platform'];
+  return lang === 'ar' ? ['خدمات الطلاب', 'الدمج', 'بيانات ومتابعة'] : ['Student services', 'Inclusive education', 'Data & follow-up'];
+}
 
 function Systems({ lang, dialect }: { lang: Language; dialect: Dialect }) {
-  const t = getT(lang, dialect); const reduced = useReducedMotion(); return <section id="systems" className="systems-section"><SectionHead label={t.systemsLabel} title={t.systemsTitle} /><p className="systems-intro">{t.systemsIntro}</p><div className="systems-stage"><SystemCard type="sakr" lang={lang} dialect={dialect} reduced={reduced} /><SystemCard type="clean" lang={lang} dialect={dialect} reduced={reduced} /></div></section>;
+  const t = getT(lang, dialect); const reduced = useReducedMotion(); return <section id="systems" className="systems-section"><SectionHead label={t.systemsLabel} title={t.systemsTitle} /><p className="systems-intro">{t.systemsIntro}</p><div className="systems-stage"><SystemCard type="sakr" lang={lang} dialect={dialect} reduced={reduced} /><SystemCard type="clean" lang={lang} dialect={dialect} reduced={reduced} /><SystemCard type="sid" lang={lang} dialect={dialect} reduced={reduced} /></div></section>;
 }
 
 function Archive({ lang, dialect }: { lang: Language; dialect: Dialect }) {

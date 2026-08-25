@@ -102,6 +102,23 @@ footer { padding:22px max(20px,calc((100% - 1240px)/2)); display:flex; justify-c
 .rtl .steps article {
   text-align:right;
 }
+
+.system-card.clean,
+.system-card.sid {
+  margin-top:0;
+}
+@media(min-width:1100px) {
+  .systems-stage {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:28px;
+  }
+  .systems-stage .system-screen {
+    height:300px;
+  }
+  .systems-stage .system-info>p:nth-of-type(2) {
+    min-height:150px;
+  }
+}
 @media(max-width:767px) {
   .hero-copy h1 {
     font-size:clamp(2.9rem,12vw,4.4rem);
