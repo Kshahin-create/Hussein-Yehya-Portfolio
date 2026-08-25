@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://husseinyehya.com/sitemap.xml

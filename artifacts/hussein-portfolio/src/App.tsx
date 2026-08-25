@@ -764,12 +764,12 @@ function PhotoLibrary({ lang, dialect }: { lang: Language; dialect: Dialect }) {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [active]);
    const copy = lang === 'en' ? { eyebrow: 'PHOTO LIBRARY / 01', title: 'Photos I wanted to keep.', intro: 'Projects, events, friends, trips, and random moments from the road so far.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', press: 'Press exhibition', 'youth-strategy': 'Youth strategy', 'know-country': 'Know Your Country', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' } : dialect === 'moroccan' ? { eyebrow: 'مكتبة التصاور / ٠١', title: 'تصاور بغيت نخليهم هنا.', intro: 'مشاريع وفعاليات وصحاب وسفر ولحظات عادية من الطريق حتى لدابا.', all: 'التصاور كلها', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'رجع للبورتفوليو', close: 'سدّ', previous: 'اللي قبل', next: 'اللي من بعد' } : { eyebrow: 'مكتبة الصور / ٠١', title: 'صور حبيت أسيبها هنا.', intro: 'مشاريع وفعاليات وصحاب وسفر ولحظات عادية من الطريق لحد دلوقتي.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' };
-  return <div className="library-page">
+   return <main className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
      <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press', 'youth-strategy', 'know-country'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} decoding="async" /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
     {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} decoding="async" /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
-  </div>;
+   </main>;
 }
 
 function SystemCard({ type, lang, dialect, reduced }: { type: 'sakr' | 'clean'; lang: Language; dialect: Dialect; reduced: boolean | null }) {
@@ -810,6 +810,49 @@ function App() {
     localStorage.setItem('hussein-language', lang);
     localStorage.setItem('hussein-dialect', dialect);
   }, [dark, lang, dialect]);
+  useEffect(() => {
+    const isGallery = libraryPage;
+    const metadata = lang === 'en'
+      ? isGallery
+        ? {
+            title: 'Hussein Yehya Photo Library | Projects & Moments',
+            description: 'A personal photo library by Hussein Yehya: projects, educational teams, events, trips, portraits, and moments worth keeping.',
+          }
+        : {
+            title: 'Hussein Yehya | Full-Stack Web & App Developer',
+            description: 'Hussein Yehya is an Egyptian-Moroccan student and full-stack web and app developer sharing projects, teams, milestones, photos, and lessons from the journey.',
+          }
+      : isGallery
+        ? {
+            title: dialect === 'moroccan' ? 'مكتبة تصاور حسين يحيى | مشاريع ولحظات' : 'مكتبة صور حسين يحيى | مشاريع ولحظات',
+            description: dialect === 'moroccan'
+              ? 'مكتبة شخصية ديال حسين يحيى فيها المشاريع والفرق التعليمية والفعاليات والسفر والبورتريهات واللحظات اللي بغا يخليها.'
+              : 'مكتبة شخصية لحسين يحيى فيها المشاريع والفرق التعليمية والفعاليات والسفر والبورتريهات واللحظات اللي حب يسيبها.',
+          }
+        : {
+            title: dialect === 'moroccan' ? 'حسين يحيى | مطوّر ويب وتطبيقات Full-Stack' : 'حسين يحيى | مطوّر ويب وتطبيقات Full-Stack',
+            description: dialect === 'moroccan'
+              ? 'الموقع الشخصي ديال حسين يحيى، طالب ومطوّر مصري مغربي كيجمع فيه المشاريع والفرق والإنجازات والتصاور والدروس ديال الطريق.'
+              : 'الموقع الشخصي لحسين يحيى، طالب ومطوّر مصري مغربي بيجمع فيه المشاريع والفرق والإنجازات والصور والدروس اللي اتعلمها.',
+          };
+    document.title = metadata.title;
+    const setMeta = (selector: string, attribute: 'name' | 'property', value: string) => {
+      const element = document.head.querySelector<HTMLMetaElement>(selector) ?? Object.assign(document.createElement('meta'), { [attribute]: selector.match(/"([^"]+)"/)?.[1] });
+      element.setAttribute(attribute, selector.match(/"([^"]+)"/)?.[1] ?? '');
+      element.setAttribute('content', value);
+      if (!element.parentElement) document.head.appendChild(element);
+    };
+    setMeta('meta[name="description"]', 'name', metadata.description);
+    setMeta('meta[property="og:title"]', 'property', metadata.title);
+    setMeta('meta[property="og:description"]', 'property', metadata.description);
+    setMeta('meta[property="og:url"]', 'property', `https://husseinyehya.com${isGallery ? '/gallery' : '/'}`);
+    setMeta('meta[name="twitter:title"]', 'name', metadata.title);
+    setMeta('meta[name="twitter:description"]', 'name', metadata.description);
+    const canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]') ?? document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = `https://husseinyehya.com${isGallery ? '/gallery' : '/'}`;
+    if (!canonical.parentElement) document.head.appendChild(canonical);
+  }, [dialect, lang, libraryPage]);
   return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}>{<Header lang={lang} dialect={dialect} dark={dark} libraryPage={libraryPage} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} />}{libraryPage ? <PhotoLibrary lang={lang} dialect={dialect} /> : <main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} dialect={dialect} /><Journal lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main>}<footer><span>© {new Date().getFullYear()} / Hussein Yehya</span>{libraryPage ? <a href="/">{t.back}<ArrowUpRight size={14} /></a> : <a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a>}</footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
 }
 export default App;

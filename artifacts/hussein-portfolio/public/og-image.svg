@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Hussein Yehya — Full-Stack Web &amp; App Developer</title>
+  <desc id="desc">Personal portfolio, projects, milestones, and lessons from Hussein Yehya.</desc>
+  <rect width="1200" height="630" fill="#f8f5e7"/>
+  <path d="M0 0h1200v22H0z" fill="#0c2031"/>
+  <path d="M0 608h1200v22H0z" fill="#0c2031"/>
+  <circle cx="1040" cy="110" r="205" fill="#1a9099" opacity=".16"/>
+  <circle cx="1060" cy="530" r="250" fill="#f34e35" opacity=".18"/>
+  <text x="76" y="112" fill="#0c2031" font-family="Arial, sans-serif" font-size="30" font-weight="700">HY<tspan fill="#f34e35">.</tspan></text>
+  <text x="76" y="250" fill="#0c2031" font-family="Arial, sans-serif" font-size="76" font-weight="900">Hussein Yehya</text>
+  <text x="80" y="332" fill="#1a9099" font-family="monospace" font-size="25" letter-spacing="3">FULL-STACK WEB &amp; APP DEVELOPER</text>
+  <text x="80" y="425" fill="#0c2031" font-family="Arial, sans-serif" font-size=" thirty" font-size="30">Projects, milestones, photos, and lessons</text>
+  <text x="80" y="474" fill="#0c2031" font-family="Arial, sans-serif" font-size="30">from an Egyptian-Moroccan student’s journey.</text>
+  <rect x="972" y="240" width="92" height="250" fill="#f34e35"/>
+  <text x="1028" y="274" fill="#0c2031" font-family="monospace" font-size="16" text-anchor="middle" transform="rotate(90 1028 274)">CAIRO / MY NOTES</text>
+</svg>
