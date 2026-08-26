@@ -1,0 +1,17 @@
+{
+  "name": "Hussein Yehya Portfolio",
+  "short_name": "Hussein Yehya",
+  "description": "Hussein Yehya's personal portfolio, projects, milestones, and photo library.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f5e7",
+  "theme_color": "#f8f5e7",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
