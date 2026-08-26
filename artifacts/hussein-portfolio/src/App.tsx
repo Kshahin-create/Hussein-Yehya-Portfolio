@@ -688,12 +688,12 @@ function AchievementGallery({ images, title, details, role, location }: { images
   return <>
     <div className="achievement-gallery" aria-label={title}>
       <button className="achievement-feature" onClick={(event) => showGallery(0, event.currentTarget)} aria-label={`Open ${title} gallery`}>
-        {images[0] && <img src={images[0]} alt={title} loading="lazy" decoding="async" />}
+        {images[0] && <img src={images[0]} alt={`${title} — photo 1`} width={1600} height={1200} loading="lazy" decoding="async" />}
         <span className="gallery-open-label">View gallery <ArrowUpRight size={15} /></span>
       </button>
       <button className="achievement-stack" onClick={(event) => showGallery(1, event.currentTarget)} aria-label={`View all ${imageCount} photos`}>
-        {images[1] && <img src={images[1]} alt="" loading="lazy" decoding="async" />}
-        {images[2] && <img src={images[2]} alt="" loading="lazy" decoding="async" />}
+        {images[1] && <img src={images[1]} alt={`${title} — photo 2`} width={1600} height={1200} loading="lazy" decoding="async" />}
+        {images[2] && <img src={images[2]} alt={`${title} — photo 3`} width={1600} height={1200} loading="lazy" decoding="async" />}
         <span>+{Math.max(0, imageCount - 1)} photos <ArrowUpRight size={15} /></span>
       </button>
     </div>
@@ -702,7 +702,7 @@ function AchievementGallery({ images, title, details, role, location }: { images
         <div className="gallery-modal-viewer">
           <span className="gallery-viewer-count">{String(activeIndex + 1).padStart(2, '0')} / {String(imageCount).padStart(2, '0')}</span>
           <button type="button" className="gallery-viewer-nav previous" onClick={previous} aria-label="Previous photo"><ChevronLeft size={20} /></button>
-          <img src={images[activeIndex]} alt={`${title} — ${activeIndex + 1}`} decoding="async" />
+          <img src={images[activeIndex]} alt={`${title} — photo ${activeIndex + 1}`} width={1600} height={1200} decoding="async" />
           <button type="button" className="gallery-viewer-nav next" onClick={next} aria-label="Next photo"><ChevronRight size={20} /></button>
         </div>
         <div className="gallery-modal-sidebar">
@@ -719,7 +719,7 @@ function AchievementGallery({ images, title, details, role, location }: { images
             </div>
           </div>
           <div className="gallery-thumbs">
-            {images.map((image, index) => <button type="button" className={index === activeIndex ? 'active' : ''} aria-current={index === activeIndex ? 'true' : undefined} key={`${image}-${index}`} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt="" loading="lazy" decoding="async" /></button>)}
+            {images.map((image, index) => <button type="button" className={index === activeIndex ? 'active' : ''} aria-current={index === activeIndex ? 'true' : undefined} key={`${image}-${index}`} onClick={() => setActive(index)} aria-label={`View photo ${index + 1}`}><img src={image} alt={`${title} — thumbnail ${index + 1}`} width={1600} height={1200} loading="lazy" decoding="async" /></button>)}
           </div>
         </div>
       </div>
@@ -767,8 +767,8 @@ function PhotoLibrary({ lang, dialect }: { lang: Language; dialect: Dialect }) {
    return <main className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
      <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press', 'youth-strategy', 'know-country'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
-    <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} loading={index > 1 ? 'lazy' : undefined} decoding="async" /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
-    {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} decoding="async" /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
+    <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} width={1600} height={1200} loading={index > 1 ? 'lazy' : undefined} decoding="async" /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
+    {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} width={1600} height={1200} decoding="async" /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
    </main>;
 }
 
@@ -829,8 +829,8 @@ function App() {
             description: 'A personal photo library by Hussein Yehya: projects, educational teams, events, trips, portraits, and moments worth keeping.',
           }
         : {
-            title: 'Hussein Yehya | Full-Stack Web & App Developer',
-            description: 'Hussein Yehya is an Egyptian-Moroccan student and full-stack web and app developer sharing projects, teams, milestones, photos, and lessons from the journey.',
+            title: 'Hussein Yehya — Full-Stack Developer in Egypt | Web, Flutter & AI Projects',
+            description: 'Hussein Yehya is an Egyptian-Moroccan full-stack developer in Egypt building web apps, Flutter mobile apps, APIs, and AI-powered products.',
           }
       : isGallery
         ? {
@@ -856,8 +856,13 @@ function App() {
     setMeta('meta[property="og:title"]', 'property', metadata.title);
     setMeta('meta[property="og:description"]', 'property', metadata.description);
     setMeta('meta[property="og:url"]', 'property', `https://husseinyehya.com${isGallery ? '/gallery' : '/'}`);
+    setMeta('meta[property="og:locale"]', 'property', lang === 'ar' ? 'ar_EG' : 'en_US');
+    setMeta('meta[property="og:image"]', 'property', 'https://husseinyehya.com/og-image.svg');
+    setMeta('meta[property="og:image:alt"]', 'property', lang === 'ar' ? 'حسين يحيى — مطوّر ويب وتطبيقات' : 'Hussein Yehya — Full-Stack Web & App Developer');
     setMeta('meta[name="twitter:title"]', 'name', metadata.title);
     setMeta('meta[name="twitter:description"]', 'name', metadata.description);
+    setMeta('meta[name="twitter:image"]', 'name', 'https://husseinyehya.com/og-image.svg');
+    setMeta('meta[name="twitter:image:alt"]', 'name', lang === 'ar' ? 'حسين يحيى — مطوّر ويب وتطبيقات' : 'Hussein Yehya — Full-Stack Web & App Developer');
     const canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]') ?? document.createElement('link');
     canonical.rel = 'canonical';
     canonical.href = `https://husseinyehya.com${isGallery ? '/gallery' : '/'}`;
