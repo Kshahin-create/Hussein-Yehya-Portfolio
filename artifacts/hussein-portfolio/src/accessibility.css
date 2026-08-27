@@ -1,0 +1,80 @@
+.system-contribution {
+  min-height:72px;
+  padding-inline-start:12px;
+  margin:14px 0 0;
+  border-inline-start:2px solid hsl(var(--signal));
+  font-size:12px;
+  line-height:1.7;
+  color:hsl(var(--paper) / .86);
+}
+
+.system-info>p:nth-of-type(2) {
+  min-height:0;
+  margin-bottom:0;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline:3px solid hsl(var(--signal));
+  outline-offset:3px;
+}
+
+.library-photo,
+.achievement-feature,
+.achievement-stack {
+  background:
+    linear-gradient(110deg, hsl(var(--ink) / .18) 8%, hsl(var(--paper) / .12) 18%, hsl(var(--ink) / .18) 33%),
+    hsl(var(--ink) / .12);
+  background-size:220% 100%;
+  animation:image-placeholder 1.6s ease-in-out infinite;
+}
+
+.library-photo img,
+.achievement-feature img,
+.achievement-stack img {
+  background:hsl(var(--ink) / .08);
+}
+
+@keyframes image-placeholder {
+  0% { background-position:200% 0; }
+  100% { background-position:-20% 0; }
+}
+
+@media (max-height:780px) and (min-width:768px) {
+  .story-hero {
+    min-height:760px;
+    padding-top:100px;
+    padding-bottom:62px;
+    gap:4vw;
+  }
+
+  .hero-photo img { height:min(53vh,500px); }
+  .hero-copy h1 { margin:18px 0; }
+  .hero-actions { margin-top:24px; }
+  .hero-signal { bottom:22px; }
+}
+
+@media (max-width:767px) {
+  .library-toolbar {
+    display:flex !important;
+    position:relative;
+    padding-top:58px !important;
+  }
+
+  .library-toolbar > span {
+    position:absolute;
+    inset-block-start:14px;
+    inset-inline-start:0;
+    display:block !important;
+    margin:0;
+    white-space:nowrap;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .library-photo,
+  .achievement-feature,
+  .achievement-stack {
+    animation:none;
+  }
+}

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
+@import './accessibility.css';
 @custom-variant dark (&:is(.dark *));
 @theme inline { --color-background:hsl(var(--background)); --color-foreground:hsl(var(--foreground)); --color-border:hsl(var(--border)); --font-sans:var(--font-body); }
 :root { --background:48 55% 94%; --foreground:207 61% 12%; --border:207 28% 72%; --paper:48 55% 94%; --ink:207 61% 12%; --signal:8 89% 58%; --aqua:184 71% 35%; --font-body:'Manrope',sans-serif; --font-display:'Archivo Black',sans-serif; --font-mono:'DM Mono',monospace; --font-arabic:'IBM Plex Sans Arabic',sans-serif; }

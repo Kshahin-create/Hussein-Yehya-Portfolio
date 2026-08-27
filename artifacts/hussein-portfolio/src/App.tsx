@@ -608,7 +608,7 @@ function Header({ lang, dialect, dark, onLanguage, onDialect, onTheme, libraryPa
   const links = ['story', 'profile', 'journal', 'systems', 'archive', 'method', 'contact'];
   const labels = [t.nav[0], lang === 'ar' ? 'البروفايل' : 'Profile', lang === 'ar' ? 'الإنجازات' : 'Journal', ...t.nav.slice(1)];
   const home = libraryPage ? '/' : '#top'; const sectionHref = (link: string) => libraryPage ? `/#${link}` : `#${link}`;
-  return <header className="new-nav"><a href={home} data-testid="link-home" className="mark">HY<span>.</span></a><nav>{links.map((link, i) => <a data-testid={`link-nav-${i}`} key={link} href={sectionHref(link)}>{labels[i]}</a>)}</nav><div className="nav-tools"><a className="library-link" href="/gallery">{lang === 'ar' ? 'مكتبة الصور' : 'Photo library'}</a><button data-testid="button-language-toggle" onClick={onLanguage}>{t.language}</button>{lang === 'ar' && <button data-testid="button-dialect-toggle" onClick={onDialect}>{dialect === 'egyptian' ? 'مصرية' : 'مغربية'}</button>}<button data-testid="button-theme-toggle" aria-label={dark ? t.themeDark : t.themeLight} onClick={onTheme}>{dark ? <Sun size={15} /> : <Moon size={15} />}</button><button data-testid="button-menu-toggle" className="mobile-menu" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X size={17} /> : <Menu size={17} />}</button></div>{open && <div className="mobile-sheet">{links.map((link, i) => <a onClick={() => setOpen(false)} data-testid={`link-mobile-nav-${i}`} key={link} href={sectionHref(link)}>{labels[i]} <ArrowDownRight size={16} /></a>)}</div>}</header>;
+  return <header className="new-nav"><a href={home} data-testid="link-home" className="mark">HY<span>.</span></a><nav>{links.map((link, i) => <a data-testid={`link-nav-${i}`} key={link} href={sectionHref(link)}>{labels[i]}</a>)}</nav><div className="nav-tools"><a className="library-link" href="/gallery">{lang === 'ar' ? 'مكتبة الصور' : 'Photo library'}</a><button data-testid="button-language-toggle" onClick={onLanguage}>{t.language}</button>{lang === 'ar' && <button data-testid="button-dialect-toggle" onClick={onDialect}>{dialect === 'egyptian' ? 'مصرية' : 'مغربية'}</button>}<button data-testid="button-theme-toggle" aria-label={dark ? t.themeDark : t.themeLight} onClick={onTheme}>{dark ? <Sun size={15} /> : <Moon size={15} />}</button><button data-testid="button-menu-toggle" className="mobile-menu" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open} aria-controls="mobile-navigation">{open ? <X size={17} /> : <Menu size={17} />}</button></div>{open && <div id="mobile-navigation" className="mobile-sheet">{links.map((link, i) => <a onClick={() => setOpen(false)} data-testid={`link-mobile-nav-${i}`} key={link} href={sectionHref(link)}>{labels[i]} <ArrowDownRight size={16} /></a>)}</div>}</header>;
 }
 
 function Hero({ lang, dialect }: { lang: Language; dialect: Dialect }) {
@@ -642,6 +642,7 @@ function AchievementGallery({ images, title, details, role, location }: { images
   const [active, setActive] = useState(0);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRef = useRef<HTMLElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
   const imageCount = images.length;
   const activeIndex = imageCount > 0 ? Math.min(active, imageCount - 1) : 0;
   const showGallery = (index = 0, trigger?: HTMLElement) => {
@@ -677,6 +678,18 @@ function AchievementGallery({ images, title, details, role, location }: { images
       } else if (event.key === 'ArrowRight') {
         event.preventDefault();
         next();
+      } else if (event.key === 'Tab') {
+        const focusable = modalRef.current?.querySelectorAll<HTMLElement>('button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (!focusable?.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     };
     document.addEventListener('keydown', onKeyDown);
@@ -697,7 +710,7 @@ function AchievementGallery({ images, title, details, role, location }: { images
         <span>+{Math.max(0, imageCount - 1)} photos <ArrowUpRight size={15} /></span>
       </button>
     </div>
-    {open && imageCount > 0 && <div className="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" onMouseDown={(event) => { if (event.target === event.currentTarget) closeGallery(); }}>
+    {open && imageCount > 0 && <div ref={modalRef} className="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" onMouseDown={(event) => { if (event.target === event.currentTarget) closeGallery(); }}>
       <div className="gallery-modal-inner">
         <div className="gallery-modal-viewer">
           <span className="gallery-viewer-count">{String(activeIndex + 1).padStart(2, '0')} / {String(imageCount).padStart(2, '0')}</span>
@@ -747,28 +760,60 @@ function Journal({ lang, dialect }: { lang: Language; dialect: Dialect }) {
 function PhotoLibrary({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   const [filter, setFilter] = useState<'all' | 'portrait' | 'launch' | 'team' | 'initiative' | 'postal-services' | 'protocol' | 'university' | 'cultural' | 'casa' | 'leaders' | 'organizing' | 'reading' | 'annual' | 'nasa' | 'press' | 'youth-strategy' | 'know-country'>('all');
   const [active, setActive] = useState<number | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
   const filtered = libraryPhotos.filter((photo) => filter === 'all' || photo.label.toLowerCase() === filter);
   const current = active === null ? null : libraryPhotos[active];
   const go = (direction: number) => {
     if (active === null) return;
     setActive((active + direction + libraryPhotos.length) % libraryPhotos.length);
   };
+  const closeLightbox = () => {
+    setActive(null);
+    window.requestAnimationFrame(() => triggerRef.current?.focus());
+  };
   useEffect(() => {
     if (active === null) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.requestAnimationFrame(() => closeButtonRef.current?.focus());
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setActive(null);
-      if (event.key === 'ArrowLeft') go(-1);
-      if (event.key === 'ArrowRight') go(1);
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeLightbox();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        go(-1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        go(1);
+      } else if (event.key === 'Tab') {
+        const focusable = modalRef.current?.querySelectorAll<HTMLElement>('button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (!focusable?.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
     };
     document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
   }, [active]);
-   const copy = lang === 'en' ? { eyebrow: 'PHOTO LIBRARY / 01', title: 'Hussein Yehya’s photo library.', intro: 'Projects, events, friends, trips, and random moments from the road so far.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', press: 'Press exhibition', 'youth-strategy': 'Youth strategy', 'know-country': 'Know Your Country', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next' } : dialect === 'moroccan' ? { eyebrow: 'مكتبة التصاور / ٠١', title: 'مكتبة تصاور حسين يحيى.', intro: 'مشاريع وفعاليات وصحاب وسفر ولحظات عادية من الطريق حتى لدابا.', all: 'التصاور كلها', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'رجع للبورتفوليو', close: 'سدّ', previous: 'اللي قبل', next: 'اللي من بعد' } : { eyebrow: 'مكتبة الصور / ٠١', title: 'مكتبة صور حسين يحيى.', intro: 'مشاريع وفعاليات وصحاب وسفر ولحظات عادية من الطريق لحد دلوقتي.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي' };
+   const copy = lang === 'en' ? { eyebrow: 'PHOTO LIBRARY / 01', title: 'Hussein Yehya’s photo library.', intro: 'Projects, events, friends, trips, and random moments from the road so far.', all: 'All photos', portrait: 'Portraits', launch: 'Madinah AI', team: 'Technical team', initiative: 'Green initiative', 'postal-services': 'Postal services', protocol: 'Cooperation protocol', university: 'University visit', cultural: 'Cultural ambassadors', casa: 'CASA platform', leaders: 'Republic Schools Leaders', organizing: 'Student organizing', reading: 'Reading carnival', annual: 'Annual activities meeting', nasa: 'NASA Space Apps', press: 'Press exhibition', 'youth-strategy': 'Youth strategy', 'know-country': 'Know Your Country', back: 'Back to portfolio', close: 'Close', previous: 'Previous', next: 'Next', count: `Showing ${filtered.length} of ${libraryPhotos.length}` } : dialect === 'moroccan' ? { eyebrow: 'مكتبة التصاور / ٠١', title: 'مكتبة تصاور حسين يحيى.', intro: 'مشاريع وفعاليات وصحاب وسفر ولحظات عادية من الطريق حتى لدابا.', all: 'التصاور كلها', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'استراتيجية الشباب', 'know-country': 'مبادرة اعرف بلدك', back: 'رجع للبورتفوليو', close: 'سدّ', previous: 'اللي قبل', next: 'اللي من بعد', count: `كنعرضو ${filtered.length} من ${libraryPhotos.length}` } : { eyebrow: 'مكتبة الصور / ٠١', title: 'مكتبة صور حسين يحيى.', intro: 'مشاريع وفعاليات وصحاب وسفر ولحظات عادية من الطريق لحد دلوقتي.', all: 'كل الصور', portrait: 'بورتريه', launch: 'مدينة AI', team: 'الفريق التقني', initiative: 'المبادرة الخضراء', 'postal-services': 'خدمات البريد', protocol: 'بروتوكول التعاون', university: 'زيارة جامعية', cultural: 'سفراء الثقافة', casa: 'منصة CASA', leaders: 'قادة مدارس الجمهورية', organizing: 'التنظيم الطلابي', reading: 'كرنفال القراءة', annual: 'اللقاء السنوي للأنشطة', nasa: 'NASA Space Apps', press: 'معرض الصحافة', 'youth-strategy': 'Youth strategy', 'know-country': 'مبادرة اعرف بلدك', back: 'العودة للبورتفوليو', close: 'إغلاق', previous: 'السابق', next: 'التالي', count: `عرض ${filtered.length} من ${libraryPhotos.length}` };
    return <main className="library-page">
     <div className="library-hero"><div><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div><a className="library-back" href="/"><ArrowUpRight size={16} /> {copy.back}</a></div>
-     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press', 'youth-strategy', 'know-country'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span>{String(filtered.length).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span></div>
-    <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={() => setActive(index)}><img src={photo.src} alt={photo.title} width={1600} height={1200} loading={index > 1 ? 'lazy' : undefined} decoding="async" /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
-    {current && <div className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button type="button" onClick={() => setActive(null)} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} width={1600} height={1200} decoding="async" /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
+     <div className="library-toolbar"><div className="library-filters">{(['all', 'portrait', 'launch', 'team', 'initiative', 'postal-services', 'protocol', 'university', 'cultural', 'casa', 'leaders', 'organizing', 'reading', 'annual', 'nasa', 'press', 'youth-strategy', 'know-country'] as const).map((value) => <button type="button" className={filter === value ? 'active' : ''} key={value} aria-pressed={filter === value} onClick={() => setFilter(value)}>{copy[value]}</button>)}</div><span aria-live="polite">{copy.count}</span></div>
+     <div className="library-grid">{filtered.map((photo) => { const index = libraryPhotos.indexOf(photo); return <button type="button" className={`library-photo ${photo.featured ? 'featured' : ''}`} key={photo.src} onClick={(event) => { triggerRef.current = event.currentTarget; setActive(index); }}><img src={photo.src} alt={photo.title} width={1600} height={1200} sizes={photo.featured ? '(max-width: 767px) 100vw, 66vw' : '(max-width: 767px) 50vw, 33vw'} loading={index > 1 ? 'lazy' : undefined} decoding="async" /><span><small>{lang === 'ar' ? photo.labelAr : photo.label}</small><strong>{photo.title}</strong><ArrowUpRight size={16} /></span></button>; })}</div>
+     {current && <div ref={modalRef} className="library-lightbox" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={(event) => { if (event.target === event.currentTarget) closeLightbox(); }}><div className="library-lightbox-card"><div className="library-lightbox-top"><span>{String((active ?? 0) + 1).padStart(2, '0')} / {String(libraryPhotos.length).padStart(2, '0')}</span><button ref={closeButtonRef} type="button" onClick={closeLightbox} aria-label={copy.close}><X size={20} /></button></div><div className="library-lightbox-stage"><button type="button" onClick={() => go(-1)} aria-label={copy.previous}><ChevronLeft /></button><img src={current.src} alt={current.title} width={1600} height={1200} sizes="(max-width: 767px) 100vw, 85vw" decoding="async" /><button type="button" onClick={() => go(1)} aria-label={copy.next}><ChevronRight /></button></div><div className="library-lightbox-caption"><span>{lang === 'ar' ? current.labelAr : current.label}</span><h2>{current.title}</h2></div></div></div>}
    </main>;
 }
 
@@ -780,12 +825,28 @@ function SystemCard({ type, lang, dialect, reduced }: { type: 'sakr' | 'clean' |
       ? { title: 'cleannovaeg.com', url: 'https://cleannovaeg.com', name: 'CleanNova laundry', mark: 'CLEAN\\NOVA', index: '02' }
       : { title: 'sid.edutech-egy.com', url: 'https://sid.edutech-egy.com', name: lang === 'ar' ? 'تعليم القليوبية' : 'Qalyubia Education', mark: 'SID', index: '03' };
   const description = type === 'sakr' ? t.sakr : type === 'clean' ? t.clean : t.sid;
-  return <motion.article data-testid={`card-project-${type}`} initial={reduced ? false : { opacity: 0, y: 70 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .65 }} className={`system-card ${type}`}><div className="system-screen"><span>LIVE SYSTEM / {project.index}</span><strong>{project.mark}</strong><div className="screen-lines"><i /><i /><i /></div></div><div className="system-info"><p>{systemTags(type, lang).map(x => <span key={x}>{x}</span>)}</p><h3 data-testid={`text-project-title-${type}`}>{project.title}</h3><p>{description}</p><div><small>{t.builtFor}<b>{project.name}</b></small><small>{lang === 'ar' ? 'دوري' : 'Role'}<b>{t.role}</b></small><a data-testid={`link-project-${type}`} target="_blank" rel="noreferrer" href={project.url}>{t.visit}<ExternalLink size={14} /></a></div></div></motion.article>;
+  return <motion.article data-testid={`card-project-${type}`} initial={reduced ? false : { opacity: 0, y: 70 }} whileInView={reduced ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .65 }} className={`system-card ${type}`}><div className="system-screen"><span>LIVE SYSTEM / {project.index}</span><strong>{project.mark}</strong><div className="screen-lines"><i /><i /><i /></div></div><div className="system-info"><p>{systemTags(type, lang).map(x => <span key={x}>{x}</span>)}</p><h3 data-testid={`text-project-title-${type}`}>{project.title}</h3><p>{description}</p><p className="system-contribution">{systemContribution(type, lang, dialect)}</p><div><small>{t.builtFor}<b>{project.name}</b></small><small>{lang === 'ar' ? 'دوري' : 'Role'}<b>{t.role}</b></small><a data-testid={`link-project-${type}`} target="_blank" rel="noopener noreferrer" href={project.url}>{t.visit}<ExternalLink size={14} /></a></div></div></motion.article>;
 }
 function systemTags(type: 'sakr' | 'clean' | 'sid', lang: Language) {
   if (type === 'sakr') return lang === 'ar' ? ['العمليات', 'المبيعات', 'نظام أعمال'] : ['Operations', 'Sales platform', 'Business system'];
   if (type === 'clean') return lang === 'ar' ? ['الطلبات', 'الإدارة', 'المبيعات'] : ['Order flow', 'Management', 'Sales platform'];
   return lang === 'ar' ? ['خدمات الطلاب', 'الدمج', 'بيانات ومتابعة'] : ['Student services', 'Inclusive education', 'Data & follow-up'];
+}
+
+function systemContribution(type: 'sakr' | 'clean' | 'sid', lang: Language, dialect: Dialect) {
+  if (lang === 'en') {
+    if (type === 'sakr') return 'My part: worked on product, sales, and day-to-day operations flows.';
+    if (type === 'clean') return 'My part: worked on order, service, and day-to-day operations flows.';
+    return 'My part: built the student services, requests, data, and follow-up experience.';
+  }
+  if (dialect === 'moroccan') {
+    if (type === 'sakr') return 'الدور ديالي: خدمت على مسارات المنتجات والمبيعات والتسيير اليومي.';
+    if (type === 'clean') return 'الدور ديالي: خدمت على مسارات الطلبات والخدمات والتسيير اليومي.';
+    return 'الدور ديالي: بنيت تجربة الخدمات والطلبات والبيانات والتتبع ديال الطلبة.';
+  }
+  if (type === 'sakr') return 'دوري: اشتغلت على مسارات المنتجات والمبيعات وتشغيل المحل يوم بيوم.';
+  if (type === 'clean') return 'دوري: اشتغلت على مسارات الطلبات والخدمات وتشغيل الشغل اليومي.';
+  return 'دوري: بنيت تجربة الخدمات والطلبات والبيانات والمتابعة للطلاب.';
 }
 
 function Systems({ lang, dialect }: { lang: Language; dialect: Dialect }) {

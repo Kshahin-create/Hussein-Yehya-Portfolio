@@ -1,1 +1,2 @@
 - [Portfolio voice](portfolio-voice.md) — Keep the site personal, youthful, and achievement-led; never frame Hussein as selling services or solving client problems.
+- [Mobile gallery toolbar](mobile-gallery-toolbar.md) — Keep the gallery result count above the filter pills on narrow screens so it remains visible as filters wrap.
