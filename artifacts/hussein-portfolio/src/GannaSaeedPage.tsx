@@ -1,4 +1,4 @@
-import { ArrowDownLeft, ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowDownLeft, ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import heroEditorial from './assets/ganna/hero-editorial.webp';
@@ -188,15 +188,15 @@ function getGannaCopy(lang: Language, dialect: Dialect) {
   return lang === 'en' ? gannaCopy.en : dialect === 'moroccan' ? gannaCopy.moroccan : gannaCopy.egyptian;
 }
 
-export default function GannaSaeedPage({ lang, dialect }: { lang: Language; dialect: Dialect }) {
+export default function GannaSaeedPage({ lang, dialect, dark, onLanguage, onDialect, onTheme }: { lang: Language; dialect: Dialect; dark: boolean; onLanguage: () => void; onDialect: () => void; onTheme: () => void }) {
   const copy = getGannaCopy(lang, dialect);
   const reduced = useReducedMotion();
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => { setMenuOpen(false); }, [lang, dialect]);
   const reveal = (delay = 0) => reduced ? undefined : { opacity: 1, y: 0, transition: { duration: .65, delay } };
-  return <main className="ganna-page">
+  return <main id="top" className="ganna-page">
     <div className="ganna-grain" aria-hidden="true" />
-    <div className="ganna-mobile-menu" data-open={menuOpen}>
+    <div className="ganna-mobile-menu" id="ganna-mobile-menu" data-open={menuOpen}>
       <a href="#ganna-about" onClick={() => setMenuOpen(false)}>{copy.aboutLabel}</a>
       <a href="#ganna-moments" onClick={() => setMenuOpen(false)}>{copy.momentsLabel}</a>
       <a href="#ganna-madinah" onClick={() => setMenuOpen(false)}>Madinah AI</a>
@@ -206,7 +206,12 @@ export default function GannaSaeedPage({ lang, dialect }: { lang: Language; dial
       <a className="ganna-brand" href="/" aria-label={copy.backTop}><img src={husseinMark} alt="" /><span>{copy.brand}</span></a>
       <nav aria-label={copy.pageLabel}><a href="#ganna-about">{copy.aboutLabel}</a><a href="#ganna-moments">{copy.momentsLabel}</a><a href="#ganna-madinah">Madinah AI</a><a href="#ganna-note">{copy.noteLabel}</a></nav>
       <span className="ganna-year">PORTFOLIO / 2026</span>
-      <button className="ganna-menu-button" type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} aria-controls="ganna-mobile-menu" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+      <div className="ganna-header-tools">
+        <button type="button" onClick={onLanguage} aria-label={lang === 'en' ? 'Switch to Arabic' : 'Switch to English'}>{lang === 'en' ? 'ع' : 'EN'}</button>
+        {lang === 'ar' && <button type="button" onClick={onDialect} aria-label={dialect === 'egyptian' ? 'Switch to Moroccan Arabic' : 'Switch to Egyptian Arabic'}>{dialect === 'egyptian' ? 'MA' : 'EG'}</button>}
+        <button type="button" onClick={onTheme} aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}>{dark ? <Sun size={15} /> : <Moon size={15} />}</button>
+        <button className="ganna-menu-button" type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} aria-controls="ganna-mobile-menu" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+      </div>
     </header>
 
     <section className="ganna-hero" aria-labelledby="ganna-hero-title">

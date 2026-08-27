@@ -163,14 +163,20 @@ export function PeopleSpotlight({ lang, dialect }: { lang: Language; dialect: Di
       <p>{lang === 'en' ? 'A growing collection of notes from people and teams who left something useful behind. Sarah is a teammate on the Madinah AI team.' : dialect === 'moroccan' ? 'مجموعة كتكبر ديال رسائل من ناس وفرق خلو شي حاجة زوينة ومفيدة فطريقي. سارة زميلة معايا ففريق العمل ديال Madinah AI.' : 'مجموعة بتكبر من رسائل ناس وفرق سابوا حاجة مفيدة في طريقي. سارة زميلة معايا في فريق عمل Madinah AI.'}</p>
       <a className="people-spotlight-link" data-testid="link-people-sarah" href="/people/sarah-sameh">{copy.read}<ArrowUpRight size={16} /></a>
     </div>
-    <figure>
-      <img src={sarahTeachingWide} alt={copy.eventWideAlt} width={899} height={1599} loading="lazy" decoding="async" />
-      <figcaption><span>NOTE 01</span><b>Sarah Sameh Hussein</b></figcaption>
-    </figure>
-    <figure>
-      <img src={gannaEditorial} alt={lang === 'en' ? 'Editorial artwork for Ganna Saeed’s note' : dialect === 'moroccan' ? 'تكوين بصري لرسالة جني سعيد' : 'تكوين بصري لرسالة جني سعيد'} width={1600} height={900} loading="lazy" decoding="async" />
-      <figcaption><span>NOTE 02</span><b>Ganna Saeed</b></figcaption>
-    </figure>
+    <div className="people-spotlight-cards">
+      <a className="people-card-link" href="/people/sarah-sameh" aria-label="Read Sarah Sameh Hussein’s note">
+        <figure>
+          <img src={sarahTeachingWide} alt={copy.eventWideAlt} width={899} height={1599} loading="lazy" decoding="async" />
+          <figcaption><span>NOTE 01</span><b>Sarah Sameh Hussein</b></figcaption>
+        </figure>
+      </a>
+      <a className="people-card-link" href="/people/ganna-saeed" aria-label="Read Ganna Saeed’s note">
+        <figure>
+          <img src={gannaEditorial} alt={lang === 'en' ? 'Editorial artwork for Ganna Saeed’s note' : 'تكوين بصري لرسالة جني سعيد'} width={1600} height={900} loading="lazy" decoding="async" />
+          <figcaption><span>NOTE 02</span><b>Ganna Saeed</b></figcaption>
+        </figure>
+      </a>
+    </div>
   </motion.section>;
 }
 

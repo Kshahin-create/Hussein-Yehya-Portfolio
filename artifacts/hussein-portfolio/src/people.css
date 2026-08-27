@@ -83,6 +83,7 @@
 .people-spotlight-copy>p:not(.people-kicker) { line-height:1.8; opacity:.7; }
 .people-spotlight-link { display:inline-flex; align-items:center; gap:7px; margin-top:18px; color:hsl(var(--aqua)); font-size:12px; font-weight:800; text-decoration:none; }
 .people-spotlight-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.people-card-link { display:block; min-width:0; text-decoration:none; }
 .people-spotlight-cards figure { margin:0; position:relative; padding:8px 0 0 8px; border-top:1px solid hsl(var(--aqua)); border-inline-start:1px solid hsl(var(--aqua)); }
 .people-spotlight figure img { width:100%; aspect-ratio:4/3; object-fit:cover; filter:saturate(.65); }
 .people-spotlight figcaption { position:absolute; inset:auto 0 0; padding:38px 15px 13px; display:flex; flex-direction:column; color:hsl(var(--paper)); background:linear-gradient(transparent,hsl(var(--ink)/.88)); }
