@@ -1,9 +1,9 @@
 import { ArrowDownRight, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
-import leadershipHero from '@assets/hy-leadership-hero.jpg';
-import leadershipMark from '@assets/hy-leadership-mark.png';
-import meetingRecord from '@assets/hy-meeting-record.jpg';
-import collaborationEvidence from '@assets/hy-collaboration-evidence.jpg';
+import leadershipHero from './assets/sarah/leadership-hero.webp';
+import leadershipMark from './assets/sarah/leadership-mark.webp';
+import meetingRecord from './assets/sarah/meeting-record.webp';
+import collaborationEvidence from './assets/sarah/collaboration-evidence.webp';
 import './people.css';
 
 type Language = 'en' | 'ar';
@@ -11,12 +11,20 @@ type Dialect = 'egyptian' | 'moroccan';
 
 const peopleCopy = {
   en: {
-    eyebrow: 'PEOPLE / NOTE 01',
-    title: 'Some people change\nhow you see the work.',
+    eyebrow: 'PEOPLE / SARAH SAMEH / 01',
+    title: 'Sarah Sameh.\nA note that stayed.',
     description: 'This page keeps a note from Sarah Sameh Hussein, an Edu-Tech teammate, about the small habits that made working together clearer: organization, follow-up, and respect for time.',
     read: "Read Sarah's note",
     back: 'Back to Hussein’s portfolio',
     mark: 'A NOTE FROM SARAH',
+    visualNote: 'VISUAL NOTE / 01',
+    teamSession: 'A NOTE ON TEAMWORK',
+    openRecord: 'OPEN RECORD',
+    regularFollowUp: 'REGULAR FOLLOW-UP',
+    followUpNote: 'FOLLOW-UP NOTE / 02',
+    connectedResult: 'CONNECTED RESULT',
+    moreToCome: 'MORE TO COME',
+    workingSession: 'WORKING SESSION / 03',
     heroAlt: 'A team gathered around a planning session',
     noteLabel: 'THE NOTE',
     noteTitle: 'A good teammate can make\nthe next step easier.',
@@ -45,12 +53,20 @@ const peopleCopy = {
     recordAlt: 'A notebook and schedule prepared for a team meeting',
   },
   egyptian: {
-    eyebrow: 'ناس / رسالة ٠١',
-    title: 'في ناس بتغيّر\nطريقتك في الشغل.',
+    eyebrow: 'ناس / سارة سامح / ٠١',
+    title: 'سارة سامح.\nرسالة فضل صداها.',
     description: 'الصفحة دي محتفظة برسالة من سارة سامح حسين، زميلة في فريق Edu-Tech، عن العادات الصغيرة اللي خلّت الشغل بينا أوضح: التنظيم، المتابعة، واحترام الوقت.',
     read: 'اقرأ رسالة سارة',
     back: 'الرجوع لبورتفوليو حسين',
     mark: 'رسالة من سارة',
+    visualNote: 'ملاحظة بصرية / ٠١',
+    teamSession: 'رسالة عن الشغل مع الفريق',
+    openRecord: 'سجل مفتوح',
+    regularFollowUp: 'متابعة مستمرة',
+    followUpNote: 'ملاحظة متابعة / ٠٢',
+    connectedResult: 'أثر متصل',
+    moreToCome: 'لسه في حكايات',
+    workingSession: 'جلسة عمل / ٠٣',
     heroAlt: 'فريق مجتمع حول جلسة لتخطيط العمل',
     noteLabel: 'الرسالة',
     noteTitle: 'زميل شاطر يسهّل\nالخطوة اللي جاية.',
@@ -79,12 +95,20 @@ const peopleCopy = {
     recordAlt: 'دفتر وجدول مجهزان لاجتماع فريق',
   },
   moroccan: {
-    eyebrow: 'الناس / رسالة ٠١',
-    title: 'كاينين ناس كيبدلو\nالطريقة اللي كتشوف بها الخدمة.',
+    eyebrow: 'الناس / سارة سامح / ٠١',
+    title: 'سارة سامح.\nرسالة بقات.',
     description: 'هاد الصفحة خلات فيها رسالة من سارة سامح حسين، زميلة ففريق Edu-Tech، على العادات الصغيرة اللي خلات الخدمة بيناتنا أوضح: التنظيم، التتبع، واحترام الوقت.',
     read: 'قرا رسالة سارة',
     back: 'رجع لبورتفوليو حسين',
     mark: 'رسالة من سارة',
+    visualNote: 'ملاحظة بصرية / ٠١',
+    teamSession: 'رسالة على الخدمة مع الفريق',
+    openRecord: 'سجل مفتوح',
+    regularFollowUp: 'تتبع مستمر',
+    followUpNote: 'ملاحظة تتبع / ٠٢',
+    connectedResult: 'أثر متواصل',
+    moreToCome: 'مازال كاينين حكايات',
+    workingSession: 'جلسة خدمة / ٠٣',
     heroAlt: 'فريق مجموع حول جلسة لتخطيط الخدمة',
     noteLabel: 'الرسالة',
     noteTitle: 'الزميل المزيان كيسهّل\nالخطوة اللي جاية.',
@@ -149,13 +173,13 @@ export default function SarahSamehPage({ lang, dialect }: { lang: Language; dial
       </motion.div>
       <motion.figure className="people-hero-visual" initial={reduced ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .75, delay: .12 }}>
         <img src={leadershipHero} alt={copy.heroAlt} width={1024} height={576} loading="eager" fetchPriority="high" decoding="async" />
-        <figcaption><span>VISUAL EVIDENCE / 01</span><span>TEAM WORKING SESSION</span></figcaption>
+        <figcaption><span>{copy.visualNote}</span><span>{copy.teamSession}</span></figcaption>
         <div className="people-stamp"><img src={leadershipMark} alt="" width={1024} height={1024} /><span>{copy.mark}</span></div>
       </motion.figure>
     </section>
 
     <section className="people-note people-section-rule" aria-labelledby="people-note-title">
-      <div className="people-section-label"><span>01</span><b>{copy.noteLabel}</b><small>OPEN RECORD</small></div>
+      <div className="people-section-label"><span>01</span><b>{copy.noteLabel}</b><small>{copy.openRecord}</small></div>
       <div className="people-note-grid">
         <h2 id="people-note-title">{copy.noteTitle}</h2>
         <p>{copy.noteBody}</p>
@@ -164,7 +188,7 @@ export default function SarahSamehPage({ lang, dialect }: { lang: Language; dial
 
     <section className="people-record" id="people-record" aria-labelledby="people-record-title">
       <div className="people-record-header">
-        <div className="people-section-label people-section-label-light"><span>02</span><b>{copy.recordLabel}</b><small>REGULAR FOLLOW-UP</small></div>
+        <div className="people-section-label people-section-label-light"><span>02</span><b>{copy.recordLabel}</b><small>{copy.regularFollowUp}</small></div>
         <h2 id="people-record-title">{copy.recordTitle}</h2>
         <p>{copy.recordIntro}</p>
       </div>
@@ -173,9 +197,9 @@ export default function SarahSamehPage({ lang, dialect }: { lang: Language; dial
 
     <section className="people-impact people-section-rule" aria-labelledby="people-impact-title">
       <div className="people-impact-layout">
-        <figure><img src={meetingRecord} alt={copy.recordAlt} width={768} height={1024} loading="lazy" decoding="async" /><figcaption><span>FOLLOW-UP NOTE / 02</span><b>{copy.impactLabel}</b></figcaption></figure>
+        <figure><img src={meetingRecord} alt={copy.recordAlt} width={768} height={1024} loading="lazy" decoding="async" /><figcaption><span>{copy.followUpNote}</span><b>{copy.impactLabel}</b></figcaption></figure>
         <div>
-          <div className="people-section-label"><span>03</span><b>{copy.impactLabel}</b><small>CONNECTED RESULT</small></div>
+          <div className="people-section-label"><span>03</span><b>{copy.impactLabel}</b><small>{copy.connectedResult}</small></div>
           <h2 id="people-impact-title">{copy.impactTitle}</h2>
           <p className="people-impact-intro">{copy.impactBody}</p>
           <div className="people-impact-points">{copy.impactPoints.map(([letter, title, body]) => <article key={letter}><span>{letter}</span><div><h3>{title}</h3><p>{body}</p></div></article>)}</div>
@@ -184,8 +208,8 @@ export default function SarahSamehPage({ lang, dialect }: { lang: Language; dial
     </section>
 
     <section className="people-continue" aria-labelledby="people-continue-title">
-      <div><div className="people-section-label"><span>04</span><b>{copy.continueLabel}</b><small>MORE TO COME</small></div><h2 id="people-continue-title">{copy.continueTitle}</h2><p>{copy.continueBody}</p><a className="people-button people-button-teal" href="/">{copy.explore}<ExternalLink size={16} /></a></div>
-      <figure><img src={collaborationEvidence} alt={copy.collaborationAlt} width={1024} height={768} loading="lazy" decoding="async" /><figcaption><span>WORKING SESSION / 03</span><b>{copy.mark}</b></figcaption></figure>
+      <div><div className="people-section-label"><span>04</span><b>{copy.continueLabel}</b><small>{copy.moreToCome}</small></div><h2 id="people-continue-title">{copy.continueTitle}</h2><p>{copy.continueBody}</p><a className="people-button people-button-teal" href="/">{copy.explore}<ExternalLink size={16} /></a></div>
+      <figure><img src={collaborationEvidence} alt={copy.collaborationAlt} width={1024} height={768} loading="lazy" decoding="async" /><figcaption><span>{copy.workingSession}</span><b>{copy.mark}</b></figcaption></figure>
     </section>
   </main>;
 }
