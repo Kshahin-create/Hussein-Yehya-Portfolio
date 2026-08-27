@@ -6,6 +6,8 @@
 .people-hero-copy { padding-inline-start:clamp(0px,3vw,48px); }
 .people-hero h1 { font:900 clamp(3.2rem,6.4vw,7.5rem)/.9 var(--font-display); letter-spacing:-.08em; white-space:pre-line; max-width:720px; margin:25px 0; }
 .people-hero-description { max-width:580px; font-size:clamp(15px,1.3vw,18px); line-height:1.85; opacity:.76; }
+.people-affiliation { display:inline-flex; align-items:center; gap:8px; margin:22px 0 0; padding:8px 10px; border:1px solid hsl(var(--aqua)/.45); color:hsl(var(--aqua)); background:hsl(var(--aqua)/.07); font:10px var(--font-mono); letter-spacing:.07em; }
+.people-affiliation span { width:6px; height:6px; border-radius:50%; background:hsl(var(--signal)); flex:0 0 auto; }
 .people-actions { display:flex; align-items:center; flex-wrap:wrap; gap:13px 22px; margin-top:32px; }
 .people-button { display:inline-flex; align-items:center; justify-content:center; gap:11px; padding:13px 17px; border:1px solid hsl(var(--ink)); text-decoration:none; font-size:12px; font-weight:800; transition:transform .2s,background .2s; }
 .people-button:hover,.people-text-link:hover { transform:translateY(-3px); }

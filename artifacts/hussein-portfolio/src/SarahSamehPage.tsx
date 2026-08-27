@@ -14,6 +14,7 @@ const peopleCopy = {
     eyebrow: 'PEOPLE / SARAH SAMEH / 01',
     title: 'Sarah Sameh.\nA note about the people\nwho make work matter.',
     description: 'Sarah Sameh Hussein is a teammate on the Madinah AI team. This page holds her note about the things she saw in the way I worked: bringing order to busy moments, following through, and making space for the whole team.',
+    affiliation: 'FELLOW TEAMMATE / MADINAH AI',
     read: "Read Sarah's note",
     back: 'Back to Hussein’s portfolio',
     mark: 'A NOTE FROM SARAH',
@@ -56,6 +57,7 @@ const peopleCopy = {
     eyebrow: 'ناس / سارة سامح / ٠١',
     title: 'سارة سامح.\nرسالة عن الناس\nاللي بتخلّي الشغل له معنى.',
     description: 'سارة سامح حسين زميلة معايا في فريق عمل Madinah AI. الصفحة دي محتفظة برسالتها عن الحاجات اللي لاحظتها في طريقتي في الشغل: ترتيب اللحظات الزحمة، إني أكمّل اللي بدأته، وإني أسيب مساحة للفريق كله.',
+    affiliation: 'زميلة في فريق عمل Madinah AI',
     read: 'اقرأ رسالة سارة',
     back: 'الرجوع لبورتفوليو حسين',
     mark: 'رسالة من سارة',
@@ -98,6 +100,7 @@ const peopleCopy = {
     eyebrow: 'الناس / سارة سامح / ٠١',
     title: 'سارة سامح.\nرسالة على الناس\nاللي كيعطيو للخدمة معنى.',
     description: 'سارة سامح حسين زميلة معايا ففريق العمل ديال Madinah AI. هاد الصفحة خلات فيها الرسالة ديالها على الحوايج اللي لاحظات فطريقتي فخدمتي: كنرتب اللحظات المزدحمة، كنتبع اللي بديت، وكنخلي بلاصة للفريق كامل.',
+    affiliation: 'زميلة ففريق العمل ديال Madinah AI',
     read: 'قرا رسالة سارة',
     back: 'رجع لبورتفوليو حسين',
     mark: 'رسالة من سارة',
@@ -168,6 +171,7 @@ export default function SarahSamehPage({ lang, dialect }: { lang: Language; dial
         <p className="people-kicker"><span />{copy.eyebrow}</p>
         <h1>{copy.title}</h1>
         <p className="people-hero-description">{copy.description}</p>
+        <p className="people-affiliation"><span />{copy.affiliation}</p>
         <div className="people-actions"><a className="people-button people-button-dark" href="#people-record">{copy.read}<ArrowDownRight size={17} /></a><a className="people-text-link" href="/">{copy.back}<ArrowUpRight size={16} /></a></div>
         <div className="people-status"><i />{copy.mark}</div>
       </motion.div>
