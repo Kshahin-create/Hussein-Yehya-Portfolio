@@ -77,12 +77,13 @@
 .people-continue figure img { width:100%; aspect-ratio:4/3; object-fit:cover; filter:saturate(.62); }
 .people-continue figcaption { color:hsl(var(--ink)/.7); }
 .people-continue figcaption b { font-weight:500; }
-.people-spotlight { max-width:1120px; margin:0 auto clamp(90px,12vw,160px); padding:clamp(28px,5vw,62px); background:hsl(var(--aqua)/.1); display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,6vw,90px); align-items:center; }
+.people-spotlight { max-width:1240px; margin:0 auto clamp(90px,12vw,160px); padding:clamp(28px,5vw,62px); background:hsl(var(--aqua)/.1); display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(28px,6vw,90px); align-items:center; }
 .people-spotlight-copy { max-width:450px; }
 .people-spotlight h2 { font:900 clamp(2.4rem,4.7vw,5rem)/.9 var(--font-display); letter-spacing:-.07em; white-space:pre-line; margin:16px 0 20px; }
 .people-spotlight-copy>p:not(.people-kicker) { line-height:1.8; opacity:.7; }
 .people-spotlight-link { display:inline-flex; align-items:center; gap:7px; margin-top:18px; color:hsl(var(--aqua)); font-size:12px; font-weight:800; text-decoration:none; }
-.people-spotlight figure { margin:0; position:relative; padding:8px 0 0 8px; border-top:1px solid hsl(var(--aqua)); border-inline-start:1px solid hsl(var(--aqua)); }
+.people-spotlight-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.people-spotlight-cards figure { margin:0; position:relative; padding:8px 0 0 8px; border-top:1px solid hsl(var(--aqua)); border-inline-start:1px solid hsl(var(--aqua)); }
 .people-spotlight figure img { width:100%; aspect-ratio:4/3; object-fit:cover; filter:saturate(.65); }
 .people-spotlight figcaption { position:absolute; inset:auto 0 0; padding:38px 15px 13px; display:flex; flex-direction:column; color:hsl(var(--paper)); background:linear-gradient(transparent,hsl(var(--ink)/.88)); }
 .people-spotlight figcaption span { color:hsl(var(--signal)); font:9px var(--font-mono); }
@@ -117,6 +118,7 @@
   .people-continue { padding:28px 22px; gap:35px; margin-inline:-20px; }
   .people-continue h2 { font-size:2.7rem; }
   .people-spotlight { margin-inline:0; padding:26px 20px; gap:28px; }
+  .people-spotlight-cards { grid-template-columns:1fr; gap:18px; }
 }
 
 @media(prefers-reduced-motion:reduce) {

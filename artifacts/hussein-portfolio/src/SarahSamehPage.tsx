@@ -5,6 +5,7 @@ import meetingRecord from './assets/sarah/meeting-record.webp';
 import collaborationEvidence from './assets/sarah/collaboration-evidence.webp';
 import sarahTeachingClose from './assets/sarah/sarah-teaching-close.webp';
 import sarahTeachingWide from './assets/sarah/sarah-teaching-wide.webp';
+import gannaEditorial from './assets/ganna/hero-editorial.webp';
 import './people.css';
 
 type Language = 'en' | 'ar';
@@ -165,6 +166,10 @@ export function PeopleSpotlight({ lang, dialect }: { lang: Language; dialect: Di
     <figure>
       <img src={sarahTeachingWide} alt={copy.eventWideAlt} width={899} height={1599} loading="lazy" decoding="async" />
       <figcaption><span>NOTE 01</span><b>Sarah Sameh Hussein</b></figcaption>
+    </figure>
+    <figure>
+      <img src={gannaEditorial} alt={lang === 'en' ? 'Editorial artwork for Ganna Saeed’s note' : dialect === 'moroccan' ? 'تكوين بصري لرسالة جني سعيد' : 'تكوين بصري لرسالة جني سعيد'} width={1600} height={900} loading="lazy" decoding="async" />
+      <figcaption><span>NOTE 02</span><b>Ganna Saeed</b></figcaption>
     </figure>
   </motion.section>;
 }
