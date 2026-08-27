@@ -891,7 +891,7 @@ function App() {
       ? isPeople
         ? {
             title: 'Sarah Sameh — A Note on Hussein Yehya’s Impact',
-            description: 'A note from Sarah Sameh Hussein about the organization, follow-up, and commitment that shaped Hussein Yehya’s work with Edu-Tech.',
+            description: 'A note from Sarah Sameh Hussein, a teammate on the Madinah AI team, about the organization, follow-up, and commitment that shaped Hussein Yehya’s work.',
           }
         : isGallery
         ? {
@@ -906,8 +906,8 @@ function App() {
         ? {
             title: dialect === 'moroccan' ? 'سارة سامح | رسالة على الأثر ديال حسين يحيى' : 'سارة سامح | رسالة عن أثر حسين يحيى',
             description: dialect === 'moroccan'
-              ? 'رسالة من سارة سامح حسين على التنظيم والتتبع والالتزام اللي خلو أثر حسين يحيى باين ففريق Edu-Tech.'
-              : 'رسالة من سارة سامح حسين عن التنظيم والمتابعة والالتزام اللي خلّوا أثر حسين يحيى واضحًا في فريق Edu-Tech.',
+              ? 'رسالة من سارة سامح حسين، الزميلة مع حسين ففريق العمل ديال Madinah AI، على التنظيم والتتبع والالتزام اللي خلو أثر خدمتو باين.'
+              : 'رسالة من سارة سامح حسين، زميلة حسين في فريق عمل Madinah AI، عن التنظيم والمتابعة والالتزام اللي خلّوا أثر شغله واضح.',
           }
         : isGallery
         ? {
