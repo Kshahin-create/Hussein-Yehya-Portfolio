@@ -1,6 +1,5 @@
 import { ArrowDownRight, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
-import leadershipHero from './assets/sarah/leadership-hero.webp';
 import leadershipMark from './assets/sarah/leadership-mark.webp';
 import meetingRecord from './assets/sarah/meeting-record.webp';
 import collaborationEvidence from './assets/sarah/collaboration-evidence.webp';
@@ -18,7 +17,7 @@ const peopleCopy = {
     description: 'Sarah Sameh Hussein is a teammate on the Madinah AI team. This page holds her note about the things she saw in the way I worked: bringing order to busy moments, following through, and making space for the whole team.',
     affiliation: 'FELLOW TEAMMATE / MADINAH AI',
     eventLabel: 'QALYUBIA TECHNICAL TEAM / LIVE SESSION',
-    eventCloseAlt: 'Sarah Sameh explaining Madinah AI at a Qalyubia Technical Team event',
+    eventCloseAlt: 'Sarah Sameh giving a presentation at a Qalyubia Technical Team event',
     eventWideAlt: 'Sarah Sameh speaking to attendees at a Qalyubia Technical Team event',
     read: "Read Sarah's note",
     back: 'Back to Hussein’s portfolio',
@@ -31,7 +30,6 @@ const peopleCopy = {
     connectedResult: 'CONNECTED RESULT',
     moreToCome: 'MORE TO COME',
     workingSession: 'WORKING SESSION / 03',
-    heroAlt: 'A team gathered around a planning session',
     noteLabel: 'THE NOTE',
     noteTitle: 'The best teamwork leaves\npeople with more room to grow.',
     noteBody: 'Sarah’s message made me think about the kind of teammate I want to keep becoming. Someone who makes a busy moment clearer, keeps a promise visible, and helps the people around him move with confidence.',
@@ -64,7 +62,7 @@ const peopleCopy = {
     description: 'سارة سامح حسين زميلة معايا في فريق عمل Madinah AI. الصفحة دي محتفظة برسالتها عن الحاجات اللي لاحظتها في طريقتي في الشغل: ترتيب اللحظات الزحمة، إني أكمّل اللي بدأته، وإني أسيب مساحة للفريق كله.',
     affiliation: 'زميلة في فريق عمل Madinah AI',
     eventLabel: 'الفريق التقني بالقليوبية / فعالية مباشرة',
-    eventCloseAlt: 'سارة سامح وهي بتشرح Madinah AI في فعالية للفريق التقني بالقليوبية',
+    eventCloseAlt: 'سارة سامح وهي بتشرح في فعالية للفريق التقني بالقليوبية',
     eventWideAlt: 'سارة سامح وهي بتتكلم مع الحضور في فعالية للفريق التقني بالقليوبية',
     read: 'اقرأ رسالة سارة',
     back: 'الرجوع لبورتفوليو حسين',
@@ -77,7 +75,6 @@ const peopleCopy = {
     connectedResult: 'أثر متصل',
     moreToCome: 'لسه في حكايات',
     workingSession: 'جلسة عمل / ٠٣',
-    heroAlt: 'فريق مجتمع حول جلسة لتخطيط العمل',
     noteLabel: 'الرسالة',
     noteTitle: 'أحسن شغل جماعي\nبيفتح للناس مساحة تكبر.',
     noteBody: 'رسالة سارة فكرتني بنوع الزميل اللي نفسي أفضل أكونه: حد يوضّح اللحظة الزحمة، يخلّي الالتزام باين، ويساعد اللي حواليه يتحركوا بثقة.',
@@ -110,7 +107,7 @@ const peopleCopy = {
     description: 'سارة سامح حسين زميلة معايا ففريق العمل ديال Madinah AI. هاد الصفحة خلات فيها الرسالة ديالها على الحوايج اللي لاحظات فطريقتي فخدمتي: كنرتب اللحظات المزدحمة، كنتبع اللي بديت، وكنخلي بلاصة للفريق كامل.',
     affiliation: 'زميلة ففريق العمل ديال Madinah AI',
     eventLabel: 'الفريق التقني ديال القليوبية / فعالية مباشرة',
-    eventCloseAlt: 'سارة سامح وهي كاتشرح Madinah AI ففعالية ديال الفريق التقني ديال القليوبية',
+    eventCloseAlt: 'سارة سامح وهي كاتشرح ففعالية ديال الفريق التقني ديال القليوبية',
     eventWideAlt: 'سارة سامح وهي كاتهضر مع الحاضرين ففعالية ديال الفريق التقني ديال القليوبية',
     read: 'قرا رسالة سارة',
     back: 'رجع لبورتفوليو حسين',
@@ -123,7 +120,6 @@ const peopleCopy = {
     connectedResult: 'أثر متواصل',
     moreToCome: 'مازال كاينين حكايات',
     workingSession: 'جلسة خدمة / ٠٣',
-    heroAlt: 'فريق مجموع حول جلسة لتخطيط الخدمة',
     noteLabel: 'الرسالة',
     noteTitle: 'الخدمة الزوينة مع الفريق\nكتخلي للناس بلاصة يكبرو.',
     noteBody: 'رسالة سارة فكراتني بنوع الزميل اللي بغيت نبقى نكون: واحد كيوضح اللحظة المزدحمة، كيخلي الالتزام باين، وكيعاون اللي حداو يتحركو بثقة.',
