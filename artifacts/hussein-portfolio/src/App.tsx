@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowDownRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, ExternalLink, Facebook, Github, Instagram, Linkedin, Menu, Moon, Phone, Sun, X } from 'lucide-react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import profileImage from '@assets/hussein-profile-new.webp';
+import { PeopleSpotlight, default as SarahSamehPage } from './SarahSamehPage';
 import libraryPortrait from '@assets/hussein-profile.jpeg';
 import madinahStage from '@assets/image_1787524765206.webp';
 import madinahExtra from '@assets/image_1787524769990.webp';
@@ -872,6 +873,8 @@ function App() {
   const [dialect, setDialect] = useState<Dialect>(() => localStorage.getItem('hussein-dialect') === 'moroccan' ? 'moroccan' : 'egyptian');
   const [dark, setDark] = useState(false); const t = getT(lang, dialect);
   const libraryPage = window.location.pathname.endsWith('/gallery') || window.location.pathname.endsWith('/gallery/');
+  const peoplePage = window.location.pathname.endsWith('/people/sarah-sameh') || window.location.pathname.endsWith('/people/sarah-sameh/');
+  const innerPage = libraryPage || peoplePage;
   useEffect(() => { setDark(localStorage.getItem('hussein-theme') === 'dark'); }, []);
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark);
@@ -883,8 +886,14 @@ function App() {
   }, [dark, lang, dialect]);
   useEffect(() => {
     const isGallery = libraryPage;
+    const isPeople = peoplePage;
     const metadata = lang === 'en'
-      ? isGallery
+      ? isPeople
+        ? {
+            title: 'Sarah Sameh — A Note on Hussein Yehya’s Impact',
+            description: 'A note from Sarah Sameh Hussein about the organization, follow-up, and commitment that shaped Hussein Yehya’s work with Edu-Tech.',
+          }
+        : isGallery
         ? {
             title: 'Hussein Yehya Photo Library | Projects & Moments',
             description: 'A personal photo library by Hussein Yehya: projects, educational teams, events, trips, portraits, and moments worth keeping.',
@@ -893,7 +902,14 @@ function App() {
             title: 'Hussein Yehya — Full-Stack Developer in Egypt | Web, Flutter & AI Projects',
             description: 'Hussein Yehya is an Egyptian-Moroccan full-stack developer in Egypt building web apps, Flutter mobile apps, APIs, and AI-powered products.',
           }
-      : isGallery
+      : isPeople
+        ? {
+            title: dialect === 'moroccan' ? 'سارة سامح | رسالة على الأثر ديال حسين يحيى' : 'سارة سامح | رسالة عن أثر حسين يحيى',
+            description: dialect === 'moroccan'
+              ? 'رسالة من سارة سامح حسين على التنظيم والتتبع والالتزام اللي خلو أثر حسين يحيى باين ففريق Edu-Tech.'
+              : 'رسالة من سارة سامح حسين عن التنظيم والمتابعة والالتزام اللي خلّوا أثر حسين يحيى واضحًا في فريق Edu-Tech.',
+          }
+        : isGallery
         ? {
             title: dialect === 'moroccan' ? 'مكتبة تصاور حسين يحيى | مشاريع ولحظات' : 'مكتبة صور حسين يحيى | مشاريع ولحظات',
             description: dialect === 'moroccan'
@@ -916,19 +932,20 @@ function App() {
     setMeta('meta[name="description"]', 'name', metadata.description);
     setMeta('meta[property="og:title"]', 'property', metadata.title);
     setMeta('meta[property="og:description"]', 'property', metadata.description);
-    setMeta('meta[property="og:url"]', 'property', `https://husseinyehya.com${isGallery ? '/gallery' : '/'}`);
+    setMeta('meta[property="og:url"]', 'property', `https://husseinyehya.com${isPeople ? '/people/sarah-sameh' : isGallery ? '/gallery' : '/'}`);
     setMeta('meta[property="og:locale"]', 'property', lang === 'ar' ? 'ar_EG' : 'en_US');
-    setMeta('meta[property="og:image"]', 'property', 'https://husseinyehya.com/og-image.svg');
+    setMeta('meta[property="og:image"]', 'property', 'https://husseinyehya.com/og-image.png');
     setMeta('meta[property="og:image:alt"]', 'property', lang === 'ar' ? 'حسين يحيى — مطوّر ويب وتطبيقات' : 'Hussein Yehya — Full-Stack Web & App Developer');
     setMeta('meta[name="twitter:title"]', 'name', metadata.title);
     setMeta('meta[name="twitter:description"]', 'name', metadata.description);
-    setMeta('meta[name="twitter:image"]', 'name', 'https://husseinyehya.com/og-image.svg');
+    setMeta('meta[name="twitter:image"]', 'name', 'https://husseinyehya.com/og-image.png');
     setMeta('meta[name="twitter:image:alt"]', 'name', lang === 'ar' ? 'حسين يحيى — مطوّر ويب وتطبيقات' : 'Hussein Yehya — Full-Stack Web & App Developer');
     const canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]') ?? document.createElement('link');
     canonical.rel = 'canonical';
-    canonical.href = `https://husseinyehya.com${isGallery ? '/gallery' : '/'}`;
+    canonical.href = `https://husseinyehya.com${isPeople ? '/people/sarah-sameh' : isGallery ? '/gallery' : '/'}`;
     if (!canonical.parentElement) document.head.appendChild(canonical);
-  }, [dialect, lang, libraryPage]);
-  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}>{<Header lang={lang} dialect={dialect} dark={dark} libraryPage={libraryPage} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} />}{libraryPage ? <PhotoLibrary lang={lang} dialect={dialect} /> : <main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} dialect={dialect} /><Journal lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main>}<footer><span>© {new Date().getFullYear()} / Hussein Yehya</span>{libraryPage ? <a href="/">{t.back}<ArrowUpRight size={14} /></a> : <a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a>}</footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
+  }, [dialect, lang, libraryPage, peoplePage]);
+  const backToPortfolio = lang === 'en' ? 'Back to portfolio' : dialect === 'moroccan' ? 'رجع للبورتفوليو' : 'الرجوع للبورتفوليو';
+  return <div className={`kinetic-shell ${lang === 'ar' ? 'rtl' : ''}`}>{<Header lang={lang} dialect={dialect} dark={dark} libraryPage={innerPage} onLanguage={() => setLang(lang === 'en' ? 'ar' : 'en')} onDialect={() => setDialect(dialect === 'egyptian' ? 'moroccan' : 'egyptian')} onTheme={() => setDark(!dark)} />}{libraryPage ? <PhotoLibrary lang={lang} dialect={dialect} /> : peoplePage ? <SarahSamehPage lang={lang} dialect={dialect} /> : <main><Hero lang={lang} dialect={dialect} /><Story lang={lang} dialect={dialect} /><ProfileDetails lang={lang} dialect={dialect} /><Journal lang={lang} dialect={dialect} /><Systems lang={lang} dialect={dialect} /><Archive lang={lang} dialect={dialect} /><Method lang={lang} dialect={dialect} /><PeopleSpotlight lang={lang} dialect={dialect} /><Contact lang={lang} dialect={dialect} /></main>}<footer><span>© {new Date().getFullYear()} / Hussein Yehya</span>{innerPage ? <a href="/">{backToPortfolio}<ArrowUpRight size={14} /></a> : <a data-testid="link-back-top" href="#top">{t.back}<ArrowUpRight size={14} /></a>}</footer><span className="sr-only" data-testid="text-current-language">{t.eyebrow}</span></div>;
 }
 export default App;
