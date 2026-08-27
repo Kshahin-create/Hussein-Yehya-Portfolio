@@ -537,7 +537,7 @@ const text = {
     eyebrow: 'Student & developer / Egypt × Morocco',
     hero: 'I’m Hussein.\nI learn, build, and try things.',
     intro: 'I’m an Egyptian-Moroccan student and developer. This is where I keep the projects, events, photos, and ideas that have shaped my path so far.',
-    available: 'Still learning. More to come.', work: 'Start with the story', talk: 'See the milestones',
+    available: 'Still learning. More to come.', work: 'View my work', talk: 'Let’s talk',
     photoTape: 'CAIRO / MY NOTES', photoRole: 'student / developer',
     storyLabel: '01 / About me', storyTitle: 'Figuring things out as I go.', story1: 'I am still at the beginning, and that is the part I like most. Every project, event, team, and new idea gives me another chance to learn something I did not know before.', story2: 'This page is simply a record of things I have made, places I have been, people I have learned from, and moments I do not want to forget.',
     systemsLabel: '02 / Projects', systemsTitle: 'Things I actually made.', systemsIntro: 'They are not perfect, and that is fine. They are real projects that taught me how ideas change once people start using them.', visit: 'Open the project', role: 'What I worked on', builtFor: 'Made for',
@@ -554,7 +554,7 @@ const text = {
     eyebrow: 'طالب ومطوّر / مصر × المغرب',
     hero: 'أنا حسين.\nبتعلّم، بجرّب، وبعمل حاجات.',
     intro: 'أنا طالب ومطوّر مصري-مغربي. المكان ده بجمع فيه المشاريع والفعاليات والصور والحاجات اللي عملتها واللي اتعلمتها وأنا ماشي في الطريق.',
-    available: 'لسه بتعلّم ولسه في حاجات جاية', work: 'ابدأ من الحكاية', talk: 'شوف الإنجازات',
+    available: 'لسه بتعلّم ولسه في حاجات جاية', work: 'شوف شغلي', talk: 'نتكلم',
     photoTape: 'القاهرة / ملاحظاتي', photoRole: 'طالب / مطوّر',
     storyLabel: '٠١ / عنّي', storyTitle: 'ماشي في الطريق واحدة واحدة.', story1: 'أنا لسه في أول الطريق، ودي أكتر حاجة بحبها فيه. كل مشروع أو فعالية أو فريق أو فكرة جديدة بتديني فرصة أتعلم حاجة ماكنتش أعرفها.', story2: 'الموقع ده مكان بجمع فيه الحاجات اللي عملتها، والأماكن اللي رحتها، والناس اللي اتعلمت منها، واللحظات اللي مش عايز أنساها.',
     systemsLabel: '٠٢ / المشاريع', systemsTitle: 'حاجات عملتها فعلًا.', systemsIntro: 'مش كاملة، وده عادي. دي مشاريع حقيقية علمتني إزاي الفكرة بتتغير أول ما الناس تبدأ تستخدمها.', visit: 'افتح المشروع', role: 'كنت بعمل إيه', builtFor: 'اتعمل لـ',
@@ -577,7 +577,7 @@ function getT(lang: Language, dialect: Dialect) {
     hero: 'أنا حسين.\nكنتعلّم، كنجرب، وكندير حوايج.',
     intro: 'أنا طالب ومطوّر مصري-مغربي. هاد البلاصة كنجمع فيها المشاريع والفعاليات والتصاور والحوايج اللي درت واللي تعلمت وأنا غادي فالطريق.',
     available: 'ما زال كنتعلم وما زال الجاي أكثر',
-    work: 'بدا من الحكاية', talk: 'شوف المحطات',
+    work: 'شوف خدمتي', talk: 'نهضرو',
     photoTape: 'القاهرة / ملاحظاتي', photoRole: 'طالب / مطوّر',
     storyLabel: '٠١ / عني', storyTitle: 'غادي فالطريق بشوية بشوية.',
     story1: 'ما زلت فبداية الطريق، وهادشي هو اللي كيعجبني فيها. كل مشروع ولا فعالية ولا فريق ولا فكرة جديدة كتعطيني فرصة نتعلم حاجة ما كنتش عارفها.',
@@ -615,7 +615,7 @@ function Hero({ lang, dialect }: { lang: Language; dialect: Dialect }) {
   const t = getT(lang, dialect); const ref = useRef<HTMLElement>(null); const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : 160]); const wordsY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : -110]); const opacity = useTransform(scrollYProgress, [.7, 1], [1, 0]);
-  return <section ref={ref} id="top" className="story-hero"><div className="hero-index">01 / 05</div><motion.div style={{ y: wordsY, opacity }} className="hero-copy"><p className="eyebrow">{t.eyebrow}</p><h1 data-testid="text-hero-title">{t.hero}</h1><p data-testid="text-hero-intro">{t.intro}</p><div className="hero-actions"><a data-testid="link-view-work" href="#story">{t.work} <ArrowDownRight size={17} /></a><a data-testid="link-start-conversation" href="#journal">{t.talk} <ArrowUpRight size={16} /></a></div></motion.div><motion.figure style={{ y: portraitY }} className="hero-photo"><div className="photo-tape">{t.photoTape}</div><img data-testid="img-profile-portrait" src={profileImage} alt={lang === 'ar' ? 'صورة شخصية لحسين يحيى' : 'Portrait of Hussein Yehya'} width={960} height={1200} loading="eager" fetchPriority="high" decoding="async" /><figcaption><span>Hussein Yehya</span><span>{t.photoRole}</span></figcaption></motion.figure><div className="hero-signal"><i />{t.available}</div><a className="scroll-rail" data-testid="link-scroll-explore" href="#story"><span>{t.rail}</span><b /></a></section>;
+  return <section ref={ref} id="top" className="story-hero"><div className="hero-index">01 / 05</div><motion.div style={{ y: wordsY, opacity }} className="hero-copy"><p className="eyebrow">{t.eyebrow}</p><h1 data-testid="text-hero-title">{t.hero}</h1><p data-testid="text-hero-intro">{t.intro}</p><div className="hero-actions"><a data-testid="link-view-work" href="#systems">{t.work} <ArrowDownRight size={17} /></a><a data-testid="link-start-conversation" href="#contact">{t.talk} <ArrowUpRight size={16} /></a></div></motion.div><motion.figure style={{ y: portraitY }} className="hero-photo"><div className="photo-tape">{t.photoTape}</div><img data-testid="img-profile-portrait" src={profileImage} alt={lang === 'ar' ? 'صورة شخصية لحسين يحيى' : 'Portrait of Hussein Yehya'} width={960} height={1200} loading="eager" fetchPriority="high" decoding="async" /><figcaption><span>Hussein Yehya</span><span>{t.photoRole}</span></figcaption></motion.figure><div className="hero-signal"><i />{t.available}</div><a className="scroll-rail" data-testid="link-scroll-explore" href="#story"><span>{t.rail}</span><b /></a></section>;
 }
 
 function Story({ lang, dialect }: { lang: Language; dialect: Dialect }) {
