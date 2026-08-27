@@ -20,9 +20,17 @@
 .people-status i { background:hsl(var(--aqua)); }
 .people-hero-visual { position:relative; margin:0; padding:9px 9px 0 0; border-top:1px solid hsl(var(--aqua)); border-inline-end:1px solid hsl(var(--aqua)); }
 .people-hero-visual:before { content:''; position:absolute; inset:-23px -28px auto auto; width:72%; height:82%; background:hsl(var(--aqua)/.13); z-index:-1; }
-.people-hero-visual>img { width:100%; aspect-ratio:16/9; object-fit:cover; filter:saturate(.65) contrast(1.04); }
-.people-hero-visual figcaption,.people-continue figcaption { display:flex; justify-content:space-between; gap:12px; padding:12px 0; color:hsl(var(--ink)/.62); font:9px var(--font-mono); letter-spacing:.06em; }
-.people-hero-visual figcaption span:first-child,.people-continue figcaption span:first-child { color:hsl(var(--aqua)); }
+.people-hero-photo-grid { display:grid; grid-template-columns:1fr 1.08fr; gap:10px; align-items:start; }
+.people-photo-card { position:relative; margin:0; min-width:0; overflow:hidden; }
+.people-photo-card-close { margin-top:42px; }
+.people-photo-card img { display:block; width:100%; aspect-ratio:3/4; object-fit:cover; filter:saturate(.78) contrast(1.03); }
+.people-photo-card-close img { object-position:center 42%; }
+.people-photo-card-wide img { object-position:center 48%; }
+.people-photo-card figcaption { position:absolute; inset:auto 0 0; display:flex; flex-direction:column; gap:4px; padding:38px 11px 10px; color:hsl(var(--paper)); background:linear-gradient(transparent,hsl(var(--ink)/.86)); font:8px var(--font-mono); letter-spacing:.04em; }
+.people-photo-card figcaption span { color:hsl(var(--signal)); }
+.people-photo-card figcaption b { font-weight:500; }
+.people-continue figcaption { display:flex; justify-content:space-between; gap:12px; padding:12px 0; color:hsl(var(--ink)/.62); font:9px var(--font-mono); letter-spacing:.06em; }
+.people-continue figcaption span:first-child { color:hsl(var(--aqua)); }
 .people-stamp { position:absolute; inset:21px 25px auto auto; width:74px; height:74px; background:hsl(var(--signal)); display:grid; place-items:center; transform:rotate(3deg); overflow:hidden; }
 .people-stamp img { width:56px; height:56px; object-fit:contain; mix-blend-mode:multiply; opacity:.88; }
 .people-stamp span { position:absolute; font:7px var(--font-mono); text-align:center; line-height:1.1; color:hsl(var(--ink)); }
@@ -88,7 +96,8 @@
   .people-hero-description { font-size:15px; }
   .people-status { margin-top:34px; }
   .people-hero-visual { width:calc(100% - 8px); align-self:end; }
-  .people-hero-visual>img { aspect-ratio:4/3; }
+  .people-hero-photo-grid { gap:8px; }
+  .people-photo-card-close { margin-top:28px; }
   .people-stamp { width:62px; height:62px; inset:15px 15px auto auto; }
   .people-stamp img { width:46px; height:46px; }
   .people-stamp span { font-size:6px; }

@@ -4,6 +4,8 @@ import leadershipHero from './assets/sarah/leadership-hero.webp';
 import leadershipMark from './assets/sarah/leadership-mark.webp';
 import meetingRecord from './assets/sarah/meeting-record.webp';
 import collaborationEvidence from './assets/sarah/collaboration-evidence.webp';
+import sarahTeachingClose from './assets/sarah/sarah-teaching-close.webp';
+import sarahTeachingWide from './assets/sarah/sarah-teaching-wide.webp';
 import './people.css';
 
 type Language = 'en' | 'ar';
@@ -15,6 +17,9 @@ const peopleCopy = {
     title: 'Sarah Sameh.\nA note about the people\nwho make work matter.',
     description: 'Sarah Sameh Hussein is a teammate on the Madinah AI team. This page holds her note about the things she saw in the way I worked: bringing order to busy moments, following through, and making space for the whole team.',
     affiliation: 'FELLOW TEAMMATE / MADINAH AI',
+    eventLabel: 'QALYUBIA TECHNICAL TEAM / LIVE SESSION',
+    eventCloseAlt: 'Sarah Sameh explaining Madinah AI at a Qalyubia Technical Team event',
+    eventWideAlt: 'Sarah Sameh speaking to attendees at a Qalyubia Technical Team event',
     read: "Read Sarah's note",
     back: 'Back to Hussein’s portfolio',
     mark: 'A NOTE FROM SARAH',
@@ -58,6 +63,9 @@ const peopleCopy = {
     title: 'سارة سامح.\nرسالة عن الناس\nاللي بتخلّي الشغل له معنى.',
     description: 'سارة سامح حسين زميلة معايا في فريق عمل Madinah AI. الصفحة دي محتفظة برسالتها عن الحاجات اللي لاحظتها في طريقتي في الشغل: ترتيب اللحظات الزحمة، إني أكمّل اللي بدأته، وإني أسيب مساحة للفريق كله.',
     affiliation: 'زميلة في فريق عمل Madinah AI',
+    eventLabel: 'الفريق التقني بالقليوبية / فعالية مباشرة',
+    eventCloseAlt: 'سارة سامح وهي بتشرح Madinah AI في فعالية للفريق التقني بالقليوبية',
+    eventWideAlt: 'سارة سامح وهي بتتكلم مع الحضور في فعالية للفريق التقني بالقليوبية',
     read: 'اقرأ رسالة سارة',
     back: 'الرجوع لبورتفوليو حسين',
     mark: 'رسالة من سارة',
@@ -101,6 +109,9 @@ const peopleCopy = {
     title: 'سارة سامح.\nرسالة على الناس\nاللي كيعطيو للخدمة معنى.',
     description: 'سارة سامح حسين زميلة معايا ففريق العمل ديال Madinah AI. هاد الصفحة خلات فيها الرسالة ديالها على الحوايج اللي لاحظات فطريقتي فخدمتي: كنرتب اللحظات المزدحمة، كنتبع اللي بديت، وكنخلي بلاصة للفريق كامل.',
     affiliation: 'زميلة ففريق العمل ديال Madinah AI',
+    eventLabel: 'الفريق التقني ديال القليوبية / فعالية مباشرة',
+    eventCloseAlt: 'سارة سامح وهي كاتشرح Madinah AI ففعالية ديال الفريق التقني ديال القليوبية',
+    eventWideAlt: 'سارة سامح وهي كاتهضر مع الحاضرين ففعالية ديال الفريق التقني ديال القليوبية',
     read: 'قرا رسالة سارة',
     back: 'رجع لبورتفوليو حسين',
     mark: 'رسالة من سارة',
@@ -156,7 +167,7 @@ export function PeopleSpotlight({ lang, dialect }: { lang: Language; dialect: Di
       <a className="people-spotlight-link" data-testid="link-people-sarah" href="/people/sarah-sameh">{copy.read}<ArrowUpRight size={16} /></a>
     </div>
     <figure>
-      <img src={collaborationEvidence} alt={copy.collaborationAlt} width={1024} height={768} loading="lazy" decoding="async" />
+      <img src={sarahTeachingWide} alt={copy.eventWideAlt} width={899} height={1599} loading="lazy" decoding="async" />
       <figcaption><span>NOTE 01</span><b>Sarah Sameh Hussein</b></figcaption>
     </figure>
   </motion.section>;
@@ -175,11 +186,19 @@ export default function SarahSamehPage({ lang, dialect }: { lang: Language; dial
         <div className="people-actions"><a className="people-button people-button-dark" href="#people-record">{copy.read}<ArrowDownRight size={17} /></a><a className="people-text-link" href="/">{copy.back}<ArrowUpRight size={16} /></a></div>
         <div className="people-status"><i />{copy.mark}</div>
       </motion.div>
-      <motion.figure className="people-hero-visual" initial={reduced ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .75, delay: .12 }}>
-        <img src={leadershipHero} alt={copy.heroAlt} width={1024} height={576} loading="eager" fetchPriority="high" decoding="async" />
-        <figcaption><span>{copy.visualNote}</span><span>{copy.teamSession}</span></figcaption>
+      <motion.div className="people-hero-visual" initial={reduced ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .75, delay: .12 }}>
+        <div className="people-hero-photo-grid">
+          <figure className="people-photo-card people-photo-card-close">
+            <img src={sarahTeachingClose} alt={copy.eventCloseAlt} width={1200} height={1600} loading="eager" fetchPriority="high" decoding="async" />
+            <figcaption><span>{copy.visualNote}</span><b>{copy.eventLabel}</b></figcaption>
+          </figure>
+          <figure className="people-photo-card people-photo-card-wide">
+            <img src={sarahTeachingWide} alt={copy.eventWideAlt} width={899} height={1599} loading="lazy" decoding="async" />
+            <figcaption><span>{copy.teamSession}</span><b>{copy.eventLabel}</b></figcaption>
+          </figure>
+        </div>
         <div className="people-stamp"><img src={leadershipMark} alt="" width={1024} height={1024} /><span>{copy.mark}</span></div>
-      </motion.figure>
+      </motion.div>
     </section>
 
     <section className="people-note people-section-rule" aria-labelledby="people-note-title">
